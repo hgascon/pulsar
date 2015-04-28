@@ -1,0 +1,366 @@
+#!/usr/bin/python
+
+import os
+import sys
+sys.path.insert(0, os.path.abspath('..'))
+
+import socket
+import time
+import json
+import ConfigParser
+import numpy as np
+from optparse import OptionParser
+from ast import literal_eval
+from random import choice, randrange
+
+from pulsar.common import pz
+from pulsar.common.networking import Client, Server
+from pulsar.core.lens.lens import Lens
+
+SENSITVE_CHARACTERS = "#$%&(){};:\'\"|,.<>/?`\\"
+FUZZ_LENGTH = 10000
+FUZZ_STATUS_OK = "OK"
+FUZZ_STATUS_CRASH = "CRASH"
+FUZZ_STATUS_TERMINATED = "TERMINATED"
+TIMER_SAMPLE_TERMINATION = 15
+
+
+def main(model_file, role, host, port, timeout, bsize, cuckoo_session):
+
+    l = Lens(model_file, role, sim_search=True, mode=3, templates_no_fields=True)
+    fuzzer = Fuzzer(l, model_file, cuckoo_session)
+
+    if l.role == "UAC":
+        #while fuzzer.is_active():
+        while True:
+            fuzzer.new_iteration()
+            connection = Client(host, port, timeout, bsize)
+            snd_message = l.transitionSelf()
+            print "\n>>> SENDING msg:\n{}".format(snd_message[1])
+            try:
+                connection.send(str(snd_message[1]))
+            except socket.error as e:
+                print "socket: {} in send operation".format(e)
+
+            while fuzzer.status == FUZZ_STATUS_OK:
+                #time.sleep(0.3)
+                try:
+                    rcv_message = connection.recv()
+                    if len(rcv_message) == 0:
+                        raise Exception, "Received empty message"
+                    else:
+                        #print ">>> RECEIVED message:\n{}".format(rcv_message)
+                        print ">>> RECEIVED message"
+                        #time.sleep(2)
+                except Exception as e:
+                    print "socket: {}\n".format(e)
+                    rcv_message = ""
+                    print ">>> No TRANSITION possible without server msg."
+                    crashed = raw_input("Has the server crashed? [0/1]: ")
+                    if crashed == 1:
+                        connection.close()
+                        fuzzer.status = FUZZ_STATUS_CRASH
+                        fuzzer.log_trace()
+                        break
+                    fuzzer.log_trace()
+                    connection.settimeout(timeout)
+                if rcv_message != "":
+                    print ">>> Consuming RECEIVED msg\n"
+                    lens_status = l.consumeOtherSide(rcv_message)
+                    fuzzer.log_trace()
+                snd_message = l.transitionSelf()
+                print ">>> STATUS: {}, TRANSITION: {}".format(snd_message[0], snd_message[2])
+                if snd_message[0] == "END":
+                    fuzzer.status = FUZZ_STATUS_TERMINATED
+                    fuzzer.log_trace()
+                    continue
+                if snd_message[1] is not None:
+                    try:
+                        connection.send(str(snd_message[1]))
+                    except socket.error as e:
+                        print "socket: {} in send operation".format(e)
+                        connection.close()
+                        crashed = raw_input("Has the server crashed? [0/1]: ")
+                        if crashed == 1:
+                            fuzzer.status = FUZZ_STATUS_CRASH
+                            fuzzer.log_trace()
+                        break
+                    #raw_input("\n>>> Press intro to continue...")
+
+    elif l.role == "UAS":
+
+        connection = Server(host, port, timeout, bsize)
+        #while fuzzer.is_active():
+        while True:
+            fuzzer.run_sample()
+            connection.accept()
+            connection.settimeout(timeout)
+            fuzzer.new_iteration()
+            while fuzzer.status == FUZZ_STATUS_OK:
+                time.sleep(2)
+                try:
+                    print ">>> RECEIVING message... "
+                    rcv_message = connection.recv()
+                    if len(rcv_message) == 0:
+                        raise Exception, "Received empty message"
+                    deco = '#'*80
+                    print ">>> RECEIVED message:\n{}\n{}\n{}".format(deco,
+                                                                     rcv_message,
+                                                                     deco)
+                except Exception as e:
+                    print "socket: {}".format(e)
+                    if str(e) == 'time out':
+                        rcv_message = ""
+                        if not l.waiting_response():
+                            print ">>> TIME OUT but TRANSITION possible without client msg."
+                            break
+                        else:
+                            print ">>> No TRANSITION possible without client msg."
+                    connection.close()
+                    print ">>> CHECKING FOR TERMINATED EXECUTION"
+                    for i in range(TIMER_SAMPLE_TERMINATION):
+                        time.sleep(1)
+                        print "."
+                    fuzzer.termination_check()
+                    if fuzzer.status is FUZZ_STATUS_TERMINATED:
+                        print ">>> CHECKING FOR CRASH"
+                        fuzzer.crash_check()
+                        fuzzer.log_trace()
+                        break
+                    print ">>> SAMPLE STILL ACTIVE :("
+                    fuzzer.log_trace()
+                    #fuzzer.new_iteration(reset=1)
+                    connection.accept()
+                    connection.settimeout(timeout)
+                    continue
+
+                if rcv_message != "":
+                    print ">>> Consuming RECEIVED msg of length {}".format(len(rcv_message))
+                    lens_status = l.consumeOtherSide(rcv_message)
+                    print ">>> STATUS: {}".format(lens_status)
+                    if lens_status is "END":
+                        fuzzer.new_iteration(reset=1)
+                        lens_status = l.consumeOtherSide(rcv_message)
+                        print ">>> STATUS: {}".format(lens_status)
+                    fuzzer.log_trace()
+                status, msg, transition = l.transitionSelf()
+                print ">>> STATUS: {}, TRANSITION: {}".format(status,
+                                                              transition)
+                if msg is not None:
+                    try:
+                        connection.send(str(msg))
+                        print ">>> SENDING msg of length {}".format(len(msg))
+                        if len(msg) < 5000:
+                            deco = '#'*80
+                            print "{}\n{}\n{}".format(deco, msg, deco)
+                    except socket.error as e:
+                        print "socket: {} in send operation".format(e)
+                        connection.close()
+                        connection.accept()
+                        connection.settimeout(timeout)
+
+
+class Fuzzer:
+    """ Definition and management of the fuzzing primitives
+    """
+
+    def __init__(self, lens, model_file, cuckoo_session=1):
+        lens.set_fuzzer(self)
+        self.lens = lens
+
+        # cuckoo initialization
+        if cuckoo_session:
+            self.db = Database()
+            self.bin_name = model_file
+
+        log_file_name = "{}.fuzzlog".format(self.lens.modelPath)
+        self.logger = Logger(log_file_name)
+        self.iteration = 0
+        self.status = FUZZ_STATUS_OK
+        self.trace = [], []
+
+        self.tracker_path = "{}.tracker.pz".format(self.lens.modelPath)
+        if not os.path.isfile(self.tracker_path):
+            # every fuzzable template is initialized to 2^num_fields-1
+            # to index all possible fuzzing masks of fields
+            self.tracker = {}
+            for t in lens.tl.template_list:
+                if t.state.endswith(lens.role) and len(t.fields) != 0:
+                    self.tracker[t.ID] = 2**len(t.fields)-1
+            pz.save(self.tracker, self.tracker_path)
+        else:
+            self._load_tracker()
+
+    ######## Sandbox Related Functions ########
+
+    def run_sample(self):
+        self.task_id = self.db.add_path(self.bin_name)
+
+    ######## Tracking Functions ########
+
+    def _load_tracker(self):
+        self.tracker = pz.load(self.tracker_path)
+
+    def _save_tracker(self):
+        pz.save(self.tracker, self.tracker_path)
+
+    def new_iteration(self, reset=0):
+        """ Increment current iteration of the fuzzer and
+        initialize the status for the new run.
+        """
+        if not reset:
+            self.iteration += 1
+            self.status = FUZZ_STATUS_OK
+        print ">>> RESETING MODEL..."
+        self.lens.reset_model()
+        print ">>> NEW STATE: {}".format(self.lens.mm.state)
+
+    def crash_check(self):
+        """ Set fuzzing status according to result of
+        last fuzzing input. This function should be read the exit
+        code of the sample from the sandbox report.
+        """
+        task = self.db.view_task(self.task_id)
+        if task.status == "reported":
+            fuzzer_path = os.path.dirname(os.path.realpath(__file__))
+            cuckoo_path = "/".join(fuzzer_path.split('/')[:-1] + ["cuckoo"])
+            report_path = "storage/analyses/{}/reports/report.json".format(task.id)
+            report_path = os.path.join(cuckoo_path, report_path)
+            report = json.loads(open(report_path, 'r').read())
+            for process in report['behavior']['processes']:
+                for call in process['calls']:
+                    if call['api'] == 'LdrLoadDll':
+                        for arg in call['arguments']:
+                            if arg['name'] == 'FileName' and 'faultrep.dll' in arg['value']:
+                                self.status = FUZZ_STATUS_CRASH
+        print "Fuzzer status: {}".format(self.status)
+
+    def termination_check(self):
+        task = self.db.view_task(self.task_id)
+        if task.completed_on:
+            self.status = FUZZ_STATUS_TERMINATED
+            print "Sample execution is terminated!"
+        else:
+            return
+
+    def _get_fuzz_fields(self, template_id):
+
+        self._load_tracker()
+        fields_len = len(self.lens.tl.template_dic[template_id].fields)
+        fuzz_mask_int = self.tracker[template_id]
+        fuzz_mask_bin = np.binary_repr(np.invert(np.array([fuzz_mask_int])),
+                                       fields_len)
+        fuzz_mask_bin = [int(i) for i in fuzz_mask_bin]
+        return np.nonzero(fuzz_mask_bin)[0]
+
+    def _update_tracker(self, template_id):
+
+        self._load_tracker()
+        fuzz_mask = self.tracker[template_id]
+        if fuzz_mask > 0:
+            self.tracker[template_id] -= 1
+        elif fuzz_mask == 0:
+            # if all fuzzing masks have been test, the masks
+            # are reinitialized and the loop is restarted.
+            t = self.lens.tl.template_dic[template_id]
+            self.tracker[template_id] = 2**len(t.fields)-1
+        self._save_tracker()
+
+    def log_trace(self):
+        """ Build a trace of the current configuration of the
+        fuzzer and send it to the logger.
+        """
+        fields_to_fuzz, fields_data = self.trace
+        template_id = self.lens.templates.getLastEntries(1)[0].ID
+        state = self.lens.mm.state
+        if self.status == FUZZ_STATUS_CRASH:
+            fields_to_fuzz, fields_data = self.previous_trace
+        trace = [int(time.time()), self.iteration,
+                 self.status, state, template_id, fields_to_fuzz, fields_data]
+        self.logger.write_trace(trace)
+        self.previous_trace = self.trace
+        self.trace = [], []
+
+    ######## Fuzzing Related Functions ########
+
+    def fuzz(self, template):
+        """ Find the next call to a fuzzing primitive and fuzz
+        the data from all fields in a template
+        """
+
+        fields_to_fuzz = self._get_fuzz_fields(template.ID)
+        ret = template.content[:]
+        non_fuzz_field_values = []
+        for field_idx, field_value in template.new_fields.items():
+            if field_idx in fields_to_fuzz:
+                rand_stream = self._get_random_data()
+                ret[template.fields[field_idx]] = rand_stream
+            else:
+                ret[template.fields[field_idx]] = field_value
+                non_fuzz_field_values += [field_value]
+
+        self._update_tracker(template.ID)
+        print "fields_to_fuzz: ", fields_to_fuzz
+        print ">>> FUZZING msg..."
+        self.trace = list(fields_to_fuzz), non_fuzz_field_values
+        return ret
+
+    def _get_random_data(self, length=FUZZ_LENGTH):
+        """ Generate a stream of random data with a 5% of security
+        sensitive characters (problematic in parsing).
+        """
+        chars_length = length * 5 / 100
+        chars = [choice(SENSITVE_CHARACTERS) for i in range(chars_length)]
+        chars_idx = [randrange(0, length-1) for i in range(chars_length)]
+        rand = list(os.urandom(length))
+        for idx, char in zip(chars_idx, chars):
+            rand[idx] = char
+        return ''.join(rand)
+
+
+class Logger:
+
+    def __init__(self, log_file_name):
+        self.log_file_name = log_file_name
+        names = ["time", "iteration",
+                 "status", "model state",
+                 "template id", "fuzzed fields", "non-fuzzed data"]
+        self.write_trace(names)
+
+    def write_trace(self, trace):
+        self.log_file = open(self.log_file_name, 'a')
+        self.log_file.write(', '.join([str(s) for s in trace]))
+        self.log_file.write('\n')
+        self.log_file.close()
+
+
+if __name__ == "__main__":
+
+    usage = "usage: %prog <model file> <UAC/UAS (client/server role)>"
+    parser = OptionParser(usage)
+    (options, args) = parser.parse_args()
+
+    if len(args) < 2:
+        parser.print_help()
+        sys.exit(1)
+
+    model_file = args[0]
+    role = args[1]
+
+    fuzzer_dir = os.path.dirname(os.path.realpath(__file__))
+    fuzzer_conf = os.path.join(fuzzer_dir, 'fuzzer.conf')
+    config = ConfigParser.RawConfigParser()
+    config.readfp(open(fuzzer_conf))
+
+    host = config.get('network', 'host')
+    port = literal_eval(config.get('network', 'port'))
+    timeout = literal_eval(config.get('network', 'timeout'))
+    bsize = literal_eval(config.get('network', 'bsize'))
+
+    cuckoo_session = literal_eval(config.get('cuckoo', 'active'))
+    cuckoo_path = config.get('cuckoo', 'path')
+    sys.path.insert(0, os.path.abspath(cuckoo_path))
+    if cuckoo_session == 1:
+        from lib.cuckoo.core.database import Database
+
+    main(model_file, role, host, port, timeout, bsize, cuckoo_session)

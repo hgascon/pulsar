@@ -1,0 +1,888 @@
+RULE transition:12;11;50 srcId:0 srcField:-1 dstField:1 type:pulsar.core.rule.DataRule
+data:568
+RULE transition:12;11;50 srcId:0 srcField:-1 dstField:2 type:pulsar.core.rule.DataRule
+data:2223440575
+RULE transition:12;11;50 srcId:0 srcField:-1 dstField:3 type:pulsar.core.rule.DataRule
+data:3494496393
+RULE transition:12;11;50 srcId:0 srcField:-1 dstField:4 type:pulsar.core.rule.DataRule
+data:172.22.32.8
+RULE transition:12;11;50 srcId:0 srcField:-1 dstField:6 type:pulsar.core.rule.DataRule
+data:a%3Drsaaeskey%3Amd463WsZ9iT41EeTco3FU7TmBRVqxid%2BM2MSGQtvPN04sLGpC6E3cVIxoJhXSDjGKXBRqvG%2BEBjNS08hNw%2BES9uPzim9uIY7VEqU/mPjpZv08%2BSLpm1q%2Bpqi/oB0Yn8tk9m8iQ8bdnvQf259VKpoKlpyRJp0PK0SaL8C8iQuP%2BV8QGBeReTuYiV1329G0MY1TK3jOVaA1yEnIOLRgxq5bUsjVZwruqGMrCmgw3uDd7R%2BnlufMl8VGQoQjouY0IS%2BmmXEQLbzECT0yRazIXDnM0Cnlw8fieNbql7/MtykX6nsFVGstifyxS3baRLaVDVb6MKw3%2BEFY0d/wFkuK6pyyQ
+RULE transition:12;11;50 srcId:0 srcField:-1 dstField:7 type:pulsar.core.rule.DataRule
+data:a%3Daesiv%3AIVpxs03cusZgcxhmq5HxIg
+RULE transition:12;11;50 srcId:-1 srcField:4 dstField:5 type:pulsar.core.rule.ExactRule
+
+RULE transition:12;11;50 srcId:-1 srcField:3 dstField:0 type:pulsar.core.rule.CopyCompleteRule
+ptype:COPY_AS_SUFFIX rest:rtsp%3A//172.22.32.8/
+RULE transition:4;29;5 srcId:0 srcField:-1 dstField:0 type:pulsar.core.rule.DataRule
+data:1
+RULE transition:39;33;21 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:26;3;21 srcId:-3 srcField:0 dstField:0 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:17;19;48 srcId:-3 srcField:1 dstField:2 type:pulsar.core.rule.ExactRule
+
+RULE transition:17;19;48 srcId:-3 srcField:0 dstField:1 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:17;19;48 srcId:0 srcField:-1 dstField:0 type:pulsar.core.rule.DataRule
+data:rtsp%3A//10.0.1.1/3494487116
+RULE transition:17;19;48 srcId:0 srcField:-1 dstField:3 type:pulsar.core.rule.DataRule
+data:2964464455
+RULE transition:14;12;14 srcId:0 srcField:-1 dstField:0 type:pulsar.core.rule.DataRule
+data:3425291314,2223440575
+RULE transition:14;12;14 srcId:0 srcField:-1 dstField:1 type:pulsar.core.rule.DataRule
+data:wSdLmUaxQCaYMhI/1UmEfg,XTctFIbwxOVQjhjXo3LzXw
+RULE transition:14;12;11 srcId:0 srcField:-1 dstField:0 type:pulsar.core.rule.DataRule
+data:OjsEOmm3gHKMKGuX/Wb1UjEalaOiv57Ev%2B/NV0Y6o9c%2BF6joXXshfpNgA2MYCGP2pqzJvYu%2BzMYjILeMmdHj7tQ2SZTqc9pex0zgXEE/2KdIuZE%2BVhVUokZgPN8xD0MZgwP7OBPwfVIGNJXj3kgXL2%2BAt/3rPauI3R29BvlQwbkkkjmIeYCLjpj4wzXvDMdXuTs08T2zI3odYKuYwNvXWnSjUFA7IkKgGW6zfiAqsiOzWsL/arKRPVQksvIO6QtHWWzMwIkweMWq8oU1aefV9KxS53TU1MDV/ur6jKsW/GZUBtnhVwcFvWm6YtmH3OrclxbV%2BBMCOtiwqD5vaVzpMg
+RULE transition:17;26;17 srcId:-3 srcField:1 dstField:1 type:pulsar.core.rule.ExactRule
+
+RULE transition:17;26;17 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:47;7;53 srcId:-3 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:47;7;53 srcId:-3 srcField:2 dstField:5 type:pulsar.core.rule.ExactRule
+
+RULE transition:47;7;53 srcId:-3 srcField:3 dstField:19 type:pulsar.core.rule.ExactRule
+
+RULE transition:47;7;53 srcId:-2 srcField:0 dstField:1 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:47;7;53 srcId:0 srcField:-1 dstField:2 type:pulsar.core.rule.DataRule
+data:image/none,image/none,image/none,image/none,image/none,image/none,image/none,image/none,image/none,image/none,image/none,image/none,image/none,image/none,image/none,image/none,image/none,image/none,image/none
+RULE transition:47;7;53 srcId:0 srcField:-1 dstField:3 type:pulsar.core.rule.DataRule
+data:0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+RULE transition:47;7;53 srcId:0 srcField:-1 dstField:4 type:pulsar.core.rule.DataRule
+data:RTP-Info%3A,RTP-Info%3A,RTP-Info%3A,RTP-Info%3A,RTP-Info%3A,RTP-Info%3A,RTP-Info%3A,RTP-Info%3A,RTP-Info%3A,RTP-Info%3A,RTP-Info%3A,RTP-Info%3A,RTP-Info%3A,RTP-Info%3A,RTP-Info%3A,RTP-Info%3A,RTP-Info%3A,RTP-Info%3A,RTP-Info%3A
+RULE transition:47;7;53 srcId:0 srcField:-1 dstField:6 type:pulsar.core.rule.DataRule
+data:%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A
+RULE transition:47;7;53 srcId:0 srcField:-1 dstField:7 type:pulsar.core.rule.DataRule
+data:User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A
+RULE transition:47;7;53 srcId:0 srcField:-1 dstField:8 type:pulsar.core.rule.DataRule
+data:iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4
+RULE transition:47;7;53 srcId:0 srcField:-1 dstField:9 type:pulsar.core.rule.DataRule
+data:%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B
+RULE transition:47;7;53 srcId:0 srcField:-1 dstField:10 type:pulsar.core.rule.DataRule
+data:OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS
+RULE transition:47;7;53 srcId:0 srcField:-1 dstField:11 type:pulsar.core.rule.DataRule
+data:%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20
+RULE transition:47;7;53 srcId:0 srcField:-1 dstField:12 type:pulsar.core.rule.DataRule
+data:X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X
+RULE transition:47;7;53 srcId:0 srcField:-1 dstField:13 type:pulsar.core.rule.DataRule
+data:10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29
+RULE transition:47;7;53 srcId:0 srcField:-1 dstField:14 type:pulsar.core.rule.DataRule
+data:Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A
+RULE transition:47;7;53 srcId:0 srcField:-1 dstField:15 type:pulsar.core.rule.DataRule
+data:DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A
+RULE transition:47;7;53 srcId:0 srcField:-1 dstField:16 type:pulsar.core.rule.DataRule
+data:9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004
+RULE transition:47;7;53 srcId:0 srcField:-1 dstField:18 type:pulsar.core.rule.DataRule
+data:Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A
+RULE transition:47;7;53 srcId:0 srcField:-1 dstField:20 type:pulsar.core.rule.DataRule
+data:%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A
+RULE transition:47;7;53 srcId:-1 srcField:6 dstField:17 type:pulsar.core.rule.ExactRule
+
+RULE transition:17;18;15 srcId:-3 srcField:1 dstField:1 type:pulsar.core.rule.ExactRule
+
+RULE transition:17;18;15 srcId:-3 srcField:0 dstField:0 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:20;21;34 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:20;21;34 srcId:0 srcField:-1 dstField:1 type:pulsar.core.rule.DataRule
+data:seq%3D4589%3Brtptime%3D1767809264
+RULE transition:34;23;17 srcId:-3 srcField:1 dstField:1 type:pulsar.core.rule.ExactRule
+
+RULE transition:34;23;17 srcId:-3 srcField:0 dstField:0 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:9;44;9 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:35;21;33 srcId:-3 srcField:1 dstField:4 type:pulsar.core.rule.ExactRule
+
+RULE transition:35;21;33 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:35;21;33 srcId:0 srcField:-1 dstField:1 type:pulsar.core.rule.DataRule
+data:image/none,image/none
+RULE transition:35;21;33 srcId:0 srcField:-1 dstField:2 type:pulsar.core.rule.DataRule
+data:0,0
+RULE transition:35;21;33 srcId:0 srcField:-1 dstField:3 type:pulsar.core.rule.DataRule
+data:RTP-Info%3A,RTP-Info%3A
+RULE transition:35;21;33 srcId:0 srcField:-1 dstField:5 type:pulsar.core.rule.DataRule
+data:%0D%0A,%0D%0A
+RULE transition:35;21;33 srcId:0 srcField:-1 dstField:6 type:pulsar.core.rule.DataRule
+data:User-Agent%3A,User-Agent%3A
+RULE transition:35;21;33 srcId:0 srcField:-1 dstField:7 type:pulsar.core.rule.DataRule
+data:iTunes/11.4,iTunes/11.4
+RULE transition:35;21;33 srcId:0 srcField:-1 dstField:8 type:pulsar.core.rule.DataRule
+data:%28Macintosh%3B,%28Macintosh%3B
+RULE transition:35;21;33 srcId:0 srcField:-1 dstField:9 type:pulsar.core.rule.DataRule
+data:OS,OS
+RULE transition:35;21;33 srcId:0 srcField:-1 dstField:10 type:pulsar.core.rule.DataRule
+data:%20,%20
+RULE transition:35;21;33 srcId:0 srcField:-1 dstField:11 type:pulsar.core.rule.DataRule
+data:X,X
+RULE transition:35;21;33 srcId:0 srcField:-1 dstField:12 type:pulsar.core.rule.DataRule
+data:10.9.5%29,10.9.5%29
+RULE transition:35;21;33 srcId:0 srcField:-1 dstField:13 type:pulsar.core.rule.DataRule
+data:Client-Instance%3A,Client-Instance%3A
+RULE transition:35;21;33 srcId:0 srcField:-1 dstField:14 type:pulsar.core.rule.DataRule
+data:DACP-ID%3A,DACP-ID%3A
+RULE transition:35;21;33 srcId:0 srcField:-1 dstField:15 type:pulsar.core.rule.DataRule
+data:9516327BC34A8004,9516327BC34A8004
+RULE transition:35;21;33 srcId:0 srcField:-1 dstField:17 type:pulsar.core.rule.DataRule
+data:Active-Remote%3A,Active-Remote%3A
+RULE transition:35;21;33 srcId:0 srcField:-1 dstField:18 type:pulsar.core.rule.DataRule
+data:2964464455,2964464455
+RULE transition:35;21;33 srcId:0 srcField:-1 dstField:19 type:pulsar.core.rule.DataRule
+data:%0D%0A%0D%0A,%0D%0A%0D%0A
+RULE transition:35;21;33 srcId:-1 srcField:5 dstField:16 type:pulsar.core.rule.ExactRule
+
+RULE transition:1;39;15 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:1;39;15 srcId:0 srcField:-1 dstField:1 type:pulsar.core.rule.DataRule
+data:seq%3D4589%3Brtptime%3D1767809264
+RULE transition:43;13;9 srcId:0 srcField:-1 dstField:0 type:pulsar.core.rule.DataRule
+data:1
+RULE transition:28;39;33 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:28;39;33 srcId:0 srcField:-1 dstField:1 type:pulsar.core.rule.DataRule
+data:text/parameters
+RULE transition:28;39;33 srcId:0 srcField:-1 dstField:2 type:pulsar.core.rule.DataRule
+data:20
+RULE transition:28;39;33 srcId:0 srcField:-1 dstField:3 type:pulsar.core.rule.DataRule
+data:User-Agent%3A
+RULE transition:28;39;33 srcId:0 srcField:-1 dstField:4 type:pulsar.core.rule.DataRule
+data:iTunes/11.4
+RULE transition:28;39;33 srcId:0 srcField:-1 dstField:5 type:pulsar.core.rule.DataRule
+data:%20
+RULE transition:28;39;33 srcId:0 srcField:-1 dstField:6 type:pulsar.core.rule.DataRule
+data:%28Macintosh%3B
+RULE transition:28;39;33 srcId:0 srcField:-1 dstField:7 type:pulsar.core.rule.DataRule
+data:OS
+RULE transition:28;39;33 srcId:0 srcField:-1 dstField:8 type:pulsar.core.rule.DataRule
+data:X
+RULE transition:28;39;33 srcId:0 srcField:-1 dstField:9 type:pulsar.core.rule.DataRule
+data:10.9.5%29
+RULE transition:28;39;33 srcId:0 srcField:-1 dstField:10 type:pulsar.core.rule.DataRule
+data:%0D%0A
+RULE transition:28;39;33 srcId:0 srcField:-1 dstField:11 type:pulsar.core.rule.DataRule
+data:Client-Instance%3A
+RULE transition:28;39;33 srcId:0 srcField:-1 dstField:12 type:pulsar.core.rule.DataRule
+data:9516327BC34A8004
+RULE transition:28;39;33 srcId:0 srcField:-1 dstField:13 type:pulsar.core.rule.DataRule
+data:DACP-ID%3A
+RULE transition:28;39;33 srcId:0 srcField:-1 dstField:14 type:pulsar.core.rule.DataRule
+data:Active-Remote%3A
+RULE transition:28;39;33 srcId:0 srcField:-1 dstField:15 type:pulsar.core.rule.DataRule
+data:2964464455
+RULE transition:28;39;33 srcId:0 srcField:-1 dstField:16 type:pulsar.core.rule.DataRule
+data:%0D%0A%0D%0A
+RULE transition:28;39;33 srcId:0 srcField:-1 dstField:17 type:pulsar.core.rule.DataRule
+data:volume%3A
+RULE transition:28;39;33 srcId:0 srcField:-1 dstField:18 type:pulsar.core.rule.DataRule
+data:-15.529426
+RULE transition:28;39;33 srcId:-1 srcField:10 dstField:19 type:pulsar.core.rule.ExactRule
+
+RULE transition:21;34;21 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:21;33;21 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:40;24;38 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:40;24;38 srcId:0 srcField:-1 dstField:1 type:pulsar.core.rule.DataRule
+data:seq%3D3759%3Brtptime%3D1767517104
+RULE transition:33;21;33 srcId:-3 srcField:5 dstField:10 type:pulsar.core.rule.ExactRule
+
+RULE transition:33;21;33 srcId:-3 srcField:5 dstField:19 type:pulsar.core.rule.ExactRule
+
+RULE transition:33;21;33 srcId:-3 srcField:6 dstField:3 type:pulsar.core.rule.ExactRule
+
+RULE transition:33;21;33 srcId:-3 srcField:7 dstField:4 type:pulsar.core.rule.ExactRule
+
+RULE transition:33;21;33 srcId:-3 srcField:8 dstField:6 type:pulsar.core.rule.ExactRule
+
+RULE transition:33;21;33 srcId:-3 srcField:9 dstField:7 type:pulsar.core.rule.ExactRule
+
+RULE transition:33;21;33 srcId:-3 srcField:10 dstField:5 type:pulsar.core.rule.ExactRule
+
+RULE transition:33;21;33 srcId:-3 srcField:11 dstField:8 type:pulsar.core.rule.ExactRule
+
+RULE transition:33;21;33 srcId:-3 srcField:12 dstField:9 type:pulsar.core.rule.ExactRule
+
+RULE transition:33;21;33 srcId:-3 srcField:13 dstField:11 type:pulsar.core.rule.ExactRule
+
+RULE transition:33;21;33 srcId:-3 srcField:14 dstField:13 type:pulsar.core.rule.ExactRule
+
+RULE transition:33;21;33 srcId:-3 srcField:15 dstField:12 type:pulsar.core.rule.ExactRule
+
+RULE transition:33;21;33 srcId:-3 srcField:17 dstField:14 type:pulsar.core.rule.ExactRule
+
+RULE transition:33;21;33 srcId:-3 srcField:18 dstField:15 type:pulsar.core.rule.ExactRule
+
+RULE transition:33;21;33 srcId:-3 srcField:19 dstField:16 type:pulsar.core.rule.ExactRule
+
+RULE transition:33;21;33 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:33;21;33 srcId:0 srcField:-1 dstField:1 type:pulsar.core.rule.DataRule
+data:text/parameters,text/parameters
+RULE transition:33;21;33 srcId:0 srcField:-1 dstField:2 type:pulsar.core.rule.DataRule
+data:44,44
+RULE transition:33;21;33 srcId:0 srcField:-1 dstField:17 type:pulsar.core.rule.DataRule
+data:progress%3A,progress%3A
+RULE transition:33;21;33 srcId:0 srcField:-1 dstField:18 type:pulsar.core.rule.DataRule
+data:1766190544/1766205904/1896450543,1766294372/1766489968/1896554371
+RULE transition:33;21;34 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:33;21;34 srcId:0 srcField:-1 dstField:1 type:pulsar.core.rule.DataRule
+data:seq%3D841%3Brtptime%3D1766489968,seq%3D2750%3Brtptime%3D1767161936
+RULE transition:33;21;35 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:33;21;35 srcId:0 srcField:-1 dstField:1 type:pulsar.core.rule.DataRule
+data:rtptime%3D1766205904
+RULE transition:26;17;26 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:21;35;21 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:46;8;44 srcId:0 srcField:-1 dstField:0 type:pulsar.core.rule.DataRule
+data:1,1,1,1
+RULE transition:46;8;44 srcId:0 srcField:-1 dstField:1 type:pulsar.core.rule.DataRule
+data:2431038832,2509372742,1878433903,708005012
+RULE transition:46;8;46 srcId:-3 srcField:5 dstField:10 type:pulsar.core.rule.ExactRule
+
+RULE transition:46;8;46 srcId:-3 srcField:6 dstField:3 type:pulsar.core.rule.ExactRule
+
+RULE transition:46;8;46 srcId:-3 srcField:7 dstField:4 type:pulsar.core.rule.ExactRule
+
+RULE transition:46;8;46 srcId:-3 srcField:8 dstField:6 type:pulsar.core.rule.ExactRule
+
+RULE transition:46;8;46 srcId:-3 srcField:9 dstField:7 type:pulsar.core.rule.ExactRule
+
+RULE transition:46;8;46 srcId:-3 srcField:10 dstField:5 type:pulsar.core.rule.ExactRule
+
+RULE transition:46;8;46 srcId:-3 srcField:11 dstField:8 type:pulsar.core.rule.ExactRule
+
+RULE transition:46;8;46 srcId:-3 srcField:12 dstField:9 type:pulsar.core.rule.ExactRule
+
+RULE transition:46;8;46 srcId:-3 srcField:13 dstField:11 type:pulsar.core.rule.ExactRule
+
+RULE transition:46;8;46 srcId:-3 srcField:14 dstField:13 type:pulsar.core.rule.ExactRule
+
+RULE transition:46;8;46 srcId:-3 srcField:15 dstField:12 type:pulsar.core.rule.ExactRule
+
+RULE transition:46;8;46 srcId:-3 srcField:16 dstField:14 type:pulsar.core.rule.ExactRule
+
+RULE transition:46;8;46 srcId:0 srcField:-1 dstField:0 type:pulsar.core.rule.DataRule
+data:OPTIONS
+RULE transition:46;8;46 srcId:0 srcField:-1 dstField:1 type:pulsar.core.rule.DataRule
+data:%2A
+RULE transition:46;8;46 srcId:0 srcField:-1 dstField:2 type:pulsar.core.rule.DataRule
+data:1
+RULE transition:46;8;46 srcId:0 srcField:-1 dstField:15 type:pulsar.core.rule.DataRule
+data:1395040003
+RULE transition:46;8;46 srcId:0 srcField:-1 dstField:16 type:pulsar.core.rule.DataRule
+data:Apple-Challenge%3A
+RULE transition:46;8;46 srcId:0 srcField:-1 dstField:17 type:pulsar.core.rule.DataRule
+data:qpXVz0k0oODVbSPFQ7TunA
+RULE transition:9;48;7 srcId:-2 srcField:1 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:53;7;47 srcId:-3 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:53;7;47 srcId:-3 srcField:16 dstField:3 type:pulsar.core.rule.ExactRule
+
+RULE transition:53;7;47 srcId:-2 srcField:0 dstField:1 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:53;7;47 srcId:0 srcField:-1 dstField:2 type:pulsar.core.rule.DataRule
+data:rtptime%3D1448091155,rtptime%3D4186909232,rtptime%3D3138691115,rtptime%3D2757990376
+RULE transition:53;7;47 srcId:0 srcField:-1 dstField:4 type:pulsar.core.rule.DataRule
+data:Magicianasbr%00%00%00%02%01%40ascm%00%00%00%00asco%00%00%00%01%00ascp%00%00%00%00asda%00%00%00%04S%E4%BCsasdm%00%00%00%04S%E4%BC%EDasdc%00%00%00%02%00%00asdn%00%00%00%02%00%00aseq%00%00%00%00asgn%00%00%00%05Houseasdt%00%00%00%0FMPEG,Magicianasbr%00%00%00%02%01%40ascm%00%00%00%00asco%00%00%00%01%00ascp%00%00%00%00asda%00%00%00%04S%E4%BCsasdm%00%00%00%04S%E4%BC%E0asdc%00%00%00%02%00%00asdn%00%00%00%02%00%00aseq%00%00%00%00asgn%00%00%00%05Houseasdt%00%00%00%0FMPEG,Magicianasbr%00%00%00%02%01%40ascm%00%00%00%00asco%00%00%00%01%00ascp%00%00%00%00asda%00%00%00%04S%E4%BCsasdm%00%00%00%04S%E4%BC%EDasdc%00%00%00%02%00%00asdn%00%00%00%02%00%00aseq%00%00%00%00asgn%00%00%00%05Houseasdt%00%00%00%0FMPEG,Magicianasbr%00%00%00%02%01%40ascm%00%00%00%00asco%00%00%00%01%00ascp%00%00%00%00asda%00%00%00%04S%E4%BCsasdm%00%00%00%04S%E4%BC%E4asdc%00%00%00%02%00%00asdn%00%00%00%02%00%00aseq%00%00%00%00asgn%00%00%00%05Houseasdt%00%00%00%0FMPEG
+RULE transition:53;7;47 srcId:0 srcField:-1 dstField:5 type:pulsar.core.rule.DataRule
+data:fileasrv%00%00%00%01%00assr%00%00%00%04%00%00%ACDassz%00%00%00%04%06%E4a%C5asst%00%00%00%04%00%00%00%00assp%00%00%00%04%00%00%00%00astm%00%00%00%04%00%2C%1B%D6astc%00%00%00%02%00%00astn%00%00%00%02%00%29asur%00%00%00%01%00asyr%00%00%00%02%00%00asfm%00%00%00%03mp3miid%00%00%00%04%00%00%F0%9Fminm%00%00%00,fileasrv%00%00%00%01%00assr%00%00%00%04%00%00%ACDassz%00%00%00%04%07%D5C%10asst%00%00%00%04%00%00%00%00assp%00%00%00%04%00%00%00%00astm%00%00%00%04%002%21xastc%00%00%00%02%00%00astn%00%00%00%02%00%2Casur%00%00%00%01%00asyr%00%00%00%02%00%00asfm%00%00%00%03mp3miid%00%00%00%04%00%00%F0%A5minm%00%00%00,fileasrv%00%00%00%01%00assr%00%00%00%04%00%00%ACDassz%00%00%00%04%06%E4a%C5asst%00%00%00%04%00%00%00%00assp%00%00%00%04%00%00%00%00astm%00%00%00%04%00%2C%1B%D6astc%00%00%00%02%00%00astn%00%00%00%02%00%29asur%00%00%00%01%00asyr%00%00%00%02%00%00asfm%00%00%00%03mp3miid%00%00%00%04%00%00%F0%9Fminm%00%00%00,fileasrv%00%00%00%01%00assr%00%00%00%04%00%00%ACDassz%00%00%00%04%07y%06%CFasst%00%00%00%04%00%00%00%00assp%00%00%00%04%00%00%00%00astm%00%00%00%04%00/%D3%29astc%00%00%00%02%00%00astn%00%00%00%02%00%2Basur%00%00%00%01%00asyr%00%00%00%02%00%00asfm%00%00%00%03mp3miid%00%00%00%04%00%00%F0%A3minm%00%00%00
+RULE transition:53;7;47 srcId:0 srcField:-1 dstField:6 type:pulsar.core.rule.DataRule
+data:41mper%00%00%00%08%A7%CB%B8%8B%0C%13%9D%9Aasdb%00%00%00%01%00aeNV%00%00%00%04%00%00%0E%B2asdk%00%00%00%01%00asbt%00%00%00%02%00%00agrp%00%00%00%00ascd%00%00%00%04mpegascs%00%00%00%04%00%00%00%03aePC%00%00%00%01%00asct%00%00%00%00ascn%00%00%00%00ascr%00%00%00%01%00aeHV%00%00%00%01%00aeMK%00%00%00%01%01aeSN%00%00%00%00aeEN%00%00%00%00aeES%00%00%00%04%00%00%00%00aeSU%00%00%00%04%00%00%00%00aeGH%00%00%00%04%00%00%00%01aeGD%00%00%00%04%00%00,44mper%00%00%00%08%5B5%04%FBa%D7%1E%A8asdb%00%00%00%01%00aeNV%00%00%00%04%00%00%0E%18asdk%00%00%00%01%00asbt%00%00%00%02%00%00agrp%00%00%00%00ascd%00%00%00%04mpegascs%00%00%00%04%00%00%00%03aePC%00%00%00%01%00asct%00%00%00%00ascn%00%00%00%00ascr%00%00%00%01%00aeHV%00%00%00%01%00aeMK%00%00%00%01%01aeSN%00%00%00%00aeEN%00%00%00%00aeES%00%00%00%04%00%00%00%00aeSU%00%00%00%04%00%00%00%00aeGH%00%00%00%04%00%00%00%01aeGD%00%00%00%04%00%00,41mper%00%00%00%08%A7%CB%B8%8B%0C%13%9D%9Aasdb%00%00%00%01%00aeNV%00%00%00%04%00%00%0E%B2asdk%00%00%00%01%00asbt%00%00%00%02%00%00agrp%00%00%00%00ascd%00%00%00%04mpegascs%00%00%00%04%00%00%00%03aePC%00%00%00%01%00asct%00%00%00%00ascn%00%00%00%00ascr%00%00%00%01%00aeHV%00%00%00%01%00aeMK%00%00%00%01%01aeSN%00%00%00%00aeEN%00%00%00%00aeES%00%00%00%04%00%00%00%00aeSU%00%00%00%04%00%00%00%00aeGH%00%00%00%04%00%00%00%01aeGD%00%00%00%04%00%00,43mper%00%00%00%08%81%BD%24f%14%A7%F1%B0asdb%00%00%00%01%00aeNV%00%00%00%04%00%00%12%FAasdk%00%00%00%01%00asbt%00%00%00%02%00%00agrp%00%00%00%00ascd%00%00%00%04mpegascs%00%00%00%04%00%00%00%03aePC%00%00%00%01%00asct%00%00%00%00ascn%00%00%00%00ascr%00%00%00%01%00aeHV%00%00%00%01%00aeMK%00%00%00%01%01aeSN%00%00%00%00aeEN%00%00%00%00aeES%00%00%00%04%00%00%00%00aeSU%00%00%00%04%00%00%00%00aeGH%00%00%00%04%00%00%00%01aeGD%00%00%00%04%00%00%07taeGU%00%00%00%08%00%00%00%00%08%3D
+RULE transition:53;7;47 srcId:0 srcField:-1 dstField:7 type:pulsar.core.rule.DataRule
+data:%0A,%0A,%0A,%09
+RULE transition:53;7;47 srcId:0 srcField:-1 dstField:8 type:pulsar.core.rule.DataRule
+data:%5EaeGU%00%00%00%08%00%00%00%00%07%99%25%92aeGR%00%00%00%08%00%00%00%00%06%E48%D0aeGE%00%00%00%04%00%00%02%10asaa%00%00%00%00asgp%00%00%00%01%00ased%00%00%00%02%00%00ashp%00%00%00%01%01assn%00%00%00%00assa%00%00%00%08Magicianassl%00%00%00%00assu%00%00%00%00assc%00%00%00%00asss%00%00%00%00asbk%00%00%00%01%00aspu%00%00%00%00aeCR%00%00%00%00asai%00%00%00%08%7C%84%F2%80%FD%83%A0%A9asls%00%00%00%08%00%00%00%00%06%E4a%C5aeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04S%EB9%3Aaskp%00%00%00%04%00%00%00%00askd%00%00%00%04%83%DA3%60mdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01,%87aeGU%00%00%00%08%00%00%00%00%08%A2%B7iaeGR%00%00%00%08%00%00%00%00%07%D5%1A%1EaeGE%00%00%00%04%00%00%02%10asaa%00%00%00%00asgp%00%00%00%01%00ased%00%00%00%02%00%00ashp%00%00%00%01%01assn%00%00%00%00assa%00%00%00%08Magicianassl%00%00%00%00assu%00%00%00%00assc%00%00%00%00asss%00%00%00%00asbk%00%00%00%01%00aspu%00%00%00%00aeCR%00%00%00%00asai%00%00%00%08%7C%84%F2%80%FD%83%A0%A9asls%00%00%00%08%00%00%00%00%07%D5C%10aeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04S%EBz%29askp%00%00%00%04%00%00%00%00askd%00%00%00%04%83%DA3%60mdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01,%5EaeGU%00%00%00%08%00%00%00%00%07%99%25%92aeGR%00%00%00%08%00%00%00%00%06%E48%D0aeGE%00%00%00%04%00%00%02%10asaa%00%00%00%00asgp%00%00%00%01%00ased%00%00%00%02%00%00ashp%00%00%00%01%01assn%00%00%00%00assa%00%00%00%08Magicianassl%00%00%00%00assu%00%00%00%00assc%00%00%00%00asss%00%00%00%00asbk%00%00%00%01%00aspu%00%00%00%00aeCR%00%00%00%00asai%00%00%00%08%7C%84%F2%80%FD%83%A0%A9asls%00%00%00%08%00%00%00%00%06%E4a%C5aeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04S%EB9%3Aaskp%00%00%00%04%00%00%00%00askd%00%00%00%04%83%DA3%60mdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01,%FCaeGR%00%00%00%08%00%00%00%00%07x%DD%E0aeGE%00%00%00%04%00%00%02%10asaa%00%00%00%00asgp%00%00%00%01%00ased%00%00%00%02%00%00ashp%00%00%00%01%01assn%00%00%00%00assa%00%00%00%08Magicianassl%00%00%00%00assu%00%00%00%00assc%00%00%00%00asss%00%00%00%00asbk%00%00%00%01%00aspu%00%00%00%00aeCR%00%00%00%00asai%00%00%00%08%7C%84%F2%80%FD%83%A0%A9asls%00%00%00%08%00%00%00%00%07y%06%CFaeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04S%EBd%00askp%00%00%00%04%00%00%00%00askd%00%00%00%04%83%DA3%60mdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01
+RULE transition:8;46;11 srcId:0 srcField:-1 dstField:0 type:pulsar.core.rule.DataRule
+data:cNepA19AOXIktEC6vobh4FIJ6KUcL4vLIaWB3AWf0jYCoRnadZKNcKvdP8QUhHUjOu41SBPMbseGrSI1iHoqTBbZCKbVr32KIgSuG3IoLk66h9/gbsI/JCyL6wiSi5%2BmpLDOJwEmgZflqdaEXcUDkYUZhIab4b5MlFTE2MuOf4WA%2BNXeR2Ln9OasPy4NyxbbmFoHE56kkmXjdoqFpVs3QWZgelirsIsSMXvs/TH/dsLchN8pMfyVcKxeu6RW35FKaFQ/jCiK8bIzubM9MqC6teGD%2B5Z4Pe76Lx3nC50IhUBO3uj5bBuWRTH0483YYTcQ9YR2iRywedtc/q7enNImNQ
+RULE transition:15;26;17 srcId:-3 srcField:1 dstField:1 type:pulsar.core.rule.ExactRule
+
+RULE transition:15;26;17 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:53;7;45 srcId:-3 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:53;7;45 srcId:-3 srcField:16 dstField:3 type:pulsar.core.rule.ExactRule
+
+RULE transition:53;7;45 srcId:-2 srcField:0 dstField:1 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:53;7;45 srcId:0 srcField:-1 dstField:2 type:pulsar.core.rule.DataRule
+data:rtptime%3D3185874257
+RULE transition:32;20;21 srcId:0 srcField:-1 dstField:0 type:pulsar.core.rule.DataRule
+data:23
+RULE transition:9;50;7 srcId:-3 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:51;7;53 srcId:-3 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:51;7;53 srcId:-3 srcField:2 dstField:5 type:pulsar.core.rule.ExactRule
+
+RULE transition:51;7;53 srcId:-3 srcField:3 dstField:19 type:pulsar.core.rule.ExactRule
+
+RULE transition:51;7;53 srcId:-2 srcField:0 dstField:1 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:51;7;53 srcId:0 srcField:-1 dstField:2 type:pulsar.core.rule.DataRule
+data:image/none,image/none,image/none,image/none,image/none
+RULE transition:51;7;53 srcId:0 srcField:-1 dstField:3 type:pulsar.core.rule.DataRule
+data:0,0,0,0,0
+RULE transition:51;7;53 srcId:0 srcField:-1 dstField:4 type:pulsar.core.rule.DataRule
+data:RTP-Info%3A,RTP-Info%3A,RTP-Info%3A,RTP-Info%3A,RTP-Info%3A
+RULE transition:51;7;53 srcId:0 srcField:-1 dstField:6 type:pulsar.core.rule.DataRule
+data:%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A
+RULE transition:51;7;53 srcId:0 srcField:-1 dstField:7 type:pulsar.core.rule.DataRule
+data:User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A
+RULE transition:51;7;53 srcId:0 srcField:-1 dstField:8 type:pulsar.core.rule.DataRule
+data:iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4
+RULE transition:51;7;53 srcId:0 srcField:-1 dstField:9 type:pulsar.core.rule.DataRule
+data:%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B
+RULE transition:51;7;53 srcId:0 srcField:-1 dstField:10 type:pulsar.core.rule.DataRule
+data:OS,OS,OS,OS,OS
+RULE transition:51;7;53 srcId:0 srcField:-1 dstField:11 type:pulsar.core.rule.DataRule
+data:%20,%20,%20,%20,%20
+RULE transition:51;7;53 srcId:0 srcField:-1 dstField:12 type:pulsar.core.rule.DataRule
+data:X,X,X,X,X
+RULE transition:51;7;53 srcId:0 srcField:-1 dstField:13 type:pulsar.core.rule.DataRule
+data:10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29
+RULE transition:51;7;53 srcId:0 srcField:-1 dstField:14 type:pulsar.core.rule.DataRule
+data:Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A
+RULE transition:51;7;53 srcId:0 srcField:-1 dstField:15 type:pulsar.core.rule.DataRule
+data:DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A
+RULE transition:51;7;53 srcId:0 srcField:-1 dstField:16 type:pulsar.core.rule.DataRule
+data:9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004
+RULE transition:51;7;53 srcId:0 srcField:-1 dstField:18 type:pulsar.core.rule.DataRule
+data:Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A
+RULE transition:51;7;53 srcId:0 srcField:-1 dstField:20 type:pulsar.core.rule.DataRule
+data:%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A
+RULE transition:51;7;53 srcId:-1 srcField:6 dstField:17 type:pulsar.core.rule.ExactRule
+
+RULE transition:44;9;50 srcId:-3 srcField:1 dstField:2 type:pulsar.core.rule.ExactRule
+
+RULE transition:44;9;50 srcId:0 srcField:-1 dstField:1 type:pulsar.core.rule.DataRule
+data:568,568
+RULE transition:44;9;50 srcId:0 srcField:-1 dstField:3 type:pulsar.core.rule.DataRule
+data:3494496584,3494497096
+RULE transition:44;9;50 srcId:0 srcField:-1 dstField:4 type:pulsar.core.rule.DataRule
+data:172.22.32.8,172.22.32.8
+RULE transition:44;9;50 srcId:0 srcField:-1 dstField:6 type:pulsar.core.rule.DataRule
+data:a%3Drsaaeskey%3AipqTK3o3XrlawvjPjFy3iHMWSou6LxrEBogjKoAYhe1TbMKhDsLj2M2YLJ6o1QP13pWiKpfLG4%2BETfgLHPWLkfmRvkjZlyU8uvaGurYdEcEPM/APtFT/YYoXUT7pj/FIpcV3KWFtrS38I4pYIjdfoA/FkMMtKkO6I7RMWMWHb2TJBPfLUacoUC2kU7iS7lCdb%2BM5UaE94XiKBZ4Ak0EFIfKI7UPOZtu6%2B8WJMrlGEIq00Qx6MevTEzyNQyAKfGzxbYqp8J9ljdkOSrPjAXgG98oV14W8VGhqiDkr1mj/qGWMef6TLQPQJCbxp7YaOzBmENykFihLbi%2Bw%2BZNxFhaxSQ,a%3Drsaaeskey%3AykbzH82jn/6xvtGKbqVZMO4chy%2BW%2BNDwMehpXk4vUoVb5HSSrrh7EtNoJcSXIGaF2cymsNgIa2%2BhqvsvD5W1QV8JAY1VrH3KF37lZV1eZhmKCs0mK3QqOi/EquEtKMK0fYsKjHTd4crYVQRgWJbRM8kaXfwTuhKZyaQuc97Ohe/%2Bc5twxvW1uI28o%2BpSgDiXuI9JmLcyQ8H9iYqA0fFQlI9RCoX4yAyKnm6Vw1JDq8hm8UBm0OJhujFATB0l5ij8jn4pFC35S7zlYTKFPAK9MU9TQrRpHWHGk8%2BjWJaS%2B6QZdK3GvOFf0CoGRt3omrgEJ1SFcerMjKp6ZZbZqd7r6A
+RULE transition:44;9;50 srcId:0 srcField:-1 dstField:7 type:pulsar.core.rule.DataRule
+data:a%3Daesiv%3ArLkAw4igs1VBOTLFNN%2BBgQ,a%3Daesiv%3AdiWIFIggbulpqdgYefjK6Q
+RULE transition:44;9;50 srcId:-1 srcField:4 dstField:5 type:pulsar.core.rule.ExactRule
+
+RULE transition:44;9;50 srcId:-1 srcField:3 dstField:0 type:pulsar.core.rule.CopyCompleteRule
+ptype:COPY_AS_SUFFIX rest:rtsp%3A//172.22.32.8/,rtsp%3A//172.22.32.8/
+RULE transition:46;10;52 srcId:-3 srcField:1 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:46;10;52 srcId:-3 srcField:17 dstField:2 type:pulsar.core.rule.ExactRule
+
+RULE transition:46;10;52 srcId:0 srcField:-1 dstField:1 type:pulsar.core.rule.DataRule
+data:seq%3D55560%3Brtptime%3D1448091155,seq%3D6717%3Brtptime%3D584993258,seq%3D17521%3Brtptime%3D4186909232,seq%3D22164%3Brtptime%3D3138691115,seq%3D57304%3Brtptime%3D2757990376,seq%3D331%3Brtptime%3D3185874257,seq%3D33013%3Brtptime%3D1566386171
+RULE transition:53;7;51 srcId:-3 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:53;7;51 srcId:-3 srcField:16 dstField:3 type:pulsar.core.rule.ExactRule
+
+RULE transition:53;7;51 srcId:-2 srcField:0 dstField:1 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:53;7;51 srcId:0 srcField:-1 dstField:2 type:pulsar.core.rule.DataRule
+data:rtptime%3D584993258
+RULE transition:53;7;51 srcId:0 srcField:-1 dstField:4 type:pulsar.core.rule.DataRule
+data:%E2%E6aeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04T%05%8D%F8askp%00%00%00%04%00%00%00%01askd%00%00%00%04S%EB%1F%1Emdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01
+RULE transition:45;7;53 srcId:-3 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:45;7;53 srcId:-3 srcField:2 dstField:5 type:pulsar.core.rule.ExactRule
+
+RULE transition:45;7;53 srcId:-3 srcField:3 dstField:19 type:pulsar.core.rule.ExactRule
+
+RULE transition:45;7;53 srcId:-2 srcField:0 dstField:1 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:45;7;53 srcId:0 srcField:-1 dstField:2 type:pulsar.core.rule.DataRule
+data:image/none,image/none,image/none,image/none,image/none,image/none,image/none
+RULE transition:45;7;53 srcId:0 srcField:-1 dstField:3 type:pulsar.core.rule.DataRule
+data:0,0,0,0,0,0,0
+RULE transition:45;7;53 srcId:0 srcField:-1 dstField:4 type:pulsar.core.rule.DataRule
+data:RTP-Info%3A,RTP-Info%3A,RTP-Info%3A,RTP-Info%3A,RTP-Info%3A,RTP-Info%3A,RTP-Info%3A
+RULE transition:45;7;53 srcId:0 srcField:-1 dstField:6 type:pulsar.core.rule.DataRule
+data:%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A
+RULE transition:45;7;53 srcId:0 srcField:-1 dstField:7 type:pulsar.core.rule.DataRule
+data:User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A
+RULE transition:45;7;53 srcId:0 srcField:-1 dstField:8 type:pulsar.core.rule.DataRule
+data:iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4
+RULE transition:45;7;53 srcId:0 srcField:-1 dstField:9 type:pulsar.core.rule.DataRule
+data:%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B
+RULE transition:45;7;53 srcId:0 srcField:-1 dstField:10 type:pulsar.core.rule.DataRule
+data:OS,OS,OS,OS,OS,OS,OS
+RULE transition:45;7;53 srcId:0 srcField:-1 dstField:11 type:pulsar.core.rule.DataRule
+data:%20,%20,%20,%20,%20,%20,%20
+RULE transition:45;7;53 srcId:0 srcField:-1 dstField:12 type:pulsar.core.rule.DataRule
+data:X,X,X,X,X,X,X
+RULE transition:45;7;53 srcId:0 srcField:-1 dstField:13 type:pulsar.core.rule.DataRule
+data:10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29
+RULE transition:45;7;53 srcId:0 srcField:-1 dstField:14 type:pulsar.core.rule.DataRule
+data:Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A
+RULE transition:45;7;53 srcId:0 srcField:-1 dstField:15 type:pulsar.core.rule.DataRule
+data:DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A
+RULE transition:45;7;53 srcId:0 srcField:-1 dstField:16 type:pulsar.core.rule.DataRule
+data:9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004
+RULE transition:45;7;53 srcId:0 srcField:-1 dstField:18 type:pulsar.core.rule.DataRule
+data:Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A
+RULE transition:45;7;53 srcId:0 srcField:-1 dstField:20 type:pulsar.core.rule.DataRule
+data:%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A
+RULE transition:45;7;53 srcId:-1 srcField:6 dstField:17 type:pulsar.core.rule.ExactRule
+
+RULE transition:53;7;53 srcId:-3 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:53;7;53 srcId:-2 srcField:0 dstField:1 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:53;7;53 srcId:0 srcField:-1 dstField:2 type:pulsar.core.rule.DataRule
+data:text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters
+RULE transition:53;7;53 srcId:0 srcField:-1 dstField:3 type:pulsar.core.rule.DataRule
+data:44,20,20,20,20,20,20,20,44,44,44,20,44,44,44,44,44,44,44,20,41,41,41,41,41,41,41,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,44,42,20,44,44,44,20,44,44,44,44,44,44,44,20,44,44,20,20,20,20,20,20,20,20,20,20,20,20,20,44,20,20,20,20,20,44,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,19,20,20,44,20,44,20
+RULE transition:53;7;53 srcId:0 srcField:-1 dstField:4 type:pulsar.core.rule.DataRule
+data:User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A
+RULE transition:53;7;53 srcId:0 srcField:-1 dstField:5 type:pulsar.core.rule.DataRule
+data:iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4
+RULE transition:53;7;53 srcId:0 srcField:-1 dstField:6 type:pulsar.core.rule.DataRule
+data:%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20
+RULE transition:53;7;53 srcId:0 srcField:-1 dstField:7 type:pulsar.core.rule.DataRule
+data:%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B
+RULE transition:53;7;53 srcId:0 srcField:-1 dstField:8 type:pulsar.core.rule.DataRule
+data:OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS
+RULE transition:53;7;53 srcId:0 srcField:-1 dstField:9 type:pulsar.core.rule.DataRule
+data:X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X
+RULE transition:53;7;53 srcId:0 srcField:-1 dstField:10 type:pulsar.core.rule.DataRule
+data:10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29
+RULE transition:53;7;53 srcId:0 srcField:-1 dstField:11 type:pulsar.core.rule.DataRule
+data:%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A
+RULE transition:53;7;53 srcId:0 srcField:-1 dstField:12 type:pulsar.core.rule.DataRule
+data:Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A
+RULE transition:53;7;53 srcId:0 srcField:-1 dstField:13 type:pulsar.core.rule.DataRule
+data:9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004
+RULE transition:53;7;53 srcId:0 srcField:-1 dstField:14 type:pulsar.core.rule.DataRule
+data:DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A
+RULE transition:53;7;53 srcId:0 srcField:-1 dstField:15 type:pulsar.core.rule.DataRule
+data:Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A
+RULE transition:53;7;53 srcId:0 srcField:-1 dstField:16 type:pulsar.core.rule.DataRule
+data:2964464455,2964464455,2964464455,2964464455,2964464455,2964464455,2964464455,2964464455,2964464455,2964464455,2964464455,2223440575,2223440575,2223440575,2223440575,2223440575,2223440575,2223440575,2223440575,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,2431038832,1395040003,1395040003,1395040003,2509372742,2509372742,2509372742,2509372742,597257590,597257590,597257590,597257590,597257590,597257590,597257590,597257590,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,1878433903,708005012,708005012,708005012,708005012,708005012
+RULE transition:53;7;53 srcId:0 srcField:-1 dstField:17 type:pulsar.core.rule.DataRule
+data:%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A
+RULE transition:53;7;53 srcId:0 srcField:-1 dstField:18 type:pulsar.core.rule.DataRule
+data:progress%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,progress%3A,progress%3A,progress%3A,volume%3A,progress%3A,progress%3A,progress%3A,progress%3A,progress%3A,progress%3A,progress%3A,volume%3A,progress%3A,progress%3A,progress%3A,progress%3A,progress%3A,progress%3A,progress%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,progress%3A,progress%3A,volume%3A,progress%3A,progress%3A,progress%3A,volume%3A,progress%3A,progress%3A,progress%3A,progress%3A,progress%3A,progress%3A,progress%3A,volume%3A,progress%3A,progress%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,progress%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,progress%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,progress%3A,volume%3A,progress%3A,volume%3A
+RULE transition:53;7;53 srcId:0 srcField:-1 dstField:19 type:pulsar.core.rule.DataRule
+data:1769076592/1769091952/1895864382,-14.681072,-14.042718,-13.404556,-12.766181,-13.404556,-14.042718,-14.681072,1769179612/1770158512/1895967402,1771639504/1771654864/1899116642,1771740961/1771914992/1899218099,-15.455281,1448075795/1448091155/1575552933,1450486643/1450502003/1576231139,1451054067/1451069427/1578531205,1451210003/1451225363/1589427983,1451309928/1452971987/1589527908,1451350413/1453012467/1589568393,1451446509/1453108563/1589664489,-15.455281,584977898/584993258/715237897,585765322/585780682/712553112,566153968/586708202/692941758,586890314/586905674/708591405,587130378/587145738/714607516,587279978/587295338/708981069,587410218/587425578/732291731,-14.681072,-14.042718,-13.404556,-12.766181,-13.404556,-14.042718,-14.681072,-15.319683,-15.958085,-16.431822,-17.069906,-17.708582,-18.179222,-18.817957,-19.456224,-20.094078,-20.733341,-21.372044,-20.733341,-20.094078,-19.456224,-18.817957,-18.179222,-17.541210,-16.903154,-16.264698,-15.793216,-15.319683,-15.319683,4132933945/4186909232/4277815458,4188345872/4188361232/19123072,-15.319683,3138675755/3138691115/3266152893,3140305867/3140321227/3266050363,3143046187/3143061547/3281264167,-15.319683,2709041431/2757990376/2847259411,2759487912/2759503272/2904369425,2759692424/2759707784/2889952423,2759794742/2759819368/2890054741,2760038088/2760053448/2890298087,2760185224/2760200584/2886973014,2760286331/2760360040/2887074121,-15.319683,3137740809/3185874257/3264528599,3187900497/3187915857/3315377635,-14.681072,-14.042718,-13.569232,-12.930822,-12.292375,-11.653944,-12.128046,-12.766181,-13.404556,-14.042718,-14.681072,-15.319683,-15.958085,3188332753/3188348113/3314077249,-15.319683,-14.681072,-14.042718,-13.404556,-12.766181,3189029361/3189044721/3319289360,-13.404556,-14.042718,-14.681072,-15.319683,-15.958085,-16.595955,-16.404621,-16.078758,-15.659515,-15.557990,-15.294974,-15.110356,-14.981485,-14.700492,-14.503295,-14.365033,-14.268583,-14.392094,-14.670302,-14.673891,-6.764619,-20.178898,-20.178898,1566370811/1566386171/1692115307,-10.452187,1566909371/1566924731/1705127351,-16.932898
+RULE transition:53;7;53 srcId:-1 srcField:11 dstField:20 type:pulsar.core.rule.ExactRule
+
+RULE transition:13;9;50 srcId:0 srcField:-1 dstField:1 type:pulsar.core.rule.DataRule
+data:568
+RULE transition:13;9;50 srcId:0 srcField:-1 dstField:2 type:pulsar.core.rule.DataRule
+data:597257590
+RULE transition:13;9;50 srcId:0 srcField:-1 dstField:3 type:pulsar.core.rule.DataRule
+data:3494496905
+RULE transition:13;9;50 srcId:0 srcField:-1 dstField:4 type:pulsar.core.rule.DataRule
+data:172.22.32.8
+RULE transition:13;9;50 srcId:0 srcField:-1 dstField:6 type:pulsar.core.rule.DataRule
+data:a%3Drsaaeskey%3AKp0ZR9bgKlkzwlThiwKyiSFOwELMcnK3ZA%2BslkeBsuQmUVsHwDT4g5XZE2ZaB0Y7wwZyAwmE3AA/n9iu3jrMvFdXxbVibSlUze21/QVHs3kCcC%2BDKowewgloMdW5a5MNp21kLGk1vLBUt1XRC0bPqirRLgj7SWdGq2ph0JYBL%2BkaloWqVcKgbP3ZZjbM5Zd/flkzHuweVqc8BRTLp0f%2BvSSOsdj4vP2OHQ5Pl0xQHurOTzpGE%2BsZ6F10WMZ/G7Tb%2BHKjvlIanqF9oVeCyyZ3I82fBOsvw8pgN2lENebUf%2Byxmiwzopz1YDQo8kqPXVGcz1wn2%2B/lX8FV2TWhdUZdaQ
+RULE transition:13;9;50 srcId:0 srcField:-1 dstField:7 type:pulsar.core.rule.DataRule
+data:a%3Daesiv%3AWIPJekp1dGkpGhAeWmmRRw
+RULE transition:13;9;50 srcId:-1 srcField:4 dstField:5 type:pulsar.core.rule.ExactRule
+
+RULE transition:13;9;50 srcId:-1 srcField:3 dstField:0 type:pulsar.core.rule.CopyCompleteRule
+ptype:COPY_AS_SUFFIX rest:rtsp%3A//172.22.32.8/
+RULE transition:3;21;34 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:3;21;34 srcId:0 srcField:-1 dstField:1 type:pulsar.core.rule.DataRule
+data:seq%3D6268%3Brtptime%3D1768400272
+RULE transition:21;1;39 srcId:-3 srcField:0 dstField:0 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:44;9;48 srcId:-3 srcField:1 dstField:3 type:pulsar.core.rule.ExactRule
+
+RULE transition:44;9;48 srcId:-2 srcField:0 dstField:1 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:44;9;48 srcId:0 srcField:-1 dstField:0 type:pulsar.core.rule.DataRule
+data:rtsp%3A//10.0.1.1/3494487116,rtsp%3A//10.0.1.1/3494487116,rtsp%3A//172.22.32.8/3494496393,rtsp%3A//172.22.32.8/3494496393,rtsp%3A//172.22.32.8/3494496393,rtsp%3A//172.22.32.8/3494496393,rtsp%3A//172.22.32.8/3494496584,rtsp%3A//172.22.32.8/3494496584,rtsp%3A//10.0.1.1/3494496684,rtsp%3A//10.0.1.1/3494496758,rtsp%3A//10.0.1.1/3494496758,rtsp%3A//172.22.32.8/3494496905,rtsp%3A//172.22.32.8/3494496905,rtsp%3A//172.22.32.8/3494497096
+RULE transition:44;9;48 srcId:0 srcField:-1 dstField:2 type:pulsar.core.rule.DataRule
+data:seq%3D8233%3Brtptime%3D1769091952,seq%3D14733%3Brtptime%3D1771379952,seq%3D57897%3Brtptime%3D1448913779,seq%3D62409%3Brtptime%3D1450502003,seq%3D3890%3Brtptime%3D1452971987,seq%3D8825%3Brtptime%3D1454709107,seq%3D8954%3Brtptime%3D585780682,seq%3D10516%3Brtptime%3D586330506,seq%3D20898%3Brtptime%3D4188097936,seq%3D26795%3Brtptime%3D3140321227,seq%3D34580%3Brtptime%3D3143061547,seq%3D61602%3Brtptime%3D2759503272,seq%3D12567%3Brtptime%3D2765311624,seq%3D6131%3Brtptime%3D3187915857
+RULE transition:48;7;53 srcId:-3 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:48;7;53 srcId:-3 srcField:3 dstField:16 type:pulsar.core.rule.ExactRule
+
+RULE transition:48;7;53 srcId:-2 srcField:0 dstField:1 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:48;7;53 srcId:0 srcField:-1 dstField:2 type:pulsar.core.rule.DataRule
+data:text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters
+RULE transition:48;7;53 srcId:0 srcField:-1 dstField:3 type:pulsar.core.rule.DataRule
+data:44,44,44,44,41,41,41,42,44,44,44,44
+RULE transition:48;7;53 srcId:0 srcField:-1 dstField:4 type:pulsar.core.rule.DataRule
+data:User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A
+RULE transition:48;7;53 srcId:0 srcField:-1 dstField:5 type:pulsar.core.rule.DataRule
+data:iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4
+RULE transition:48;7;53 srcId:0 srcField:-1 dstField:6 type:pulsar.core.rule.DataRule
+data:%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20,%20
+RULE transition:48;7;53 srcId:0 srcField:-1 dstField:7 type:pulsar.core.rule.DataRule
+data:%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B
+RULE transition:48;7;53 srcId:0 srcField:-1 dstField:8 type:pulsar.core.rule.DataRule
+data:OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS,OS
+RULE transition:48;7;53 srcId:0 srcField:-1 dstField:9 type:pulsar.core.rule.DataRule
+data:X,X,X,X,X,X,X,X,X,X,X,X
+RULE transition:48;7;53 srcId:0 srcField:-1 dstField:10 type:pulsar.core.rule.DataRule
+data:10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29
+RULE transition:48;7;53 srcId:0 srcField:-1 dstField:11 type:pulsar.core.rule.DataRule
+data:%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A
+RULE transition:48;7;53 srcId:0 srcField:-1 dstField:12 type:pulsar.core.rule.DataRule
+data:Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A
+RULE transition:48;7;53 srcId:0 srcField:-1 dstField:13 type:pulsar.core.rule.DataRule
+data:9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004
+RULE transition:48;7;53 srcId:0 srcField:-1 dstField:14 type:pulsar.core.rule.DataRule
+data:DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A
+RULE transition:48;7;53 srcId:0 srcField:-1 dstField:15 type:pulsar.core.rule.DataRule
+data:Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A
+RULE transition:48;7;53 srcId:0 srcField:-1 dstField:17 type:pulsar.core.rule.DataRule
+data:%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A
+RULE transition:48;7;53 srcId:0 srcField:-1 dstField:18 type:pulsar.core.rule.DataRule
+data:progress%3A,progress%3A,progress%3A,progress%3A,progress%3A,progress%3A,progress%3A,progress%3A,progress%3A,progress%3A,progress%3A,progress%3A
+RULE transition:48;7;53 srcId:0 srcField:-1 dstField:19 type:pulsar.core.rule.DataRule
+data:1715751557/1768400272/1846011556,1754238264/1771379952/1881026054,1439927151/1448913779/1567404289,1432985326/1450737843/1558729822,558529941/586330506/685317731,566053729/586552618/692841519,534186035/587531530/679067548,4188082576/4188097936/37996793,3094724133/3140850987/3220468629,3095444290/3143274507/3233662270,2717078148/2760542024/2843865938,1553149327/1566711771/1678893823
+RULE transition:48;7;53 srcId:-1 srcField:11 dstField:20 type:pulsar.core.rule.ExactRule
+
+RULE transition:7;46;10 srcId:0 srcField:-1 dstField:0 type:pulsar.core.rule.DataRule
+data:RTP/AVP/UDP%3Bunicast%3Bmode%3Drecord%3Btiming_port%3D53797%3Bevents%3Bcontrol_port%3D63315%3Bserver_port%3D62922,RTP/AVP/UDP%3Bunicast%3Bmode%3Drecord%3Btiming_port%3D56825%3Bevents%3Bcontrol_port%3D50347%3Bserver_port%3D50613,RTP/AVP/UDP%3Bunicast%3Bmode%3Drecord%3Btiming_port%3D49540%3Bevents%3Bcontrol_port%3D62756%3Bserver_port%3D63853,RTP/AVP/UDP%3Bunicast%3Bmode%3Drecord%3Btiming_port%3D60976%3Bevents%3Bcontrol_port%3D54300%3Bserver_port%3D50193,RTP/AVP/UDP%3Bunicast%3Bmode%3Drecord%3Btiming_port%3D64133%3Bevents%3Bcontrol_port%3D59572%3Bserver_port%3D49380,RTP/AVP/UDP%3Bunicast%3Bmode%3Drecord%3Btiming_port%3D59879%3Bevents%3Bcontrol_port%3D60474%3Bserver_port%3D63674,RTP/AVP/UDP%3Bunicast%3Bmode%3Drecord%3Btiming_port%3D63974%3Bevents%3Bcontrol_port%3D54545%3Bserver_port%3D65299
+RULE transition:2;40;24 srcId:0 srcField:-1 dstField:0 type:pulsar.core.rule.DataRule
+data:16
+RULE transition:6;30;5 srcId:0 srcField:-1 dstField:0 type:pulsar.core.rule.DataRule
+data:3
+RULE transition:44;9;44 srcId:-3 srcField:1 dstField:1 type:pulsar.core.rule.ExactRule
+
+RULE transition:44;9;44 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:53;7;48 srcId:-3 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:53;7;48 srcId:-3 srcField:16 dstField:3 type:pulsar.core.rule.ExactRule
+
+RULE transition:53;7;48 srcId:-2 srcField:0 dstField:1 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:53;7;48 srcId:0 srcField:-1 dstField:2 type:pulsar.core.rule.DataRule
+data:seq%3D11263%3Brtptime%3D1770158512,seq%3D15514%3Brtptime%3D1771654864,seq%3D16253%3Brtptime%3D1771914992,seq%3D16832%3Brtptime%3D1772118800,seq%3D63079%3Brtptime%3D1450737843,seq%3D64021%3Brtptime%3D1451069427,seq%3D64464%3Brtptime%3D1451225363,seq%3D4005%3Brtptime%3D1453012467,seq%3D4278%3Brtptime%3D1453108563,seq%3D11147%3Brtptime%3D586552618,seq%3D11589%3Brtptime%3D586708202,seq%3D12150%3Brtptime%3D586905674,seq%3D12832%3Brtptime%3D587145738,seq%3D13257%3Brtptime%3D587295338,seq%3D13627%3Brtptime%3D587425578,seq%3D13928%3Brtptime%3D587531530,seq%3D16003%3Brtptime%3D588261930,seq%3D21646%3Brtptime%3D4188361232,seq%3D22872%3Brtptime%3D4188792784,seq%3D28300%3Brtptime%3D3140850987,seq%3D35185%3Brtptime%3D3143274507,seq%3D35605%3Brtptime%3D3143422347,seq%3D62183%3Brtptime%3D2759707784,seq%3D62500%3Brtptime%3D2759819368,seq%3D63165%3Brtptime%3D2760053448,seq%3D63583%3Brtptime%3D2760200584,seq%3D64036%3Brtptime%3D2760360040,seq%3D64553%3Brtptime%3D2760542024,seq%3D7359%3Brtptime%3D3188348113,seq%3D9338%3Brtptime%3D3189044721,seq%3D11995%3Brtptime%3D3189979985,seq%3D33938%3Brtptime%3D1566711771,seq%3D34543%3Brtptime%3D1566924731,seq%3D36031%3Brtptime%3D1567448507
+RULE transition:53;7;49 srcId:-3 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:53;7;49 srcId:-3 srcField:16 dstField:3 type:pulsar.core.rule.ExactRule
+
+RULE transition:53;7;49 srcId:-2 srcField:0 dstField:1 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:53;7;49 srcId:0 srcField:-1 dstField:2 type:pulsar.core.rule.DataRule
+data:rtptime%3D1566386171
+RULE transition:53;7;49 srcId:0 srcField:-1 dstField:4 type:pulsar.core.rule.DataRule
+data:aeGE%00%00%00%04%00%00%02%10asaa%00%00%00%00asgp%00%00%00%01%00ased%00%00%00%02%00%00ashp%00%00%00%01%01assn%00%00%00%00assa%00%00%00%08Magicianassl%00%00%00%00assu%00%00%00%00assc%00%00%00%00asss%00%00%00%00asbk%00%00%00%01%00aspu%00%00%00%00aeCR%00%00%00%00asai%00%00%00%08%7C%84%F2%80%FD%83%A0%A9asls%00%00%00%08%00%00%00%00%06%CCf%F3aeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04S%EBTXaskp%00%00%00%04%00%00%00%02askd%00%00%00%04T%23%FE%F0mdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01
+RULE transition:38;24;38 srcId:-3 srcField:1 dstField:1 type:pulsar.core.rule.ExactRule
+
+RULE transition:38;24;38 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:36;41;24 srcId:0 srcField:-1 dstField:0 type:pulsar.core.rule.DataRule
+data:19
+RULE transition:49;7;53 srcId:-3 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:49;7;53 srcId:-3 srcField:2 dstField:5 type:pulsar.core.rule.ExactRule
+
+RULE transition:49;7;53 srcId:-3 srcField:3 dstField:19 type:pulsar.core.rule.ExactRule
+
+RULE transition:49;7;53 srcId:-2 srcField:0 dstField:1 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:49;7;53 srcId:0 srcField:-1 dstField:2 type:pulsar.core.rule.DataRule
+data:image/none,image/none,image/none,image/none,image/none
+RULE transition:49;7;53 srcId:0 srcField:-1 dstField:3 type:pulsar.core.rule.DataRule
+data:0,0,0,0,0
+RULE transition:49;7;53 srcId:0 srcField:-1 dstField:4 type:pulsar.core.rule.DataRule
+data:RTP-Info%3A,RTP-Info%3A,RTP-Info%3A,RTP-Info%3A,RTP-Info%3A
+RULE transition:49;7;53 srcId:0 srcField:-1 dstField:6 type:pulsar.core.rule.DataRule
+data:%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A
+RULE transition:49;7;53 srcId:0 srcField:-1 dstField:7 type:pulsar.core.rule.DataRule
+data:User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A
+RULE transition:49;7;53 srcId:0 srcField:-1 dstField:8 type:pulsar.core.rule.DataRule
+data:iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4
+RULE transition:49;7;53 srcId:0 srcField:-1 dstField:9 type:pulsar.core.rule.DataRule
+data:%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B
+RULE transition:49;7;53 srcId:0 srcField:-1 dstField:10 type:pulsar.core.rule.DataRule
+data:OS,OS,OS,OS,OS
+RULE transition:49;7;53 srcId:0 srcField:-1 dstField:11 type:pulsar.core.rule.DataRule
+data:%20,%20,%20,%20,%20
+RULE transition:49;7;53 srcId:0 srcField:-1 dstField:12 type:pulsar.core.rule.DataRule
+data:X,X,X,X,X
+RULE transition:49;7;53 srcId:0 srcField:-1 dstField:13 type:pulsar.core.rule.DataRule
+data:10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29
+RULE transition:49;7;53 srcId:0 srcField:-1 dstField:14 type:pulsar.core.rule.DataRule
+data:Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A
+RULE transition:49;7;53 srcId:0 srcField:-1 dstField:15 type:pulsar.core.rule.DataRule
+data:DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A
+RULE transition:49;7;53 srcId:0 srcField:-1 dstField:16 type:pulsar.core.rule.DataRule
+data:9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004
+RULE transition:49;7;53 srcId:0 srcField:-1 dstField:18 type:pulsar.core.rule.DataRule
+data:Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A
+RULE transition:49;7;53 srcId:0 srcField:-1 dstField:20 type:pulsar.core.rule.DataRule
+data:%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A
+RULE transition:49;7;53 srcId:-1 srcField:6 dstField:17 type:pulsar.core.rule.ExactRule
+
+RULE transition:46;11;50 srcId:-3 srcField:15 dstField:2 type:pulsar.core.rule.ExactRule
+
+RULE transition:46;11;50 srcId:0 srcField:-1 dstField:1 type:pulsar.core.rule.DataRule
+data:562
+RULE transition:46;11;50 srcId:0 srcField:-1 dstField:3 type:pulsar.core.rule.DataRule
+data:3494496684
+RULE transition:46;11;50 srcId:0 srcField:-1 dstField:4 type:pulsar.core.rule.DataRule
+data:10.0.1.1
+RULE transition:46;11;50 srcId:0 srcField:-1 dstField:6 type:pulsar.core.rule.DataRule
+data:a%3Drsaaeskey%3AchcHPIEXXIsNVM/gpaWeegWcPJFKtNfeROXmCwDvohR0uNBsR0OUab8eAWuKrQNYFCpDvNmQ8pvdG3eTioi5VeZhmSXY%2BQTsS8VzUXOEL17RIVNX2NkvhARcl2FUk3yINwBwJsBethK24iaNxymnMK24dA0tbF%2BKIUA1/UUts%2BUyUBHGqzwlANlnKgu9Vb6I7M1e8ILpeXRXM2y7JSD2mtgmV7UmGen4BaoAA8DGGA%2BglRlHziWoZ6DNnxZ6GRa1puKXB5cJN28vsA2l6tzK9xERCf7v0Rj8Nl5cg8ZXzEA7yIEF6gH4rH0cygSwhKpkiIneVAtV1zgVrYY%2BO/%2BDrg
+RULE transition:46;11;50 srcId:0 srcField:-1 dstField:7 type:pulsar.core.rule.DataRule
+data:a%3Daesiv%3Ah8caWf9ueaUVOV5RvNVPDg
+RULE transition:46;11;50 srcId:-1 srcField:4 dstField:5 type:pulsar.core.rule.ExactRule
+
+RULE transition:46;11;50 srcId:-1 srcField:3 dstField:0 type:pulsar.core.rule.CopyCompleteRule
+ptype:COPY_AS_SUFFIX rest:rtsp%3A//10.0.1.1/
+RULE transition:7;46;8 srcId:-2 srcField:2 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:7;47;7 srcId:-2 srcField:1 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:19;48;7 srcId:-2 srcField:1 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:7;45;7 srcId:-2 srcField:1 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:48;7;48 srcId:-3 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:48;7;48 srcId:-3 srcField:2 dstField:2 type:pulsar.core.rule.ExactRule
+
+RULE transition:48;7;48 srcId:-3 srcField:3 dstField:3 type:pulsar.core.rule.ExactRule
+
+RULE transition:48;7;48 srcId:-2 srcField:0 dstField:1 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:48;7;49 srcId:-3 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:48;7;49 srcId:-3 srcField:3 dstField:3 type:pulsar.core.rule.ExactRule
+
+RULE transition:48;7;49 srcId:-2 srcField:0 dstField:1 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:48;7;49 srcId:-3 srcField:2 dstField:2 type:pulsar.core.rule.CopyPartialRule
+ptype:COPY_THE_SUFFIX sep:%3B
+RULE transition:48;7;49 srcId:0 srcField:-1 dstField:4 type:pulsar.core.rule.DataRule
+data:aeGE%00%00%00%04%00%00%02%10asaa%00%00%00%00asgp%00%00%00%01%00ased%00%00%00%02%00%00ashp%00%00%00%01%01assn%00%00%00%00assa%00%00%00%08Magicianassl%00%00%00%00assu%00%00%00%00assc%00%00%00%00asss%00%00%00%00asbk%00%00%00%01%00aspu%00%00%00%00aeCR%00%00%00%00asai%00%00%00%08%7C%84%F2%80%FD%83%A0%A9asls%00%00%00%08%00%00%00%00%06%CCf%F3aeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04S%EBTXaskp%00%00%00%04%00%00%00%00askd%00%00%00%04%83%DA3%60mdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01,aeGE%00%00%00%04%00%00%02%10asaa%00%00%00%00asgp%00%00%00%01%00ased%00%00%00%02%00%00ashp%00%00%00%01%01assn%00%00%00%00assa%00%00%00%08Magicianassl%00%00%00%00assu%00%00%00%00assc%00%00%00%00asss%00%00%00%00asbk%00%00%00%01%00aspu%00%00%00%00aeCR%00%00%00%00asai%00%00%00%08%7C%84%F2%80%FD%83%A0%A9asls%00%00%00%08%00%00%00%00%06%CCf%F3aeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04S%EBTXaskp%00%00%00%04%00%00%00%00askd%00%00%00%04%83%DA3%60mdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01,aeGE%00%00%00%04%00%00%02%10asaa%00%00%00%00asgp%00%00%00%01%00ased%00%00%00%02%00%00ashp%00%00%00%01%01assn%00%00%00%00assa%00%00%00%08Magicianassl%00%00%00%00assu%00%00%00%00assc%00%00%00%00asss%00%00%00%00asbk%00%00%00%01%00aspu%00%00%00%00aeCR%00%00%00%00asai%00%00%00%08%7C%84%F2%80%FD%83%A0%A9asls%00%00%00%08%00%00%00%00%06%CCf%F3aeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04S%EBTXaskp%00%00%00%04%00%00%00%01askd%00%00%00%04T%23%FDVmdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01,aeGE%00%00%00%04%00%00%02%10asaa%00%00%00%00asgp%00%00%00%01%00ased%00%00%00%02%00%00ashp%00%00%00%01%01assn%00%00%00%00assa%00%00%00%08Magicianassl%00%00%00%00assu%00%00%00%00assc%00%00%00%00asss%00%00%00%00asbk%00%00%00%01%00aspu%00%00%00%00aeCR%00%00%00%00asai%00%00%00%08%7C%84%F2%80%FD%83%A0%A9asls%00%00%00%08%00%00%00%00%06%CCf%F3aeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04S%EBTXaskp%00%00%00%04%00%00%00%01askd%00%00%00%04T%23%FDVmdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01
+RULE transition:48;7;46 srcId:-3 srcField:0 dstField:1 type:pulsar.core.rule.ExactRule
+
+RULE transition:48;7;46 srcId:-3 srcField:3 dstField:17 type:pulsar.core.rule.ExactRule
+
+RULE transition:48;7;46 srcId:-2 srcField:0 dstField:2 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:48;7;46 srcId:0 srcField:-1 dstField:0 type:pulsar.core.rule.DataRule
+data:TEARDOWN,TEARDOWN,TEARDOWN,TEARDOWN,TEARDOWN,TEARDOWN,TEARDOWN,TEARDOWN
+RULE transition:48;7;46 srcId:0 srcField:-1 dstField:3 type:pulsar.core.rule.DataRule
+data:Session%3A,Session%3A,Session%3A,Session%3A,Session%3A,Session%3A,Session%3A,Session%3A
+RULE transition:48;7;46 srcId:0 srcField:-1 dstField:4 type:pulsar.core.rule.DataRule
+data:DEADBEEF,DEADBEEF,DEADBEEF,DEADBEEF,DEADBEEF,DEADBEEF,DEADBEEF,DEADBEEF
+RULE transition:48;7;46 srcId:0 srcField:-1 dstField:5 type:pulsar.core.rule.DataRule
+data:%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A
+RULE transition:48;7;46 srcId:0 srcField:-1 dstField:6 type:pulsar.core.rule.DataRule
+data:User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A
+RULE transition:48;7;46 srcId:0 srcField:-1 dstField:7 type:pulsar.core.rule.DataRule
+data:iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4
+RULE transition:48;7;46 srcId:0 srcField:-1 dstField:8 type:pulsar.core.rule.DataRule
+data:%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B
+RULE transition:48;7;46 srcId:0 srcField:-1 dstField:9 type:pulsar.core.rule.DataRule
+data:OS,OS,OS,OS,OS,OS,OS,OS
+RULE transition:48;7;46 srcId:0 srcField:-1 dstField:10 type:pulsar.core.rule.DataRule
+data:%20,%20,%20,%20,%20,%20,%20,%20
+RULE transition:48;7;46 srcId:0 srcField:-1 dstField:11 type:pulsar.core.rule.DataRule
+data:X,X,X,X,X,X,X,X
+RULE transition:48;7;46 srcId:0 srcField:-1 dstField:12 type:pulsar.core.rule.DataRule
+data:10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29
+RULE transition:48;7;46 srcId:0 srcField:-1 dstField:13 type:pulsar.core.rule.DataRule
+data:Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A
+RULE transition:48;7;46 srcId:0 srcField:-1 dstField:14 type:pulsar.core.rule.DataRule
+data:DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A
+RULE transition:48;7;46 srcId:0 srcField:-1 dstField:15 type:pulsar.core.rule.DataRule
+data:9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004
+RULE transition:48;7;46 srcId:0 srcField:-1 dstField:16 type:pulsar.core.rule.DataRule
+data:Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A
+RULE transition:48;7;47 srcId:-3 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:48;7;47 srcId:-3 srcField:3 dstField:3 type:pulsar.core.rule.ExactRule
+
+RULE transition:48;7;47 srcId:-2 srcField:0 dstField:1 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:48;7;47 srcId:-3 srcField:2 dstField:2 type:pulsar.core.rule.CopyPartialRule
+ptype:COPY_THE_SUFFIX sep:%3B
+RULE transition:48;7;47 srcId:0 srcField:-1 dstField:4 type:pulsar.core.rule.DataRule
+data:Magicianasbr%00%00%00%02%01%40ascm%00%00%00%00asco%00%00%00%01%00ascp%00%00%00%00asda%00%00%00%04S%E4%BCsasdm%00%00%00%04S%E4%BC%EDasdc%00%00%00%02%00%00asdn%00%00%00%02%00%00aseq%00%00%00%00asgn%00%00%00%05Houseasdt%00%00%00%0FMPEG,Magicianasbr%00%00%00%02%01%40ascm%00%00%00%00asco%00%00%00%01%00ascp%00%00%00%00asda%00%00%00%04S%E4%BCsasdm%00%00%00%04S%E4%BC%EDasdc%00%00%00%02%00%00asdn%00%00%00%02%00%00aseq%00%00%00%00asgn%00%00%00%05Houseasdt%00%00%00%0FMPEG,Magicianasbr%00%00%00%02%01%40ascm%00%00%00%00asco%00%00%00%01%00ascp%00%00%00%00asda%00%00%00%04S%E4%BCsasdm%00%00%00%04S%E4%BC%EDasdc%00%00%00%02%00%00asdn%00%00%00%02%00%00aseq%00%00%00%00asgn%00%00%00%05Houseasdt%00%00%00%0FMPEG,Magicianasbr%00%00%00%02%01%40ascm%00%00%00%00asco%00%00%00%01%00ascp%00%00%00%00asda%00%00%00%04S%E4%BCsasdm%00%00%00%04S%E4%BC%E4asdc%00%00%00%02%00%00asdn%00%00%00%02%00%00aseq%00%00%00%00asgn%00%00%00%05Houseasdt%00%00%00%0FMPEG,Magicianasbr%00%00%00%02%01%40ascm%00%00%00%00asco%00%00%00%01%00ascp%00%00%00%00asda%00%00%00%04S%E4%BCsasdm%00%00%00%04S%E4%BC%E4asdc%00%00%00%02%00%00asdn%00%00%00%02%00%00aseq%00%00%00%00asgn%00%00%00%05Houseasdt%00%00%00%0FMPEG,Magicianasbr%00%00%00%02%01%40ascm%00%00%00%00asco%00%00%00%01%00ascp%00%00%00%00asda%00%00%00%04S%E4%BCsasdm%00%00%00%04S%E4%BC%E4asdc%00%00%00%02%00%00asdn%00%00%00%02%00%00aseq%00%00%00%00asgn%00%00%00%05Houseasdt%00%00%00%0FMPEG,Magicianasbr%00%00%00%02%01%40ascm%00%00%00%00asco%00%00%00%01%00ascp%00%00%00%00asda%00%00%00%04S%E4%BCsasdm%00%00%00%04S%E4%BC%E4asdc%00%00%00%02%00%00asdn%00%00%00%02%00%00aseq%00%00%00%00asgn%00%00%00%05Houseasdt%00%00%00%0FMPEG,Magicianasbr%00%00%00%02%01%40ascm%00%00%00%00asco%00%00%00%01%00ascp%00%00%00%00asda%00%00%00%04S%E4%BCsasdm%00%00%00%04S%E4%BC%E8asdc%00%00%00%02%00%00asdn%00%00%00%02%00%00aseq%00%00%00%00asgn%00%00%00%05Houseasdt%00%00%00%0FMPEG,Magicianasbr%00%00%00%02%01%40ascm%00%00%00%00asco%00%00%00%01%00ascp%00%00%00%00asda%00%00%00%04S%E4%BCsasdm%00%00%00%04S%E4%BC%EDasdc%00%00%00%02%00%00asdn%00%00%00%02%00%00aseq%00%00%00%00asgn%00%00%00%05Houseasdt%00%00%00%0FMPEG,Magicianasbr%00%00%00%02%01%40ascm%00%00%00%00asco%00%00%00%01%00ascp%00%00%00%00asda%00%00%00%04S%E4%BCsasdm%00%00%00%04S%E4%BC%E8asdc%00%00%00%02%00%00asdn%00%00%00%02%00%00aseq%00%00%00%00asgn%00%00%00%05Houseasdt%00%00%00%0FMPEG,Magicianasbr%00%00%00%02%01%40ascm%00%00%00%00asco%00%00%00%01%00ascp%00%00%00%00asda%00%00%00%04S%E4%BCsasdm%00%00%00%04S%E4%BC%E0asdc%00%00%00%02%00%00asdn%00%00%00%02%00%00aseq%00%00%00%00asgn%00%00%00%05Houseasdt%00%00%00%0FMPEG,Magicianasbr%00%00%00%02%01%40ascm%00%00%00%00asco%00%00%00%01%00ascp%00%00%00%00asda%00%00%00%04S%E4%BCsasdm%00%00%00%04S%E4%BC%E4asdc%00%00%00%02%00%00asdn%00%00%00%02%00%00aseq%00%00%00%00asgn%00%00%00%05Houseasdt%00%00%00%0FMPEG,Magicianasbr%00%00%00%02%01%40ascm%00%00%00%00asco%00%00%00%01%00ascp%00%00%00%00asda%00%00%00%04S%E4%BCsasdm%00%00%00%04S%E4%BC%E0asdc%00%00%00%02%00%00asdn%00%00%00%02%00%00aseq%00%00%00%00asgn%00%00%00%05Houseasdt%00%00%00%0FMPEG,Magicianasbr%00%00%00%02%01%40ascm%00%00%00%00asco%00%00%00%01%00ascp%00%00%00%00asda%00%00%00%04S%E4%BCsasdm%00%00%00%04S%E4%BC%EDasdc%00%00%00%02%00%00asdn%00%00%00%02%00%00aseq%00%00%00%00asgn%00%00%00%05Houseasdt%00%00%00%0FMPEG,Magicianasbr%00%00%00%02%01%40ascm%00%00%00%00asco%00%00%00%01%00ascp%00%00%00%00asda%00%00%00%04S%E4%BCsasdm%00%00%00%04S%E4%BC%E4asdc%00%00%00%02%00%00asdn%00%00%00%02%00%00aseq%00%00%00%00asgn%00%00%00%05Houseasdt%00%00%00%0FMPEG
+RULE transition:48;7;47 srcId:0 srcField:-1 dstField:5 type:pulsar.core.rule.DataRule
+data:fileasrv%00%00%00%01%00assr%00%00%00%04%00%00%ACDassz%00%00%00%04%06%E4a%C5asst%00%00%00%04%00%00%00%00assp%00%00%00%04%00%00%00%00astm%00%00%00%04%00%2C%1B%D6astc%00%00%00%02%00%00astn%00%00%00%02%00%29asur%00%00%00%01%00asyr%00%00%00%02%00%00asfm%00%00%00%03mp3miid%00%00%00%04%00%00%F0%9Fminm%00%00%00,fileasrv%00%00%00%01%00assr%00%00%00%04%00%00%ACDassz%00%00%00%04%06%E4a%C5asst%00%00%00%04%00%00%00%00assp%00%00%00%04%00%00%00%00astm%00%00%00%04%00%2C%1B%D6astc%00%00%00%02%00%00astn%00%00%00%02%00%29asur%00%00%00%01%00asyr%00%00%00%02%00%00asfm%00%00%00%03mp3miid%00%00%00%04%00%00%F0%9Fminm%00%00%00,fileasrv%00%00%00%01%00assr%00%00%00%04%00%00%ACDassz%00%00%00%04%06%E4a%C5asst%00%00%00%04%00%00%00%00assp%00%00%00%04%00%00%00%00astm%00%00%00%04%00%2C%1B%D6astc%00%00%00%02%00%00astn%00%00%00%02%00%29asur%00%00%00%01%00asyr%00%00%00%02%00%00asfm%00%00%00%03mp3miid%00%00%00%04%00%00%F0%9Fminm%00%00%00,fileasrv%00%00%00%01%00assr%00%00%00%04%00%00%ACDassz%00%00%00%04%07y%06%CFasst%00%00%00%04%00%00%00%00assp%00%00%00%04%00%00%00%00astm%00%00%00%04%00/%D3%29astc%00%00%00%02%00%00astn%00%00%00%02%00%2Basur%00%00%00%01%00asyr%00%00%00%02%00%00asfm%00%00%00%03mp3miid%00%00%00%04%00%00%F0%A3minm%00%00%00,fileasrv%00%00%00%01%00assr%00%00%00%04%00%00%ACDassz%00%00%00%04%07y%06%CFasst%00%00%00%04%00%00%00%00assp%00%00%00%04%00%00%00%00astm%00%00%00%04%00/%D3%29astc%00%00%00%02%00%00astn%00%00%00%02%00%2Basur%00%00%00%01%00asyr%00%00%00%02%00%00asfm%00%00%00%03mp3miid%00%00%00%04%00%00%F0%A3minm%00%00%00,fileasrv%00%00%00%01%00assr%00%00%00%04%00%00%ACDassz%00%00%00%04%07y%06%CFasst%00%00%00%04%00%00%00%00assp%00%00%00%04%00%00%00%00astm%00%00%00%04%00/%D3%29astc%00%00%00%02%00%00astn%00%00%00%02%00%2Basur%00%00%00%01%00asyr%00%00%00%02%00%00asfm%00%00%00%03mp3miid%00%00%00%04%00%00%F0%A3minm%00%00%00,fileasrv%00%00%00%01%00assr%00%00%00%04%00%00%ACDassz%00%00%00%04%07y%06%CFasst%00%00%00%04%00%00%00%00assp%00%00%00%04%00%00%00%00astm%00%00%00%04%00/%D3%29astc%00%00%00%02%00%00astn%00%00%00%02%00%2Basur%00%00%00%01%00asyr%00%00%00%02%00%00asfm%00%00%00%03mp3miid%00%00%00%04%00%00%F0%A3minm%00%00%00,fileasrv%00%00%00%01%00assr%00%00%00%04%00%00%ACDassz%00%00%00%04%06%94psasst%00%00%00%04%00%00%00%00assp%00%00%00%04%00%00%00%00astm%00%00%00%04%00%2A%1C4astc%00%00%00%02%00%00astn%00%00%00%02%00%28asur%00%00%00%01%00asyr%00%00%00%02%00%00asfm%00%00%00%03mp3miid%00%00%00%04%00%00%F0%9Dminm%00%00%00,fileasrv%00%00%00%01%00assr%00%00%00%04%00%00%ACDassz%00%00%00%04%06%E4a%C5asst%00%00%00%04%00%00%00%00assp%00%00%00%04%00%00%00%00astm%00%00%00%04%00%2C%1B%D6astc%00%00%00%02%00%00astn%00%00%00%02%00%29asur%00%00%00%01%00asyr%00%00%00%02%00%00asfm%00%00%00%03mp3miid%00%00%00%04%00%00%F0%9Fminm%00%00%00,fileasrv%00%00%00%01%00assr%00%00%00%04%00%00%ACDassz%00%00%00%04%06%94psasst%00%00%00%04%00%00%00%00assp%00%00%00%04%00%00%00%00astm%00%00%00%04%00%2A%1C4astc%00%00%00%02%00%00astn%00%00%00%02%00%28asur%00%00%00%01%00asyr%00%00%00%02%00%00asfm%00%00%00%03mp3miid%00%00%00%04%00%00%F0%9Dminm%00%00%00,fileasrv%00%00%00%01%00assr%00%00%00%04%00%00%ACDassz%00%00%00%04%07%D5C%10asst%00%00%00%04%00%00%00%00assp%00%00%00%04%00%00%00%00astm%00%00%00%04%002%21xastc%00%00%00%02%00%00astn%00%00%00%02%00%2Casur%00%00%00%01%00asyr%00%00%00%02%00%00asfm%00%00%00%03mp3miid%00%00%00%04%00%00%F0%A5minm%00%00%00,fileasrv%00%00%00%01%00assr%00%00%00%04%00%00%ACDassz%00%00%00%04%07y%06%CFasst%00%00%00%04%00%00%00%00assp%00%00%00%04%00%00%00%00astm%00%00%00%04%00/%D3%29astc%00%00%00%02%00%00astn%00%00%00%02%00%2Basur%00%00%00%01%00asyr%00%00%00%02%00%00asfm%00%00%00%03mp3miid%00%00%00%04%00%00%F0%A3minm%00%00%00,fileasrv%00%00%00%01%00assr%00%00%00%04%00%00%ACDassz%00%00%00%04%07%D5C%10asst%00%00%00%04%00%00%00%00assp%00%00%00%04%00%00%00%00astm%00%00%00%04%002%21xastc%00%00%00%02%00%00astn%00%00%00%02%00%2Casur%00%00%00%01%00asyr%00%00%00%02%00%00asfm%00%00%00%03mp3miid%00%00%00%04%00%00%F0%A5minm%00%00%00,fileasrv%00%00%00%01%00assr%00%00%00%04%00%00%ACDassz%00%00%00%04%06%E4a%C5asst%00%00%00%04%00%00%00%00assp%00%00%00%04%00%00%00%00astm%00%00%00%04%00%2C%1B%D6astc%00%00%00%02%00%00astn%00%00%00%02%00%29asur%00%00%00%01%00asyr%00%00%00%02%00%00asfm%00%00%00%03mp3miid%00%00%00%04%00%00%F0%9Fminm%00%00%00,fileasrv%00%00%00%01%00assr%00%00%00%04%00%00%ACDassz%00%00%00%04%07y%06%CFasst%00%00%00%04%00%00%00%00assp%00%00%00%04%00%00%00%00astm%00%00%00%04%00/%D3%29astc%00%00%00%02%00%00astn%00%00%00%02%00%2Basur%00%00%00%01%00asyr%00%00%00%02%00%00asfm%00%00%00%03mp3miid%00%00%00%04%00%00%F0%A3minm%00%00%00
+RULE transition:48;7;47 srcId:0 srcField:-1 dstField:6 type:pulsar.core.rule.DataRule
+data:41mper%00%00%00%08%A7%CB%B8%8B%0C%13%9D%9Aasdb%00%00%00%01%00aeNV%00%00%00%04%00%00%0E%B2asdk%00%00%00%01%00asbt%00%00%00%02%00%00agrp%00%00%00%00ascd%00%00%00%04mpegascs%00%00%00%04%00%00%00%03aePC%00%00%00%01%00asct%00%00%00%00ascn%00%00%00%00ascr%00%00%00%01%00aeHV%00%00%00%01%00aeMK%00%00%00%01%01aeSN%00%00%00%00aeEN%00%00%00%00aeES%00%00%00%04%00%00%00%00aeSU%00%00%00%04%00%00%00%00aeGH%00%00%00%04%00%00%00%01aeGD%00%00%00%04%00%00,41mper%00%00%00%08%A7%CB%B8%8B%0C%13%9D%9Aasdb%00%00%00%01%00aeNV%00%00%00%04%00%00%0E%B2asdk%00%00%00%01%00asbt%00%00%00%02%00%00agrp%00%00%00%00ascd%00%00%00%04mpegascs%00%00%00%04%00%00%00%03aePC%00%00%00%01%00asct%00%00%00%00ascn%00%00%00%00ascr%00%00%00%01%00aeHV%00%00%00%01%00aeMK%00%00%00%01%01aeSN%00%00%00%00aeEN%00%00%00%00aeES%00%00%00%04%00%00%00%00aeSU%00%00%00%04%00%00%00%00aeGH%00%00%00%04%00%00%00%01aeGD%00%00%00%04%00%00,41mper%00%00%00%08%A7%CB%B8%8B%0C%13%9D%9Aasdb%00%00%00%01%00aeNV%00%00%00%04%00%00%0E%B2asdk%00%00%00%01%00asbt%00%00%00%02%00%00agrp%00%00%00%00ascd%00%00%00%04mpegascs%00%00%00%04%00%00%00%03aePC%00%00%00%01%00asct%00%00%00%00ascn%00%00%00%00ascr%00%00%00%01%00aeHV%00%00%00%01%00aeMK%00%00%00%01%01aeSN%00%00%00%00aeEN%00%00%00%00aeES%00%00%00%04%00%00%00%00aeSU%00%00%00%04%00%00%00%00aeGH%00%00%00%04%00%00%00%01aeGD%00%00%00%04%00%00,43mper%00%00%00%08%81%BD%24f%14%A7%F1%B0asdb%00%00%00%01%00aeNV%00%00%00%04%00%00%12%FAasdk%00%00%00%01%00asbt%00%00%00%02%00%00agrp%00%00%00%00ascd%00%00%00%04mpegascs%00%00%00%04%00%00%00%03aePC%00%00%00%01%00asct%00%00%00%00ascn%00%00%00%00ascr%00%00%00%01%00aeHV%00%00%00%01%00aeMK%00%00%00%01%01aeSN%00%00%00%00aeEN%00%00%00%00aeES%00%00%00%04%00%00%00%00aeSU%00%00%00%04%00%00%00%00aeGH%00%00%00%04%00%00%00%01aeGD%00%00%00%04%00%00%07taeGU%00%00%00%08%00%00%00%00%08%3D,43mper%00%00%00%08%81%BD%24f%14%A7%F1%B0asdb%00%00%00%01%00aeNV%00%00%00%04%00%00%12%FAasdk%00%00%00%01%00asbt%00%00%00%02%00%00agrp%00%00%00%00ascd%00%00%00%04mpegascs%00%00%00%04%00%00%00%03aePC%00%00%00%01%00asct%00%00%00%00ascn%00%00%00%00ascr%00%00%00%01%00aeHV%00%00%00%01%00aeMK%00%00%00%01%01aeSN%00%00%00%00aeEN%00%00%00%00aeES%00%00%00%04%00%00%00%00aeSU%00%00%00%04%00%00%00%00aeGH%00%00%00%04%00%00%00%01aeGD%00%00%00%04%00%00%07taeGU%00%00%00%08%00%00%00%00%08%3D,43mper%00%00%00%08%81%BD%24f%14%A7%F1%B0asdb%00%00%00%01%00aeNV%00%00%00%04%00%00%12%FAasdk%00%00%00%01%00asbt%00%00%00%02%00%00agrp%00%00%00%00ascd%00%00%00%04mpegascs%00%00%00%04%00%00%00%03aePC%00%00%00%01%00asct%00%00%00%00ascn%00%00%00%00ascr%00%00%00%01%00aeHV%00%00%00%01%00aeMK%00%00%00%01%01aeSN%00%00%00%00aeEN%00%00%00%00aeES%00%00%00%04%00%00%00%00aeSU%00%00%00%04%00%00%00%00aeGH%00%00%00%04%00%00%00%01aeGD%00%00%00%04%00%00%07taeGU%00%00%00%08%00%00%00%00%08%3D,43mper%00%00%00%08%81%BD%24f%14%A7%F1%B0asdb%00%00%00%01%00aeNV%00%00%00%04%00%00%12%FAasdk%00%00%00%01%00asbt%00%00%00%02%00%00agrp%00%00%00%00ascd%00%00%00%04mpegascs%00%00%00%04%00%00%00%03aePC%00%00%00%01%00asct%00%00%00%00ascn%00%00%00%00ascr%00%00%00%01%00aeHV%00%00%00%01%00aeMK%00%00%00%01%01aeSN%00%00%00%00aeEN%00%00%00%00aeES%00%00%00%04%00%00%00%00aeSU%00%00%00%04%00%00%00%00aeGH%00%00%00%04%00%00%00%01aeGD%00%00%00%04%00%00%07taeGU%00%00%00%08%00%00%00%00%08%3D,40mper%00%00%00%08%FBi%E1b%B8%14d%1Fasdb%00%00%00%01%00aeNV%00%00%00%04%00%00%16%B3asdk%00%00%00%01%00asbt%00%00%00%02%00%00agrp%00%00%00%00ascd%00%00%00%04mpegascs%00%00%00%04%00%00%00%03aePC%00%00%00%01%00asct%00%00%00%00ascn%00%00%00%00ascr%00%00%00%01%00aeHV%00%00%00%01%00aeMK%00%00%00%01%01aeSN%00%00%00%00aeEN%00%00%00%00aeES%00%00%00%04%00%00%00%00aeSU%00%00%00%04%00%00%00%00aeGH%00%00%00%04%00%00%00%01aeGD%00%00%00%04%00%00,41mper%00%00%00%08%A7%CB%B8%8B%0C%13%9D%9Aasdb%00%00%00%01%00aeNV%00%00%00%04%00%00%0E%B2asdk%00%00%00%01%00asbt%00%00%00%02%00%00agrp%00%00%00%00ascd%00%00%00%04mpegascs%00%00%00%04%00%00%00%03aePC%00%00%00%01%00asct%00%00%00%00ascn%00%00%00%00ascr%00%00%00%01%00aeHV%00%00%00%01%00aeMK%00%00%00%01%01aeSN%00%00%00%00aeEN%00%00%00%00aeES%00%00%00%04%00%00%00%00aeSU%00%00%00%04%00%00%00%00aeGH%00%00%00%04%00%00%00%01aeGD%00%00%00%04%00%00,40mper%00%00%00%08%FBi%E1b%B8%14d%1Fasdb%00%00%00%01%00aeNV%00%00%00%04%00%00%16%B3asdk%00%00%00%01%00asbt%00%00%00%02%00%00agrp%00%00%00%00ascd%00%00%00%04mpegascs%00%00%00%04%00%00%00%03aePC%00%00%00%01%00asct%00%00%00%00ascn%00%00%00%00ascr%00%00%00%01%00aeHV%00%00%00%01%00aeMK%00%00%00%01%01aeSN%00%00%00%00aeEN%00%00%00%00aeES%00%00%00%04%00%00%00%00aeSU%00%00%00%04%00%00%00%00aeGH%00%00%00%04%00%00%00%01aeGD%00%00%00%04%00%00,44mper%00%00%00%08%5B5%04%FBa%D7%1E%A8asdb%00%00%00%01%00aeNV%00%00%00%04%00%00%0E%18asdk%00%00%00%01%00asbt%00%00%00%02%00%00agrp%00%00%00%00ascd%00%00%00%04mpegascs%00%00%00%04%00%00%00%03aePC%00%00%00%01%00asct%00%00%00%00ascn%00%00%00%00ascr%00%00%00%01%00aeHV%00%00%00%01%00aeMK%00%00%00%01%01aeSN%00%00%00%00aeEN%00%00%00%00aeES%00%00%00%04%00%00%00%00aeSU%00%00%00%04%00%00%00%00aeGH%00%00%00%04%00%00%00%01aeGD%00%00%00%04%00%00,43mper%00%00%00%08%81%BD%24f%14%A7%F1%B0asdb%00%00%00%01%00aeNV%00%00%00%04%00%00%12%FAasdk%00%00%00%01%00asbt%00%00%00%02%00%00agrp%00%00%00%00ascd%00%00%00%04mpegascs%00%00%00%04%00%00%00%03aePC%00%00%00%01%00asct%00%00%00%00ascn%00%00%00%00ascr%00%00%00%01%00aeHV%00%00%00%01%00aeMK%00%00%00%01%01aeSN%00%00%00%00aeEN%00%00%00%00aeES%00%00%00%04%00%00%00%00aeSU%00%00%00%04%00%00%00%00aeGH%00%00%00%04%00%00%00%01aeGD%00%00%00%04%00%00%07taeGU%00%00%00%08%00%00%00%00%08%3D,44mper%00%00%00%08%5B5%04%FBa%D7%1E%A8asdb%00%00%00%01%00aeNV%00%00%00%04%00%00%0E%18asdk%00%00%00%01%00asbt%00%00%00%02%00%00agrp%00%00%00%00ascd%00%00%00%04mpegascs%00%00%00%04%00%00%00%03aePC%00%00%00%01%00asct%00%00%00%00ascn%00%00%00%00ascr%00%00%00%01%00aeHV%00%00%00%01%00aeMK%00%00%00%01%01aeSN%00%00%00%00aeEN%00%00%00%00aeES%00%00%00%04%00%00%00%00aeSU%00%00%00%04%00%00%00%00aeGH%00%00%00%04%00%00%00%01aeGD%00%00%00%04%00%00,41mper%00%00%00%08%A7%CB%B8%8B%0C%13%9D%9Aasdb%00%00%00%01%00aeNV%00%00%00%04%00%00%0E%B2asdk%00%00%00%01%00asbt%00%00%00%02%00%00agrp%00%00%00%00ascd%00%00%00%04mpegascs%00%00%00%04%00%00%00%03aePC%00%00%00%01%00asct%00%00%00%00ascn%00%00%00%00ascr%00%00%00%01%00aeHV%00%00%00%01%00aeMK%00%00%00%01%01aeSN%00%00%00%00aeEN%00%00%00%00aeES%00%00%00%04%00%00%00%00aeSU%00%00%00%04%00%00%00%00aeGH%00%00%00%04%00%00%00%01aeGD%00%00%00%04%00%00,43mper%00%00%00%08%81%BD%24f%14%A7%F1%B0asdb%00%00%00%01%00aeNV%00%00%00%04%00%00%12%FAasdk%00%00%00%01%00asbt%00%00%00%02%00%00agrp%00%00%00%00ascd%00%00%00%04mpegascs%00%00%00%04%00%00%00%03aePC%00%00%00%01%00asct%00%00%00%00ascn%00%00%00%00ascr%00%00%00%01%00aeHV%00%00%00%01%00aeMK%00%00%00%01%01aeSN%00%00%00%00aeEN%00%00%00%00aeES%00%00%00%04%00%00%00%00aeSU%00%00%00%04%00%00%00%00aeGH%00%00%00%04%00%00%00%01aeGD%00%00%00%04%00%00%07taeGU%00%00%00%08%00%00%00%00%08%3D
+RULE transition:48;7;47 srcId:0 srcField:-1 dstField:7 type:pulsar.core.rule.DataRule
+data:%0A,%0A,%0A,%09,%09,%09,%09,%0A%0D,%0A,%0A%0D,%0A,%09,%0A,%0A,%09
+RULE transition:48;7;47 srcId:0 srcField:-1 dstField:8 type:pulsar.core.rule.DataRule
+data:%5EaeGU%00%00%00%08%00%00%00%00%07%99%25%92aeGR%00%00%00%08%00%00%00%00%06%E48%D0aeGE%00%00%00%04%00%00%02%10asaa%00%00%00%00asgp%00%00%00%01%00ased%00%00%00%02%00%00ashp%00%00%00%01%01assn%00%00%00%00assa%00%00%00%08Magicianassl%00%00%00%00assu%00%00%00%00assc%00%00%00%00asss%00%00%00%00asbk%00%00%00%01%00aspu%00%00%00%00aeCR%00%00%00%00asai%00%00%00%08%7C%84%F2%80%FD%83%A0%A9asls%00%00%00%08%00%00%00%00%06%E4a%C5aeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04S%EB9%3Aaskp%00%00%00%04%00%00%00%00askd%00%00%00%04%83%DA3%60mdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01,%5EaeGU%00%00%00%08%00%00%00%00%07%99%25%92aeGR%00%00%00%08%00%00%00%00%06%E48%D0aeGE%00%00%00%04%00%00%02%10asaa%00%00%00%00asgp%00%00%00%01%00ased%00%00%00%02%00%00ashp%00%00%00%01%01assn%00%00%00%00assa%00%00%00%08Magicianassl%00%00%00%00assu%00%00%00%00assc%00%00%00%00asss%00%00%00%00asbk%00%00%00%01%00aspu%00%00%00%00aeCR%00%00%00%00asai%00%00%00%08%7C%84%F2%80%FD%83%A0%A9asls%00%00%00%08%00%00%00%00%06%E4a%C5aeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04S%EB9%3Aaskp%00%00%00%04%00%00%00%00askd%00%00%00%04%83%DA3%60mdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01,%5EaeGU%00%00%00%08%00%00%00%00%07%99%25%92aeGR%00%00%00%08%00%00%00%00%06%E48%D0aeGE%00%00%00%04%00%00%02%10asaa%00%00%00%00asgp%00%00%00%01%00ased%00%00%00%02%00%00ashp%00%00%00%01%01assn%00%00%00%00assa%00%00%00%08Magicianassl%00%00%00%00assu%00%00%00%00assc%00%00%00%00asss%00%00%00%00asbk%00%00%00%01%00aspu%00%00%00%00aeCR%00%00%00%00asai%00%00%00%08%7C%84%F2%80%FD%83%A0%A9asls%00%00%00%08%00%00%00%00%06%E4a%C5aeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04S%EB9%3Aaskp%00%00%00%04%00%00%00%00askd%00%00%00%04%83%DA3%60mdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01,%FCaeGR%00%00%00%08%00%00%00%00%07x%DD%E0aeGE%00%00%00%04%00%00%02%10asaa%00%00%00%00asgp%00%00%00%01%00ased%00%00%00%02%00%00ashp%00%00%00%01%01assn%00%00%00%00assa%00%00%00%08Magicianassl%00%00%00%00assu%00%00%00%00assc%00%00%00%00asss%00%00%00%00asbk%00%00%00%01%00aspu%00%00%00%00aeCR%00%00%00%00asai%00%00%00%08%7C%84%F2%80%FD%83%A0%A9asls%00%00%00%08%00%00%00%00%07y%06%CFaeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04S%EBd%00askp%00%00%00%04%00%00%00%00askd%00%00%00%04%83%DA3%60mdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01,%FCaeGR%00%00%00%08%00%00%00%00%07x%DD%E0aeGE%00%00%00%04%00%00%02%10asaa%00%00%00%00asgp%00%00%00%01%00ased%00%00%00%02%00%00ashp%00%00%00%01%01assn%00%00%00%00assa%00%00%00%08Magicianassl%00%00%00%00assu%00%00%00%00assc%00%00%00%00asss%00%00%00%00asbk%00%00%00%01%00aspu%00%00%00%00aeCR%00%00%00%00asai%00%00%00%08%7C%84%F2%80%FD%83%A0%A9asls%00%00%00%08%00%00%00%00%07y%06%CFaeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04S%EBd%00askp%00%00%00%04%00%00%00%00askd%00%00%00%04%83%DA3%60mdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01,%FCaeGR%00%00%00%08%00%00%00%00%07x%DD%E0aeGE%00%00%00%04%00%00%02%10asaa%00%00%00%00asgp%00%00%00%01%00ased%00%00%00%02%00%00ashp%00%00%00%01%01assn%00%00%00%00assa%00%00%00%08Magicianassl%00%00%00%00assu%00%00%00%00assc%00%00%00%00asss%00%00%00%00asbk%00%00%00%01%00aspu%00%00%00%00aeCR%00%00%00%00asai%00%00%00%08%7C%84%F2%80%FD%83%A0%A9asls%00%00%00%08%00%00%00%00%07y%06%CFaeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04S%EBd%00askp%00%00%00%04%00%00%00%00askd%00%00%00%04%83%DA3%60mdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01,%FCaeGR%00%00%00%08%00%00%00%00%07x%DD%E0aeGE%00%00%00%04%00%00%02%10asaa%00%00%00%00asgp%00%00%00%01%00ased%00%00%00%02%00%00ashp%00%00%00%01%01assn%00%00%00%00assa%00%00%00%08Magicianassl%00%00%00%00assu%00%00%00%00assc%00%00%00%00asss%00%00%00%00asbk%00%00%00%01%00aspu%00%00%00%00aeCR%00%00%00%00asai%00%00%00%08%7C%84%F2%80%FD%83%A0%A9asls%00%00%00%08%00%00%00%00%07y%06%CFaeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04S%EBd%00askp%00%00%00%04%00%00%00%00askd%00%00%00%04%83%DA3%60mdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01,aeGU%00%00%00%08%00%00%00%00%07A%02%E3aeGR%00%00%00%08%00%00%00%00%06%94G%82aeGE%00%00%00%04%00%00%02%10asaa%00%00%00%00asgp%00%00%00%01%00ased%00%00%00%02%00%00ashp%00%00%00%01%01assn%00%00%00%00assa%00%00%00%08Magicianassl%00%00%00%00assu%00%00%00%00assc%00%00%00%00asss%00%00%00%00asbk%00%00%00%01%00aspu%00%00%00%00aeCR%00%00%00%00asai%00%00%00%08%7C%84%F2%80%FD%83%A0%A9asls%00%00%00%08%00%00%00%00%06%94psaeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04S%EB%29Gaskp%00%00%00%04%00%00%00%00askd%00%00%00%04%83%DA3%60mdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01,%5EaeGU%00%00%00%08%00%00%00%00%07%99%25%92aeGR%00%00%00%08%00%00%00%00%06%E48%D0aeGE%00%00%00%04%00%00%02%10asaa%00%00%00%00asgp%00%00%00%01%00ased%00%00%00%02%00%00ashp%00%00%00%01%01assn%00%00%00%00assa%00%00%00%08Magicianassl%00%00%00%00assu%00%00%00%00assc%00%00%00%00asss%00%00%00%00asbk%00%00%00%01%00aspu%00%00%00%00aeCR%00%00%00%00asai%00%00%00%08%7C%84%F2%80%FD%83%A0%A9asls%00%00%00%08%00%00%00%00%06%E4a%C5aeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04S%EB9%3Aaskp%00%00%00%04%00%00%00%00askd%00%00%00%04%83%DA3%60mdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01,aeGU%00%00%00%08%00%00%00%00%07A%02%E3aeGR%00%00%00%08%00%00%00%00%06%94G%82aeGE%00%00%00%04%00%00%02%10asaa%00%00%00%00asgp%00%00%00%01%00ased%00%00%00%02%00%00ashp%00%00%00%01%01assn%00%00%00%00assa%00%00%00%08Magicianassl%00%00%00%00assu%00%00%00%00assc%00%00%00%00asss%00%00%00%00asbk%00%00%00%01%00aspu%00%00%00%00aeCR%00%00%00%00asai%00%00%00%08%7C%84%F2%80%FD%83%A0%A9asls%00%00%00%08%00%00%00%00%06%94psaeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04S%EB%29Gaskp%00%00%00%04%00%00%00%01askd%00%00%00%04T%23%FC%DDmdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01,%87aeGU%00%00%00%08%00%00%00%00%08%A2%B7iaeGR%00%00%00%08%00%00%00%00%07%D5%1A%1EaeGE%00%00%00%04%00%00%02%10asaa%00%00%00%00asgp%00%00%00%01%00ased%00%00%00%02%00%00ashp%00%00%00%01%01assn%00%00%00%00assa%00%00%00%08Magicianassl%00%00%00%00assu%00%00%00%00assc%00%00%00%00asss%00%00%00%00asbk%00%00%00%01%00aspu%00%00%00%00aeCR%00%00%00%00asai%00%00%00%08%7C%84%F2%80%FD%83%A0%A9asls%00%00%00%08%00%00%00%00%07%D5C%10aeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04S%EBz%29askp%00%00%00%04%00%00%00%00askd%00%00%00%04%83%DA3%60mdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01,%FCaeGR%00%00%00%08%00%00%00%00%07x%DD%E0aeGE%00%00%00%04%00%00%02%10asaa%00%00%00%00asgp%00%00%00%01%00ased%00%00%00%02%00%00ashp%00%00%00%01%01assn%00%00%00%00assa%00%00%00%08Magicianassl%00%00%00%00assu%00%00%00%00assc%00%00%00%00asss%00%00%00%00asbk%00%00%00%01%00aspu%00%00%00%00aeCR%00%00%00%00asai%00%00%00%08%7C%84%F2%80%FD%83%A0%A9asls%00%00%00%08%00%00%00%00%07y%06%CFaeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04S%EBd%00askp%00%00%00%04%00%00%00%00askd%00%00%00%04%83%DA3%60mdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01,%87aeGU%00%00%00%08%00%00%00%00%08%A2%B7iaeGR%00%00%00%08%00%00%00%00%07%D5%1A%1EaeGE%00%00%00%04%00%00%02%10asaa%00%00%00%00asgp%00%00%00%01%00ased%00%00%00%02%00%00ashp%00%00%00%01%01assn%00%00%00%00assa%00%00%00%08Magicianassl%00%00%00%00assu%00%00%00%00assc%00%00%00%00asss%00%00%00%00asbk%00%00%00%01%00aspu%00%00%00%00aeCR%00%00%00%00asai%00%00%00%08%7C%84%F2%80%FD%83%A0%A9asls%00%00%00%08%00%00%00%00%07%D5C%10aeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04S%EBz%29askp%00%00%00%04%00%00%00%01askd%00%00%00%04T%23%FD-mdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01,%5EaeGU%00%00%00%08%00%00%00%00%07%99%25%92aeGR%00%00%00%08%00%00%00%00%06%E48%D0aeGE%00%00%00%04%00%00%02%10asaa%00%00%00%00asgp%00%00%00%01%00ased%00%00%00%02%00%00ashp%00%00%00%01%01assn%00%00%00%00assa%00%00%00%08Magicianassl%00%00%00%00assu%00%00%00%00assc%00%00%00%00asss%00%00%00%00asbk%00%00%00%01%00aspu%00%00%00%00aeCR%00%00%00%00asai%00%00%00%08%7C%84%F2%80%FD%83%A0%A9asls%00%00%00%08%00%00%00%00%06%E4a%C5aeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04S%EB9%3Aaskp%00%00%00%04%00%00%00%00askd%00%00%00%04%83%DA3%60mdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01,%FCaeGR%00%00%00%08%00%00%00%00%07x%DD%E0aeGE%00%00%00%04%00%00%02%10asaa%00%00%00%00asgp%00%00%00%01%00ased%00%00%00%02%00%00ashp%00%00%00%01%01assn%00%00%00%00assa%00%00%00%08Magicianassl%00%00%00%00assu%00%00%00%00assc%00%00%00%00asss%00%00%00%00asbk%00%00%00%01%00aspu%00%00%00%00aeCR%00%00%00%00asai%00%00%00%08%7C%84%F2%80%FD%83%A0%A9asls%00%00%00%08%00%00%00%00%07y%06%CFaeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04S%EBd%00askp%00%00%00%04%00%00%00%00askd%00%00%00%04%83%DA3%60mdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01
+RULE transition:48;7;45 srcId:-3 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:48;7;45 srcId:-3 srcField:3 dstField:3 type:pulsar.core.rule.ExactRule
+
+RULE transition:48;7;45 srcId:-2 srcField:0 dstField:1 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:48;7;45 srcId:-3 srcField:2 dstField:2 type:pulsar.core.rule.CopyPartialRule
+ptype:COPY_THE_SUFFIX sep:%3B
+RULE transition:10;52;7 srcId:0 srcField:-1 dstField:0 type:pulsar.core.rule.DataRule
+data:3,3,3,3,3,3,3
+RULE transition:12;14;14 srcId:0 srcField:-1 dstField:0 type:pulsar.core.rule.DataRule
+data:1561717346
+RULE transition:12;14;14 srcId:0 srcField:-1 dstField:1 type:pulsar.core.rule.DataRule
+data:ZiqivYuIUymOdeVbPpXCMQ
+RULE transition:7;44;9 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:39;15;26 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:41;24;38 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:41;24;38 srcId:0 srcField:-1 dstField:1 type:pulsar.core.rule.DataRule
+data:seq%3D4589%3Brtptime%3D1767809264
+RULE transition:53;7;44 srcId:-3 srcField:16 dstField:1 type:pulsar.core.rule.ExactRule
+
+RULE transition:53;7;44 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:7;49;7 srcId:-2 srcField:1 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:14;14;14 srcId:0 srcField:-1 dstField:0 type:pulsar.core.rule.DataRule
+data:2390968209
+RULE transition:14;14;14 srcId:0 srcField:-1 dstField:1 type:pulsar.core.rule.DataRule
+data:BvigsAK81fu1Uxnu6p%2BV7g
+RULE transition:7;51;7 srcId:-2 srcField:1 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:8;43;14 srcId:0 srcField:-1 dstField:0 type:pulsar.core.rule.DataRule
+data:2377654859
+RULE transition:8;43;14 srcId:0 srcField:-1 dstField:1 type:pulsar.core.rule.DataRule
+data:G9si7HC9G2dMFyqf05RjMQ
+RULE transition:44;12;9 srcId:-3 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:7;53;7 srcId:-2 srcField:1 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:24;38;24 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:18;15;26 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:12;9;50 srcId:0 srcField:-1 dstField:1 type:pulsar.core.rule.DataRule
+data:562,562
+RULE transition:12;9;50 srcId:0 srcField:-1 dstField:2 type:pulsar.core.rule.DataRule
+data:2509372742,708005012
+RULE transition:12;9;50 srcId:0 srcField:-1 dstField:3 type:pulsar.core.rule.DataRule
+data:3494496758,3494497211
+RULE transition:12;9;50 srcId:0 srcField:-1 dstField:4 type:pulsar.core.rule.DataRule
+data:10.0.1.1,10.0.1.1
+RULE transition:12;9;50 srcId:0 srcField:-1 dstField:6 type:pulsar.core.rule.DataRule
+data:a%3Drsaaeskey%3A0ybLcQvLF%2BufToTMf5Cp7vi1CqiGtys3sysh%2BOB/YIyV1BUqByJRCZ/jh7F0IPEHJdY%2BU3amFlRcGIXbDH2wop6rm2HWOem8WBYOdR5bYE6ydyBa5kF9CKOZRJgKlj1tPBrFrWqUYaYvCC2elt9QZBztgK5p%2BRhlazcdgnhKFow9tfV0T%2BCo3ga3Ux2/BlOd8El79OL5KkXwE80phm1SuxtQ1XpYNTQ0HgkeEvSeR%2BIlsShizLT2Br4OO9daGuYQyGNw%2ByANDGJN4z9S5ok3mGcfLbbyrYwHNSukhH%2BhYkWT/KiZx3vu9vN1YEaB4iXeUyrP4HU5MIlTzP61%2BcJHbA,a%3Drsaaeskey%3AqPIktl%2B3QMhc/pmIqZlUEnGiQbVSn3PJ9pbsGIQDLtjZ5bNhXmiS46BMfqXRrtQ/4mXeyZoO6nOti2PtQrKzmUd/z%2BpNuTPcm4fAcdcUdGoHuPyFlk%2BQ%2BkcAHMRJG%2BmZ%2BGS6O%2B2w4SjzSdynu/bKDK%2B1KCQWFUuLZzgwJ0uDAUCEgoGGYYYU/JGhtVNpBei6eby/hWa9hmAbh/r50l71k0vIyd%2BhYQEhLY9Zdnc0yMD3L9HD%2B3ixHzk2HjyS39nUkzGfDkYAQ6H9xJbCLL3srdn2cAZnXOwR8prVCXYr3uWEswH7ITuCtUmQwx61cHbFzICs8hIQrsmY16Pbeldg8w
+RULE transition:12;9;50 srcId:0 srcField:-1 dstField:7 type:pulsar.core.rule.DataRule
+data:a%3Daesiv%3AEGjdy5PYOFMDJteHL%2BeL6Q,a%3Daesiv%3A%2BFxa/2hX8ggldDsVjGBHvA
+RULE transition:12;9;50 srcId:-1 srcField:4 dstField:5 type:pulsar.core.rule.ExactRule
+
+RULE transition:12;9;50 srcId:-1 srcField:3 dstField:0 type:pulsar.core.rule.CopyCompleteRule
+ptype:COPY_AS_SUFFIX rest:rtsp%3A//10.0.1.1/,rtsp%3A//10.0.1.1/
+RULE transition:5;28;39 srcId:-3 srcField:0 dstField:0 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:8;44;9 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:50;7;46 srcId:-3 srcField:0 dstField:1 type:pulsar.core.rule.ExactRule
+
+RULE transition:50;7;46 srcId:-3 srcField:2 dstField:17 type:pulsar.core.rule.ExactRule
+
+RULE transition:50;7;46 srcId:-2 srcField:0 dstField:2 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:50;7;46 srcId:0 srcField:-1 dstField:0 type:pulsar.core.rule.DataRule
+data:SETUP,SETUP,SETUP,SETUP,SETUP,SETUP,SETUP
+RULE transition:50;7;46 srcId:0 srcField:-1 dstField:3 type:pulsar.core.rule.DataRule
+data:Transport%3A,Transport%3A,Transport%3A,Transport%3A,Transport%3A,Transport%3A,Transport%3A
+RULE transition:50;7;46 srcId:0 srcField:-1 dstField:4 type:pulsar.core.rule.DataRule
+data:RTP/AVP/UDP%3Bunicast%3Binterleaved%3D0-1%3Bmode%3Drecord%3Bcontrol_port%3D6001%3Btiming_port%3D6002,RTP/AVP/UDP%3Bunicast%3Binterleaved%3D0-1%3Bmode%3Drecord%3Bcontrol_port%3D6001%3Btiming_port%3D6002,RTP/AVP/UDP%3Bunicast%3Binterleaved%3D0-1%3Bmode%3Drecord%3Bcontrol_port%3D6001%3Btiming_port%3D6002,RTP/AVP/UDP%3Bunicast%3Binterleaved%3D0-1%3Bmode%3Drecord%3Bcontrol_port%3D6001%3Btiming_port%3D6002,RTP/AVP/UDP%3Bunicast%3Binterleaved%3D0-1%3Bmode%3Drecord%3Bcontrol_port%3D6001%3Btiming_port%3D6002,RTP/AVP/UDP%3Bunicast%3Binterleaved%3D0-1%3Bmode%3Drecord%3Bcontrol_port%3D6001%3Btiming_port%3D6002,RTP/AVP/UDP%3Bunicast%3Binterleaved%3D0-1%3Bmode%3Drecord%3Bcontrol_port%3D6001%3Btiming_port%3D6002
+RULE transition:50;7;46 srcId:0 srcField:-1 dstField:5 type:pulsar.core.rule.DataRule
+data:%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A
+RULE transition:50;7;46 srcId:0 srcField:-1 dstField:6 type:pulsar.core.rule.DataRule
+data:User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A
+RULE transition:50;7;46 srcId:0 srcField:-1 dstField:7 type:pulsar.core.rule.DataRule
+data:iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4
+RULE transition:50;7;46 srcId:0 srcField:-1 dstField:8 type:pulsar.core.rule.DataRule
+data:%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B
+RULE transition:50;7;46 srcId:0 srcField:-1 dstField:9 type:pulsar.core.rule.DataRule
+data:OS,OS,OS,OS,OS,OS,OS
+RULE transition:50;7;46 srcId:0 srcField:-1 dstField:10 type:pulsar.core.rule.DataRule
+data:%20,%20,%20,%20,%20,%20,%20
+RULE transition:50;7;46 srcId:0 srcField:-1 dstField:11 type:pulsar.core.rule.DataRule
+data:X,X,X,X,X,X,X
+RULE transition:50;7;46 srcId:0 srcField:-1 dstField:12 type:pulsar.core.rule.DataRule
+data:10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29
+RULE transition:50;7;46 srcId:0 srcField:-1 dstField:13 type:pulsar.core.rule.DataRule
+data:Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A
+RULE transition:50;7;46 srcId:0 srcField:-1 dstField:14 type:pulsar.core.rule.DataRule
+data:DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A
+RULE transition:50;7;46 srcId:0 srcField:-1 dstField:15 type:pulsar.core.rule.DataRule
+data:9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004
+RULE transition:50;7;46 srcId:0 srcField:-1 dstField:16 type:pulsar.core.rule.DataRule
+data:Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A
+RULE transition:11;50;7 srcId:0 srcField:-1 dstField:0 type:pulsar.core.rule.DataRule
+data:1,1
+RULE transition:52;7;53 srcId:-3 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:52;7;53 srcId:-3 srcField:2 dstField:16 type:pulsar.core.rule.ExactRule
+
+RULE transition:52;7;53 srcId:-2 srcField:0 dstField:1 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:52;7;53 srcId:0 srcField:-1 dstField:2 type:pulsar.core.rule.DataRule
+data:text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters,text/parameters
+RULE transition:52;7;53 srcId:0 srcField:-1 dstField:3 type:pulsar.core.rule.DataRule
+data:20,20,20,20,20,20,20
+RULE transition:52;7;53 srcId:0 srcField:-1 dstField:4 type:pulsar.core.rule.DataRule
+data:User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A,User-Agent%3A
+RULE transition:52;7;53 srcId:0 srcField:-1 dstField:5 type:pulsar.core.rule.DataRule
+data:iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4,iTunes/11.4
+RULE transition:52;7;53 srcId:0 srcField:-1 dstField:6 type:pulsar.core.rule.DataRule
+data:%20,%20,%20,%20,%20,%20,%20
+RULE transition:52;7;53 srcId:0 srcField:-1 dstField:7 type:pulsar.core.rule.DataRule
+data:%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B,%28Macintosh%3B
+RULE transition:52;7;53 srcId:0 srcField:-1 dstField:8 type:pulsar.core.rule.DataRule
+data:OS,OS,OS,OS,OS,OS,OS
+RULE transition:52;7;53 srcId:0 srcField:-1 dstField:9 type:pulsar.core.rule.DataRule
+data:X,X,X,X,X,X,X
+RULE transition:52;7;53 srcId:0 srcField:-1 dstField:10 type:pulsar.core.rule.DataRule
+data:10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29,10.9.5%29
+RULE transition:52;7;53 srcId:0 srcField:-1 dstField:11 type:pulsar.core.rule.DataRule
+data:%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A,%0D%0A
+RULE transition:52;7;53 srcId:0 srcField:-1 dstField:12 type:pulsar.core.rule.DataRule
+data:Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A,Client-Instance%3A
+RULE transition:52;7;53 srcId:0 srcField:-1 dstField:13 type:pulsar.core.rule.DataRule
+data:9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004,9516327BC34A8004
+RULE transition:52;7;53 srcId:0 srcField:-1 dstField:14 type:pulsar.core.rule.DataRule
+data:DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A,DACP-ID%3A
+RULE transition:52;7;53 srcId:0 srcField:-1 dstField:15 type:pulsar.core.rule.DataRule
+data:Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A,Active-Remote%3A
+RULE transition:52;7;53 srcId:0 srcField:-1 dstField:17 type:pulsar.core.rule.DataRule
+data:%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A,%0D%0A%0D%0A
+RULE transition:52;7;53 srcId:0 srcField:-1 dstField:18 type:pulsar.core.rule.DataRule
+data:volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A,volume%3A
+RULE transition:52;7;53 srcId:0 srcField:-1 dstField:19 type:pulsar.core.rule.DataRule
+data:-15.455281,-15.455281,-15.319683,-15.319683,-15.319683,-15.319683,-20.178898
+RULE transition:52;7;53 srcId:-1 srcField:11 dstField:20 type:pulsar.core.rule.ExactRule
+
+RULE transition:48;7;51 srcId:-3 srcField:0 dstField:0 type:pulsar.core.rule.ExactRule
+
+RULE transition:48;7;51 srcId:-3 srcField:3 dstField:3 type:pulsar.core.rule.ExactRule
+
+RULE transition:48;7;51 srcId:-2 srcField:0 dstField:1 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:48;7;51 srcId:-3 srcField:2 dstField:2 type:pulsar.core.rule.CopyPartialRule
+ptype:COPY_THE_SUFFIX sep:%3B
+RULE transition:48;7;51 srcId:0 srcField:-1 dstField:4 type:pulsar.core.rule.DataRule
+data:%E2%E6aeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04T%05%8D%F8askp%00%00%00%04%00%00%00%02askd%00%00%00%04T%23%FC%BAmdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01,%E2%E6aeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04T%05%8D%F8askp%00%00%00%04%00%00%00%02askd%00%00%00%04T%23%FC%BAmdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01,%E2%E6aeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04T%05%8D%F8askp%00%00%00%04%00%00%00%02askd%00%00%00%04T%23%FC%BAmdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01,%E2%E6aeSE%00%00%00%08%00%00%00%00%00%00%00%00aeDV%00%00%00%04%00%00%00%00aeDP%00%00%00%04%00%00%00%00aeDR%00%00%00%08%00%00%00%00%00%00%00%00aeND%00%00%00%08%00%00%00%00%00%00%00%00aeK1%00%00%00%08%00%00%00%00%00%00%00%00aeK2%00%00%00%08%00%00%00%00%00%00%00%00aeXD%00%00%00%00aeMk%00%00%00%04%00%00%00%01aeMX%00%00%00%00aspc%00%00%00%04%00%00%00%01asri%00%00%00%08%3C%E1%17%99%FF%94ePaeCS%00%00%00%04%00%00%00%00aspl%00%00%00%04T%05%8D%F8askp%00%00%00%04%00%00%00%02askd%00%00%00%04T%23%FC%BAmdst%00%00%00%01%01ases%00%00%00%01%00asrs%00%00%00%01%00aslr%00%00%00%01%00asas%00%00%00%01
+RULE transition:34;21;35 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:34;21;35 srcId:-3 srcField:1 dstField:1 type:pulsar.core.rule.CopyPartialRule
+ptype:COPY_THE_SUFFIX sep:%3B
+RULE transition:34;21;34 srcId:-3 srcField:1 dstField:1 type:pulsar.core.rule.ExactRule
+
+RULE transition:34;21;34 srcId:-2 srcField:0 dstField:0 type:pulsar.core.rule.SeqRule
+diff:1
+RULE transition:7;48;7 srcId:-2 srcField:1 dstField:0 type:pulsar.core.rule.ExactRule
+

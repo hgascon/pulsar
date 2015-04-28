@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Peach xmlns="http://peachfuzzer.com/2012/Peach" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://peachfuzzer.com/2012/Peach /peach/peach.xsd">
+
+	<!-- TODO: Create data model -->
+	<DataModel name="id:0 1.UAC|1.UAS">
+		<String name="0" value="HTTP/1.0"/>
+		<String name="1" value="%20"/>
+		<String name="2" value="200"/>
+		<String name="3" value="%20"/>
+		<String name="4" value="OK"/>
+		<String name="5" value="%0D%0A"/>
+		<String name="6" value="Server%3A"/>
+		<String name="7" value="%20"/>
+		<String name="8" value="SimpleHTTP/0.6"/>
+		<String name="9" value="%20"/>
+		<String name="10" value="Python/2.7.3"/>
+		<String name="11" value="%0D%0A"/>
+		<String name="12" value="Date%3A"/>
+		<String name="13" value="%20"/>
+		<String name="14" value="Fri%2C"/>
+		<String name="15" value="%20"/>
+		<String name="16" value="24"/>
+		<String name="17" value="%20"/>
+		<String name="18" value="Jan"/>
+		<String name="19" value="%20"/>
+		<String name="20" value="2014"/>
+		<String name="21" value="%20"/>
+		<String name="22" value="13%3A52%3A58"/>
+		<String name="23" value="%20"/>
+		<String name="24" value="GMT"/>
+		<String name="25" value="%0D%0A"/>
+		<String name="26" value="Content-type%3A"/>
+		<String name="27" value="%20"/>
+		<String name="28" value="application/octet-stream"/>
+		<String name="29" value="%0D%0A"/>
+		<String name="30" value="Content-Length%3A"/>
+		<String name="31" value="%20"/>
+		<String name="32" value="4"/>
+		<String name="33" value="%0D%0A"/>
+		<String name="34" value="Last-Modified%3A"/>
+		<String name="35" value="%20"/>
+		<String name="36" value="Fri%2C"/>
+		<String name="37" value="%20"/>
+		<String name="38" value="24"/>
+		<String name="39" value="%20"/>
+		<String name="40" value="Jan"/>
+		<String name="41" value="%20"/>
+		<String name="42" value="2014"/>
+		<String name="43" value="%20"/>
+		<String name="44" value="13%3A52%3A58"/>
+		<String name="45" value="%20"/>
+		<String name="46" value="GMT"/>
+		<String name="47" value="%0D%0A%0D%0A"/>
+		<String name="48" value="1250"/>
+	</DataModel>
+	<DataModel name="id:1 START|None.UAC">
+		<String name="0" value="GET"/>
+		<String name="1" value="%20"/>
+		<String name="2" value="/data/seed"/>
+		<String name="3" value="%20"/>
+		<String name="4" value="HTTP/1.0"/>
+		<String name="5" value="%0D%0A"/>
+		<String name="6" value="Host%3A"/>
+		<String name="7" value="%20"/>
+		<String name="8" value="10.0.0.1"/>
+		<String name="9" value="%0D%0A"/>
+		<String name="10" value="User-Agent%3A"/>
+		<String name="11" value="%20"/>
+		<String name="12" value="TOYBOT"/>
+		<String name="13" value="%20"/>
+		<String name="14" value="1.0"/>
+		<String name="15" value="%0D%0A%0D%0A"/>
+	</DataModel>
+	<DataModel name="id:2 1.UAS|None.UAC">
+		<String name="0" value="GET"/>
+		<String name="1" value="%20"/>
+		<String name="2" value="/data/cmd_475"/>
+		<String name="3" value="%20"/>
+		<String name="4" value="HTTP/1.0"/>
+		<String name="5" value="%0D%0A"/>
+		<String name="6" value="Host%3A"/>
+		<String name="7" value="%20"/>
+		<String name="8" value="10.0.0.1"/>
+		<String name="9" value="%0D%0A"/>
+		<String name="10" value="User-Agent%3A"/>
+		<String name="11" value="%20"/>
+		<String name="12" value="TOYBOT"/>
+		<String name="13" value="%20"/>
+		<String name="14" value="1.0"/>
+		<String name="15" value="%0D%0A%0D%0A"/>
+	</DataModel>
+	<DataModel name="id:3 2.UAS|2.UAC">
+		<String name="0" value="GET"/>
+		<String name="1" value="%20"/>
+		<String name="2" value="/data/cmd_6030"/>
+		<String name="3" value="%20"/>
+		<String name="4" value="HTTP/1.0"/>
+		<String name="5" value="%0D%0A"/>
+		<String name="6" value="Host%3A"/>
+		<String name="7" value="%20"/>
+		<String name="8" value="10.0.0.1"/>
+		<String name="9" value="%0D%0A"/>
+		<String name="10" value="User-Agent%3A"/>
+		<String name="11" value="%20"/>
+		<String name="12" value="TOYBOT"/>
+		<String name="13" value="%20"/>
+		<String name="14" value="1.0"/>
+		<String name="15" value="%0D%0A%0D%0A"/>
+	</DataModel>
+	<DataModel name="id:4 2.UAS|2.UAC">
+	</DataModel>
+	<DataModel name="id:5 None.UAC|None.UAC">
+	</DataModel>
+	<DataModel name="id:6 None.UAS|None.UAC">
+		<String name="0" value="GET"/>
+		<String name="1" value="%20"/>
+		<String name="2" value="non-DataRule EXISTS"/>
+		<String name="3" value="%20"/>
+		<String name="4" value="HTTP/1.0"/>
+		<String name="5" value="%0D%0A"/>
+		<String name="6" value="Host%3A"/>
+		<String name="7" value="%20"/>
+		<String name="8" value="10.0.0.1"/>
+		<String name="9" value="%0D%0A"/>
+		<String name="10" value="User-Agent%3A"/>
+		<String name="11" value="%20"/>
+		<String name="12" value="TOYBOT"/>
+		<String name="13" value="%20"/>
+		<String name="14" value="1.0"/>
+		<String name="15" value="%0D%0A%0D%0A"/>
+	</DataModel>
+	<DataModel name="id:7 None.UAS|None.UAC">
+	</DataModel>
+	<DataModel name="id:8 1.UAC|2.UAS">
+		<String name="0" value="HTTP/1.0"/>
+		<String name="1" value="%20"/>
+		<String name="2" value="200"/>
+		<String name="3" value="%20"/>
+		<String name="4" value="OK"/>
+		<String name="5" value="%0D%0A"/>
+		<String name="6" value="Server%3A"/>
+		<String name="7" value="%20"/>
+		<String name="8" value="SimpleHTTP/0.6"/>
+		<String name="9" value="%20"/>
+		<String name="10" value="Python/2.7.3"/>
+		<String name="11" value="%0D%0A"/>
+		<String name="12" value="Date%3A"/>
+		<String name="13" value="%20"/>
+		<String name="14" value="Fri%2C"/>
+		<String name="15" value="%20"/>
+		<String name="16" value="24"/>
+		<String name="17" value="%20"/>
+		<String name="18" value="Jan"/>
+		<String name="19" value="%20"/>
+		<String name="20" value="2014"/>
+		<String name="21" value="%20"/>
+		<String name="22" value="13%3A52%3A33"/>
+		<String name="23" value="%20"/>
+		<String name="24" value="GMT"/>
+		<String name="25" value="%0D%0A"/>
+		<String name="26" value="Content-type%3A"/>
+		<String name="27" value="%20"/>
+		<String name="28" value="application/octet-stream"/>
+		<String name="29" value="%0D%0A"/>
+		<String name="30" value="Content-Length%3A"/>
+		<String name="31" value="%20"/>
+		<String name="32" value="4"/>
+		<String name="33" value="%0D%0A"/>
+		<String name="34" value="Last-Modified%3A"/>
+		<String name="35" value="%20"/>
+		<String name="36" value="Fri%2C"/>
+		<String name="37" value="%20"/>
+		<String name="38" value="24"/>
+		<String name="39" value="%20"/>
+		<String name="40" value="Jan"/>
+		<String name="41" value="%20"/>
+		<String name="42" value="2014"/>
+		<String name="43" value="%20"/>
+		<String name="44" value="13%3A52%3A18"/>
+		<String name="45" value="%20"/>
+		<String name="46" value="GMT"/>
+		<String name="47" value="%0D%0A%0D%0A"/>
+		<String name="48" value="4791"/>
+	</DataModel>
+	<DataModel name="id:9 2.UAC|2.UAS">
+		<String name="0" value="HTTP/1.0"/>
+		<String name="1" value="%20"/>
+		<String name="2" value="200"/>
+		<String name="3" value="%20"/>
+		<String name="4" value="OK"/>
+		<String name="5" value="%0D%0A"/>
+		<String name="6" value="Server%3A"/>
+		<String name="7" value="%20"/>
+		<String name="8" value="SimpleHTTP/0.6"/>
+		<String name="9" value="%20"/>
+		<String name="10" value="Python/2.7.3"/>
+		<String name="11" value="%0D%0A"/>
+		<String name="12" value="Date%3A"/>
+		<String name="13" value="%20"/>
+		<String name="14" value="Fri%2C"/>
+		<String name="15" value="%20"/>
+		<String name="16" value="24"/>
+		<String name="17" value="%20"/>
+		<String name="18" value="Jan"/>
+		<String name="19" value="%20"/>
+		<String name="20" value="2014"/>
+		<String name="21" value="%20"/>
+		<String name="22" value="13%3A52%3A34"/>
+		<String name="23" value="%20"/>
+		<String name="24" value="GMT"/>
+		<String name="25" value="%0D%0A"/>
+		<String name="26" value="Content-type%3A"/>
+		<String name="27" value="%20"/>
+		<String name="28" value="application/octet-stream"/>
+		<String name="29" value="%0D%0A"/>
+		<String name="30" value="Content-Length%3A"/>
+		<String name="31" value="%20"/>
+		<String name="32" value="4"/>
+		<String name="33" value="%0D%0A"/>
+		<String name="34" value="Last-Modified%3A"/>
+		<String name="35" value="%20"/>
+		<String name="36" value="Fri%2C"/>
+		<String name="37" value="%20"/>
+		<String name="38" value="24"/>
+		<String name="39" value="%20"/>
+		<String name="40" value="Jan"/>
+		<String name="41" value="%20"/>
+		<String name="42" value="2014"/>
+		<String name="43" value="%20"/>
+		<String name="44" value="13%3A52%3A18"/>
+		<String name="45" value="%20"/>
+		<String name="46" value="GMT"/>
+		<String name="47" value="%0D%0A%0D%0A"/>
+		<String name="48" value="SCAN"/>
+	</DataModel>
+	<DataModel name="id:10 None.UAC|None.UAS">
+		<String name="0" value="HTTP/1.0"/>
+		<String name="1" value="%20"/>
+		<String name="2" value="404"/>
+		<String name="3" value="%20"/>
+		<String name="4" value="File"/>
+		<String name="5" value="%20"/>
+		<String name="6" value="not"/>
+		<String name="7" value="%20"/>
+		<String name="8" value="found"/>
+		<String name="9" value="%0D%0A"/>
+		<String name="10" value="Server%3A"/>
+		<String name="11" value="%20"/>
+		<String name="12" value="SimpleHTTP/0.6"/>
+		<String name="13" value="%20"/>
+		<String name="14" value="Python/2.7.3"/>
+		<String name="15" value="%0D%0A"/>
+		<String name="16" value="Date%3A"/>
+		<String name="17" value="%20"/>
+		<String name="18" value="Fri%2C"/>
+		<String name="19" value="%20"/>
+		<String name="20" value="24"/>
+		<String name="21" value="%20"/>
+		<String name="22" value="Jan"/>
+		<String name="23" value="%20"/>
+		<String name="24" value="2014"/>
+		<String name="25" value="%20"/>
+		<String name="26" value="non-DataRule EXISTS"/>
+		<String name="27" value="%20"/>
+		<String name="28" value="GMT"/>
+		<String name="29" value="%0D%0A"/>
+		<String name="30" value="Content-Type%3A"/>
+		<String name="31" value="%20"/>
+		<String name="32" value="text/html"/>
+		<String name="33" value="%0D%0A"/>
+		<String name="34" value="Connection%3A"/>
+		<String name="35" value="%20"/>
+		<String name="36" value="close"/>
+		<String name="37" value="%0D%0A%0D%0A"/>
+		<String name="38" value="%3Chead%3E"/>
+		<String name="39" value="%0A"/>
+		<String name="40" value="%3Ctitle%3EError"/>
+		<String name="41" value="%20"/>
+		<String name="42" value="response%3C/title%3E"/>
+		<String name="43" value="%0A"/>
+		<String name="44" value="%3C/head%3E"/>
+		<String name="45" value="%0A"/>
+		<String name="46" value="%3Cbody%3E"/>
+		<String name="47" value="%0A"/>
+		<String name="48" value="%3Ch1%3EError"/>
+		<String name="49" value="%20"/>
+		<String name="50" value="response%3C/h1%3E"/>
+		<String name="51" value="%0A"/>
+		<String name="52" value="%3Cp%3EError"/>
+		<String name="53" value="%20"/>
+		<String name="54" value="code"/>
+		<String name="55" value="%20"/>
+		<String name="56" value="404."/>
+		<String name="57" value="%0A"/>
+		<String name="58" value="%3Cp%3EMessage%3A"/>
+		<String name="59" value="%20"/>
+		<String name="60" value="File"/>
+		<String name="61" value="%20"/>
+		<String name="62" value="not"/>
+		<String name="63" value="%20"/>
+		<String name="64" value="found."/>
+		<String name="65" value="%0A"/>
+		<String name="66" value="%3Cp%3EError"/>
+		<String name="67" value="%20"/>
+		<String name="68" value="code"/>
+		<String name="69" value="%20"/>
+		<String name="70" value="explanation%3A"/>
+		<String name="71" value="%20"/>
+		<String name="72" value="404"/>
+		<String name="73" value="%20"/>
+		<String name="74" value="%3D"/>
+		<String name="75" value="%20"/>
+		<String name="76" value="Nothing"/>
+		<String name="77" value="%20"/>
+		<String name="78" value="matches"/>
+		<String name="79" value="%20"/>
+		<String name="80" value="the"/>
+		<String name="81" value="%20"/>
+		<String name="82" value="given"/>
+		<String name="83" value="%20"/>
+		<String name="84" value="URI."/>
+		<String name="85" value="%0A"/>
+		<String name="86" value="%3C/body%3E"/>
+		<String name="87" value="%0A"/>
+	</DataModel>
+	<DataModel name="id:11 None.UAC|None.UAS">
+		<String name="0" value="HTTP/1.0"/>
+		<String name="1" value="%20"/>
+		<String name="2" value="200"/>
+		<String name="3" value="%20"/>
+		<String name="4" value="OK"/>
+		<String name="5" value="%0D%0A"/>
+		<String name="6" value="Server%3A"/>
+		<String name="7" value="%20"/>
+		<String name="8" value="SimpleHTTP/0.6"/>
+		<String name="9" value="%20"/>
+		<String name="10" value="Python/2.7.3"/>
+		<String name="11" value="%0D%0A"/>
+		<String name="12" value="Date%3A"/>
+		<String name="13" value="%20"/>
+		<String name="14" value="Fri%2C"/>
+		<String name="15" value="%20"/>
+		<String name="16" value="24"/>
+		<String name="17" value="%20"/>
+		<String name="18" value="Jan"/>
+		<String name="19" value="%20"/>
+		<String name="20" value="2014"/>
+		<String name="21" value="%20"/>
+		<String name="22" value="non-DataRule EXISTS"/>
+		<String name="23" value="%20"/>
+		<String name="24" value="GMT"/>
+		<String name="25" value="%0D%0A"/>
+		<String name="26" value="Content-type%3A"/>
+		<String name="27" value="%20"/>
+		<String name="28" value="application/octet-stream"/>
+		<String name="29" value="%0D%0A"/>
+		<String name="30" value="Content-Length%3A"/>
+		<String name="31" value="%20"/>
+		<String name="32" value="non-DataRule EXISTS"/>
+		<String name="33" value="%0D%0A"/>
+		<String name="34" value="Last-Modified%3A"/>
+		<String name="35" value="%20"/>
+		<String name="36" value="Fri%2C"/>
+		<String name="37" value="%20"/>
+		<String name="38" value="24"/>
+		<String name="39" value="%20"/>
+		<String name="40" value="Jan"/>
+		<String name="41" value="%20"/>
+		<String name="42" value="2014"/>
+		<String name="43" value="%20"/>
+		<Choice name="44" minOccurs="1" maxOccurs="1">
+			<String name="0" value="14%3A11%3A20"/>
+			<String name="1" value="14%3A14%3A00"/>
+			<String name="2" value="14%3A11%3A40"/>
+			<String name="3" value="14%3A14%3A20"/>
+			<String name="4" value="14%3A02%3A59"/>
+			<String name="5" value="14%3A03%3A39"/>
+			<String name="6" value="14%3A03%3A59"/>
+			<String name="7" value="14%3A04%3A39"/>
+			<String name="8" value="14%3A01%3A19"/>
+			<String name="9" value="14%3A01%3A39"/>
+			<String name="10" value="14%3A02%3A19"/>
+			<String name="11" value="14%3A02%3A39"/>
+			<String name="12" value="14%3A13%3A00"/>
+			<String name="13" value="14%3A13%3A40"/>
+			<String name="14" value="14%3A12%3A20"/>
+			<String name="15" value="14%3A12%3A40"/>
+			<String name="16" value="14%3A04%3A59"/>
+			<String name="17" value="14%3A05%3A19"/>
+			<String name="18" value="14%3A10%3A20"/>
+			<String name="19" value="14%3A10%3A40"/>
+			<String name="20" value="13%3A53%3A38"/>
+			<String name="21" value="13%3A53%3A18"/>
+			<String name="22" value="13%3A54%3A39"/>
+			<String name="23" value="13%3A53%3A58"/>
+			<String name="24" value="13%3A55%3A39"/>
+			<String name="25" value="13%3A54%3A59"/>
+			<String name="26" value="13%3A56%3A19"/>
+			<String name="27" value="13%3A55%3A59"/>
+			<String name="28" value="14%3A10%3A00"/>
+			<String name="29" value="14%3A09%3A19"/>
+			<String name="30" value="13%3A57%3A19"/>
+			<String name="31" value="13%3A56%3A39"/>
+			<String name="32" value="13%3A58%3A19"/>
+			<String name="33" value="13%3A57%3A39"/>
+			<String name="34" value="13%3A58%3A59"/>
+			<String name="35" value="13%3A58%3A39"/>
+			<String name="36" value="13%3A59%3A59"/>
+			<String name="37" value="13%3A59%3A39"/>
+			<String name="38" value="14%3A00%3A59"/>
+			<String name="39" value="14%3A00%3A19"/>
+			<String name="40" value="14%3A06%3A19"/>
+			<String name="41" value="14%3A05%3A59"/>
+			<String name="42" value="14%3A08%3A59"/>
+			<String name="43" value="14%3A08%3A39"/>
+			<String name="44" value="14%3A07%3A59"/>
+			<String name="45" value="14%3A07%3A39"/>
+			<String name="46" value="14%3A07%3A19"/>
+			<String name="47" value="14%3A06%3A39"/>
+		</Choice>
+		<String name="45" value="%20"/>
+		<String name="46" value="GMT"/>
+		<String name="47" value="%0D%0A%0D%0A"/>
+		<String name="48" value="non-DataRule EXISTS"/>
+	</DataModel>
+	<DataModel name="id:12 START|1.UAC">
+		<String name="0" value="GET"/>
+		<String name="1" value="%20"/>
+		<String name="2" value="/data/seed"/>
+		<String name="3" value="%20"/>
+		<String name="4" value="HTTP/1.0"/>
+		<String name="5" value="%0D%0A"/>
+		<String name="6" value="Host%3A"/>
+		<String name="7" value="%20"/>
+		<String name="8" value="10.0.0.1"/>
+		<String name="9" value="%0D%0A"/>
+		<String name="10" value="User-Agent%3A"/>
+		<String name="11" value="%20"/>
+		<String name="12" value="TOYBOT"/>
+		<String name="13" value="%20"/>
+		<String name="14" value="1.0"/>
+		<String name="15" value="%0D%0A%0D%0A"/>
+	</DataModel>
+
+	<!-- TODO: Create state model -->
+	<StateModel name="TheState" initialState="START|START">
+		<State name="START|None.UAC">
+			<!-- TODO: need to find out correct SLURP ACTION -->
+			<!-- No slurp Action found -->
+			<Action type="input"><DataModel ref="id:1 START|None.UAC"/></Action>
+			<!-- transitions; need to figure out the when's -->
+			<Action type="changeState" ref="None.UAC|None.UAS" when="???"></Action>
+		</State>
+		<State name="2.UAS|2.UAC">
+			<!-- TODO: need to find out correct SLURP ACTION -->
+			<!-- No slurp Action found -->
+			<Action type="input"><DataModel ref="id:3 2.UAS|2.UAC"/></Action>
+			<Action type="input"><DataModel ref="id:4 2.UAS|2.UAC"/></Action>
+			<!-- transitions; need to figure out the when's -->
+			<Action type="changeState" ref="2.UAC|END" when="???"></Action>
+			<Action type="changeState" ref="2.UAC|2.UAS" when="???"></Action>
+		</State>
+		<State name="1.UAS|None.UAC">
+			<!-- TODO: need to find out correct SLURP ACTION -->
+			<!-- No slurp Action found -->
+			<Action type="input"><DataModel ref="id:2 1.UAS|None.UAC"/></Action>
+			<!-- transitions; need to figure out the when's -->
+			<Action type="changeState" ref="None.UAC|None.UAS" when="???"></Action>
+		</State>
+		<State name="None.UAC|None.UAC">
+			<!-- TODO: need to find out correct SLURP ACTION -->
+			<!-- No slurp Action found -->
+			<!-- TODO: need to find out correct datamodel to be referenced -->
+			<Action type="output"><DataModel ref="id:5 None.UAC|None.UAC"/></Action>
+			<!-- transitions; need to figure out the when's -->
+			<Action type="changeState" ref="None.UAC|END" when="???"></Action>
+		</State>
+		<State name="None.UAS|None.UAC">
+			<!-- TODO: need to find out correct SLURP ACTION -->
+			<!-- No slurp Action found -->
+			<Action type="input"><DataModel ref="id:6 None.UAS|None.UAC"/></Action>
+			<Action type="input"><DataModel ref="id:7 None.UAS|None.UAC"/></Action>
+			<!-- transitions; need to figure out the when's -->
+			<Action type="changeState" ref="None.UAC|None.UAC" when="???"></Action>
+			<Action type="changeState" ref="None.UAC|None.UAS" when="???"></Action>
+			<Action type="changeState" ref="None.UAC|END" when="???"></Action>
+		</State>
+		<State name="1.UAC|2.UAS">
+			<!-- TODO: need to find out correct SLURP ACTION -->
+			<!-- No slurp Action found -->
+			<!-- TODO: need to find out correct datamodel to be referenced -->
+			<Action type="output"><DataModel ref="id:8 1.UAC|2.UAS"/></Action>
+			<!-- transitions; need to figure out the when's -->
+			<Action type="changeState" ref="2.UAS|2.UAC" when="???"></Action>
+		</State>
+		<State name="2.UAC|2.UAS">
+			<!-- TODO: need to find out correct SLURP ACTION -->
+			<!-- No slurp Action found -->
+			<!-- TODO: need to find out correct datamodel to be referenced -->
+			<Action type="output"><DataModel ref="id:9 2.UAC|2.UAS"/></Action>
+			<!-- transitions; need to figure out the when's -->
+			<Action type="changeState" ref="2.UAS|2.UAC" when="???"></Action>
+		</State>
+		<State name="1.UAC|1.UAS">
+			<!-- TODO: need to find out correct SLURP ACTION -->
+			<!-- No slurp Action found -->
+			<!-- TODO: need to find out correct datamodel to be referenced -->
+			<Action type="output"><DataModel ref="id:0 1.UAC|1.UAS"/></Action>
+			<!-- transitions; need to figure out the when's -->
+			<Action type="changeState" ref="1.UAS|None.UAC" when="???"></Action>
+		</State>
+		<State name="None.UAC|None.UAS">
+			<!-- TODO: need to find out correct SLURP ACTION -->
+			<Action type ="slurp" valueXpath="//id:1 START|None.UAC//0//Value" setXpath="//id:11 None.UAC|None.UAS//2//Value"/> 
+			<Action type ="slurp" valueXpath="//None//2//Value" setXpath="//id:11 None.UAC|None.UAS//2//Value"/> 
+			<!-- TODO: need to find out correct datamodel to be referenced -->
+			<Action type="output"><DataModel ref="id:10 None.UAC|None.UAS"/></Action>
+			<Action type="output"><DataModel ref="id:11 None.UAC|None.UAS"/></Action>
+			<!-- transitions; need to figure out the when's -->
+			<Action type="changeState" ref="None.UAS|None.UAC" when="???"></Action>
+		</State>
+		<State name="START|1.UAC">
+			<!-- TODO: need to find out correct SLURP ACTION -->
+			<!-- No slurp Action found -->
+			<Action type="input"><DataModel ref="id:12 START|1.UAC"/></Action>
+			<!-- transitions; need to figure out the when's -->
+			<Action type="changeState" ref="1.UAC|1.UAS" when="???"></Action>
+			<Action type="changeState" ref="1.UAC|2.UAS" when="???"></Action>
+		</State>
+		<State name="START|START">
+			<!-- TODO: need to find out correct SLURP ACTION -->
+			<!-- No slurp Action found -->
+			<!-- TODO: need to find out correct datamodel to be referenced -->
+			<!-- transitions; need to figure out the when's -->
+			<Action type="changeState" ref="START|None.UAC" when="???"></Action>
+			<Action type="changeState" ref="START|1.UAC" when="???"></Action>
+		</State>
+	</StateModel>
+
+	<!-- TODO: Configure Agent -->
+	<Agent name="TheAgent" location="http://127.0.0.1:9000">
+		<!--<Monitor class="WindowsDebugger">
+			<Param name="CommandLine" value="mspaint.exe fuzzed.png" />
+			<Param name="WinDbgPath" value="C:\Program Files (x86)\Debugging Tools for Windows (x86)" />
+			<Param name="StartOnCall" value="ScoobySnacks"/>
+		</Monitor>
+		<Monitor class="PageHeap">
+			<Param name="Executable" value="mspaint.exe"/>
+			<Param name="WinDbgPath" value="C:\Program Files (x86)\Debugging Tools for Windows (x86)" />
+		</Monitor>-->
+	</Agent>
+
+	<Test name="Default">
+		<Agent ref="TheAgent"/>
+		<StateModel ref="TheState"/>
+
+		<!-- TODO: Configure a publisher -->
+		<!--<Publisher class="File">
+			<Param name="FileName" value="fuzzed.png"/>
+		</Publisher>-->
+
+		<!-- OPTIONAL: Configure a strategy -->
+		<!--<Strategy class="Random"/>-->
+		
+		<Logger class="File">
+			<Param name="Path" value="logs"/>
+		</Logger>
+	</Test>
+
+</Peach>
+<!-- end -->

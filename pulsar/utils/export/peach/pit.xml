@@ -1,0 +1,1086 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Peach xmlns="http://peachfuzzer.com/2012/Peach" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://peachfuzzer.com/2012/Peach /peach/peach.xsd">
+
+	<!-- TODO: Create data model -->
+	<DataModel name="-1:12:0">
+		<String name="0" value="HTTP/1.0"/>
+		<String name="1" value="%20"/>
+		<String name="2" value="200"/>
+		<String name="3" value="%20"/>
+		<String name="4" value="OK"/>
+		<String name="5" value="%0D%0A"/>
+		<String name="6" value="Server%3A"/>
+		<String name="7" value="%20"/>
+		<String name="8" value="SimpleHTTP/0.6"/>
+		<String name="9" value="%20"/>
+		<String name="10" value="Python/2.7.3"/>
+		<String name="11" value="%0D%0A"/>
+		<String name="12" value="Date%3A"/>
+		<String name="13" value="%20"/>
+		<String name="14" value="Fri%2C"/>
+		<String name="15" value="%20"/>
+		<String name="16" value="24"/>
+		<String name="17" value="%20"/>
+		<String name="18" value="Jan"/>
+		<String name="19" value="%20"/>
+		<String name="20" value="2014"/>
+		<String name="21" value="%20"/>
+		<String name="22" value="13%3A52%3A58"/>
+		<String name="23" value="%20"/>
+		<String name="24" value="GMT"/>
+		<String name="25" value="%0D%0A"/>
+		<String name="26" value="Content-type%3A"/>
+		<String name="27" value="%20"/>
+		<String name="28" value="application/octet-stream"/>
+		<String name="29" value="%0D%0A"/>
+		<String name="30" value="Content-Length%3A"/>
+		<String name="31" value="%20"/>
+		<String name="32" value="4"/>
+		<String name="33" value="%0D%0A"/>
+		<String name="34" value="Last-Modified%3A"/>
+		<String name="35" value="%20"/>
+		<String name="36" value="Fri%2C"/>
+		<String name="37" value="%20"/>
+		<String name="38" value="24"/>
+		<String name="39" value="%20"/>
+		<String name="40" value="Jan"/>
+		<String name="41" value="%20"/>
+		<String name="42" value="2014"/>
+		<String name="43" value="%20"/>
+		<String name="44" value="13%3A52%3A58"/>
+		<String name="45" value="%20"/>
+		<String name="46" value="GMT"/>
+		<String name="47" value="%0D%0A%0D%0A"/>
+		<String name="48" value="1250"/>
+	</DataModel>
+	<DataModel name="-1:-1:1">
+		<String name="0" value="GET"/>
+		<String name="1" value="%20"/>
+		<String name="2" value="/data/seed"/>
+		<String name="3" value="%20"/>
+		<String name="4" value="HTTP/1.0"/>
+		<String name="5" value="%0D%0A"/>
+		<String name="6" value="Host%3A"/>
+		<String name="7" value="%20"/>
+		<String name="8" value="10.0.0.1"/>
+		<String name="9" value="%0D%0A"/>
+		<String name="10" value="User-Agent%3A"/>
+		<String name="11" value="%20"/>
+		<String name="12" value="TOYBOT"/>
+		<String name="13" value="%20"/>
+		<String name="14" value="1.0"/>
+		<String name="15" value="%0D%0A%0D%0A"/>
+	</DataModel>
+	<DataModel name="12:0:2">
+		<String name="0" value="GET"/>
+		<String name="1" value="%20"/>
+		<String name="2" value="/data/cmd_475"/>
+		<String name="3" value="%20"/>
+		<String name="4" value="HTTP/1.0"/>
+		<String name="5" value="%0D%0A"/>
+		<String name="6" value="Host%3A"/>
+		<String name="7" value="%20"/>
+		<String name="8" value="10.0.0.1"/>
+		<String name="9" value="%0D%0A"/>
+		<String name="10" value="User-Agent%3A"/>
+		<String name="11" value="%20"/>
+		<String name="12" value="TOYBOT"/>
+		<String name="13" value="%20"/>
+		<String name="14" value="1.0"/>
+		<String name="15" value="%0D%0A%0D%0A"/>
+	</DataModel>
+	<DataModel name="12:8:3">
+		<String name="0" value="GET"/>
+		<String name="1" value="%20"/>
+		<String name="2" value="/data/cmd_6030"/>
+		<String name="3" value="%20"/>
+		<String name="4" value="HTTP/1.0"/>
+		<String name="5" value="%0D%0A"/>
+		<String name="6" value="Host%3A"/>
+		<String name="7" value="%20"/>
+		<String name="8" value="10.0.0.1"/>
+		<String name="9" value="%0D%0A"/>
+		<String name="10" value="User-Agent%3A"/>
+		<String name="11" value="%20"/>
+		<String name="12" value="TOYBOT"/>
+		<String name="13" value="%20"/>
+		<String name="14" value="1.0"/>
+		<String name="15" value="%0D%0A%0D%0A"/>
+	</DataModel>
+	<DataModel name="3:9:3">
+		<String name="0" value="GET"/>
+		<String name="1" value="%20"/>
+		<String name="2" value="/data/cmd_6030"/>
+		<String name="3" value="%20"/>
+		<String name="4" value="HTTP/1.0"/>
+		<String name="5" value="%0D%0A"/>
+		<String name="6" value="Host%3A"/>
+		<String name="7" value="%20"/>
+		<String name="8" value="10.0.0.1"/>
+		<String name="9" value="%0D%0A"/>
+		<String name="10" value="User-Agent%3A"/>
+		<String name="11" value="%20"/>
+		<String name="12" value="TOYBOT"/>
+		<String name="13" value="%20"/>
+		<String name="14" value="1.0"/>
+		<String name="15" value="%0D%0A%0D%0A"/>
+	</DataModel>
+	<DataModel name="11:6:5">
+	</DataModel>
+	<DataModel name="1:11:6">
+		<String name="0" value="GET"/>
+		<String name="1" value="%20"/>
+		<Choice name="2" minOccurs="1" maxOccurs="1">
+			<String name="0" value="/data/cmd_366"/>
+			<String name="1" value="/data/cmd_3055"/>
+			<String name="2" value="/data/cmd_3309"/>
+			<String name="3" value="/data/cmd_2687"/>
+			<String name="4" value="/data/cmd_3774"/>
+			<String name="5" value="/data/cmd_1184"/>
+			<String name="6" value="/data/cmd_3666"/>
+			<String name="7" value="/data/cmd_2700"/>
+			<String name="8" value="/data/cmd_3131"/>
+			<String name="9" value="/data/cmd_2764"/>
+			<String name="10" value="/data/cmd_2734"/>
+			<String name="11" value="/data/cmd_3670"/>
+			<String name="12" value="/data/cmd_2251"/>
+			<String name="13" value="/data/cmd_3730"/>
+			<String name="14" value="/data/cmd_3437"/>
+			<String name="15" value="/data/cmd_5571"/>
+			<String name="16" value="/data/cmd_824"/>
+			<String name="17" value="/data/cmd_2660"/>
+			<String name="18" value="/data/cmd_3618"/>
+			<String name="19" value="/data/cmd_2442"/>
+			<String name="20" value="/data/cmd_5548"/>
+			<String name="21" value="/data/cmd_5182"/>
+			<String name="22" value="/data/cmd_5396"/>
+			<String name="23" value="/data/cmd_5657"/>
+			<String name="24" value="/data/cmd_1733"/>
+			<String name="25" value="/data/cmd_5702"/>
+			<String name="26" value="/data/cmd_3464"/>
+			<String name="27" value="/data/cmd_2061"/>
+			<String name="28" value="/data/cmd_2636"/>
+			<String name="29" value="/data/cmd_2953"/>
+			<String name="30" value="/data/cmd_446"/>
+			<String name="31" value="/data/cmd_5669"/>
+			<String name="32" value="/data/cmd_1980"/>
+			<String name="33" value="/data/cmd_2331"/>
+			<String name="34" value="/data/cmd_2891"/>
+			<String name="35" value="/data/cmd_2314"/>
+			<String name="36" value="/data/cmd_1727"/>
+			<String name="37" value="/data/cmd_3842"/>
+			<String name="38" value="/data/cmd_6113"/>
+			<String name="39" value="/data/cmd_5429"/>
+			<String name="40" value="/data/cmd_2998"/>
+			<String name="41" value="/data/cmd_1472"/>
+			<String name="42" value="/data/cmd_5291"/>
+			<String name="43" value="/data/cmd_31111111111cmd_5604"/>
+			<String name="44" value="/data/cmd_5324"/>
+			<String name="45" value="/data/cmd_2865"/>
+			<String name="46" value="/data/cmd_3925"/>
+		</Choice>
+		<String name="3" value="%20"/>
+		<String name="4" value="HTTP/1.0"/>
+		<String name="5" value="%0D%0A"/>
+		<String name="6" value="Host%3A"/>
+		<String name="7" value="%20"/>
+		<String name="8" value="10.0.0.1"/>
+		<String name="9" value="%0D%0A"/>
+		<String name="10" value="User-Agent%3A"/>
+		<String name="11" value="%20"/>
+		<String name="12" value="TOYBOT"/>
+		<String name="13" value="%20"/>
+		<String name="14" value="1.0"/>
+		<String name="15" value="%0D%0A%0D%0A"/>
+	</DataModel>
+	<DataModel name="6:11:6">
+		<String name="0" value="GET"/>
+		<String name="1" value="%20"/>
+		<String name="2" value="non-DataRule EXISTS"/>
+		<String name="3" value="%20"/>
+		<String name="4" value="HTTP/1.0"/>
+		<String name="5" value="%0D%0A"/>
+		<String name="6" value="Host%3A"/>
+		<String name="7" value="%20"/>
+		<String name="8" value="10.0.0.1"/>
+		<String name="9" value="%0D%0A"/>
+		<String name="10" value="User-Agent%3A"/>
+		<String name="11" value="%20"/>
+		<String name="12" value="TOYBOT"/>
+		<String name="13" value="%20"/>
+		<String name="14" value="1.0"/>
+		<String name="15" value="%0D%0A%0D%0A"/>
+	</DataModel>
+	<DataModel name="2:11:6">
+		<String name="0" value="GET"/>
+		<String name="1" value="%20"/>
+		<String name="2" value="non-DataRule EXISTS"/>
+		<String name="3" value="%20"/>
+		<String name="4" value="HTTP/1.0"/>
+		<String name="5" value="%0D%0A"/>
+		<String name="6" value="Host%3A"/>
+		<String name="7" value="%20"/>
+		<String name="8" value="10.0.0.1"/>
+		<String name="9" value="%0D%0A"/>
+		<String name="10" value="User-Agent%3A"/>
+		<String name="11" value="%20"/>
+		<String name="12" value="TOYBOT"/>
+		<String name="13" value="%20"/>
+		<String name="14" value="1.0"/>
+		<String name="15" value="%0D%0A%0D%0A"/>
+	</DataModel>
+	<DataModel name="-1:12:8">
+		<String name="0" value="HTTP/1.0"/>
+		<String name="1" value="%20"/>
+		<String name="2" value="200"/>
+		<String name="3" value="%20"/>
+		<String name="4" value="OK"/>
+		<String name="5" value="%0D%0A"/>
+		<String name="6" value="Server%3A"/>
+		<String name="7" value="%20"/>
+		<String name="8" value="SimpleHTTP/0.6"/>
+		<String name="9" value="%20"/>
+		<String name="10" value="Python/2.7.3"/>
+		<String name="11" value="%0D%0A"/>
+		<String name="12" value="Date%3A"/>
+		<String name="13" value="%20"/>
+		<String name="14" value="Fri%2C"/>
+		<String name="15" value="%20"/>
+		<String name="16" value="24"/>
+		<String name="17" value="%20"/>
+		<String name="18" value="Jan"/>
+		<String name="19" value="%20"/>
+		<String name="20" value="2014"/>
+		<String name="21" value="%20"/>
+		<String name="22" value="13%3A52%3A33"/>
+		<String name="23" value="%20"/>
+		<String name="24" value="GMT"/>
+		<String name="25" value="%0D%0A"/>
+		<String name="26" value="Content-type%3A"/>
+		<String name="27" value="%20"/>
+		<String name="28" value="application/octet-stream"/>
+		<String name="29" value="%0D%0A"/>
+		<String name="30" value="Content-Length%3A"/>
+		<String name="31" value="%20"/>
+		<String name="32" value="4"/>
+		<String name="33" value="%0D%0A"/>
+		<String name="34" value="Last-Modified%3A"/>
+		<String name="35" value="%20"/>
+		<String name="36" value="Fri%2C"/>
+		<String name="37" value="%20"/>
+		<String name="38" value="24"/>
+		<String name="39" value="%20"/>
+		<String name="40" value="Jan"/>
+		<String name="41" value="%20"/>
+		<String name="42" value="2014"/>
+		<String name="43" value="%20"/>
+		<String name="44" value="13%3A52%3A18"/>
+		<String name="45" value="%20"/>
+		<String name="46" value="GMT"/>
+		<String name="47" value="%0D%0A%0D%0A"/>
+		<String name="48" value="4791"/>
+	</DataModel>
+	<DataModel name="8:3:9">
+		<String name="0" value="HTTP/1.0"/>
+		<String name="1" value="%20"/>
+		<String name="2" value="200"/>
+		<String name="3" value="%20"/>
+		<String name="4" value="OK"/>
+		<String name="5" value="%0D%0A"/>
+		<String name="6" value="Server%3A"/>
+		<String name="7" value="%20"/>
+		<String name="8" value="SimpleHTTP/0.6"/>
+		<String name="9" value="%20"/>
+		<String name="10" value="Python/2.7.3"/>
+		<String name="11" value="%0D%0A"/>
+		<String name="12" value="Date%3A"/>
+		<String name="13" value="%20"/>
+		<String name="14" value="Fri%2C"/>
+		<String name="15" value="%20"/>
+		<String name="16" value="24"/>
+		<String name="17" value="%20"/>
+		<String name="18" value="Jan"/>
+		<String name="19" value="%20"/>
+		<String name="20" value="2014"/>
+		<String name="21" value="%20"/>
+		<String name="22" value="13%3A52%3A34"/>
+		<String name="23" value="%20"/>
+		<String name="24" value="GMT"/>
+		<String name="25" value="%0D%0A"/>
+		<String name="26" value="Content-type%3A"/>
+		<String name="27" value="%20"/>
+		<String name="28" value="application/octet-stream"/>
+		<String name="29" value="%0D%0A"/>
+		<String name="30" value="Content-Length%3A"/>
+		<String name="31" value="%20"/>
+		<String name="32" value="4"/>
+		<String name="33" value="%0D%0A"/>
+		<String name="34" value="Last-Modified%3A"/>
+		<String name="35" value="%20"/>
+		<String name="36" value="Fri%2C"/>
+		<String name="37" value="%20"/>
+		<String name="38" value="24"/>
+		<String name="39" value="%20"/>
+		<String name="40" value="Jan"/>
+		<String name="41" value="%20"/>
+		<String name="42" value="2014"/>
+		<String name="43" value="%20"/>
+		<String name="44" value="13%3A52%3A18"/>
+		<String name="45" value="%20"/>
+		<String name="46" value="GMT"/>
+		<String name="47" value="%0D%0A%0D%0A"/>
+		<String name="48" value="SCAN"/>
+	</DataModel>
+	<DataModel name="9:3:9">
+		<String name="0" value="HTTP/1.0"/>
+		<String name="1" value="%20"/>
+		<String name="2" value="200"/>
+		<String name="3" value="%20"/>
+		<String name="4" value="OK"/>
+		<String name="5" value="%0D%0A"/>
+		<String name="6" value="Server%3A"/>
+		<String name="7" value="%20"/>
+		<String name="8" value="SimpleHTTP/0.6"/>
+		<String name="9" value="%20"/>
+		<String name="10" value="Python/2.7.3"/>
+		<String name="11" value="%0D%0A"/>
+		<String name="12" value="Date%3A"/>
+		<String name="13" value="%20"/>
+		<String name="14" value="Fri%2C"/>
+		<String name="15" value="%20"/>
+		<String name="16" value="24"/>
+		<String name="17" value="%20"/>
+		<String name="18" value="Jan"/>
+		<String name="19" value="%20"/>
+		<String name="20" value="2014"/>
+		<String name="21" value="%20"/>
+		<String name="22" value="13%3A52%3A34"/>
+		<String name="23" value="%20"/>
+		<String name="24" value="GMT"/>
+		<String name="25" value="%0D%0A"/>
+		<String name="26" value="Content-type%3A"/>
+		<String name="27" value="%20"/>
+		<String name="28" value="application/octet-stream"/>
+		<String name="29" value="%0D%0A"/>
+		<String name="30" value="Content-Length%3A"/>
+		<String name="31" value="%20"/>
+		<String name="32" value="4"/>
+		<String name="33" value="%0D%0A"/>
+		<String name="34" value="Last-Modified%3A"/>
+		<String name="35" value="%20"/>
+		<String name="36" value="Fri%2C"/>
+		<String name="37" value="%20"/>
+		<String name="38" value="24"/>
+		<String name="39" value="%20"/>
+		<String name="40" value="Jan"/>
+		<String name="41" value="%20"/>
+		<String name="42" value="2014"/>
+		<String name="43" value="%20"/>
+		<String name="44" value="13%3A52%3A18"/>
+		<String name="45" value="%20"/>
+		<String name="46" value="GMT"/>
+		<String name="47" value="%0D%0A%0D%0A"/>
+		<String name="48" value="SCAN"/>
+	</DataModel>
+	<DataModel name="-1:1:11">
+		<String name="0" value="HTTP/1.0"/>
+		<String name="1" value="%20"/>
+		<String name="2" value="200"/>
+		<String name="3" value="%20"/>
+		<String name="4" value="OK"/>
+		<String name="5" value="%0D%0A"/>
+		<String name="6" value="Server%3A"/>
+		<String name="7" value="%20"/>
+		<String name="8" value="SimpleHTTP/0.6"/>
+		<String name="9" value="%20"/>
+		<String name="10" value="Python/2.7.3"/>
+		<String name="11" value="%0D%0A"/>
+		<String name="12" value="Date%3A"/>
+		<String name="13" value="%20"/>
+		<String name="14" value="Fri%2C"/>
+		<String name="15" value="%20"/>
+		<String name="16" value="24"/>
+		<String name="17" value="%20"/>
+		<String name="18" value="Jan"/>
+		<String name="19" value="%20"/>
+		<String name="20" value="2014"/>
+		<String name="21" value="%20"/>
+		<Choice name="22" minOccurs="1" maxOccurs="1">
+			<String name="0" value="14%3A11%3A26"/>
+			<String name="1" value="14%3A14%3A12"/>
+			<String name="2" value="14%3A11%3A54"/>
+			<String name="3" value="14%3A14%3A40"/>
+			<String name="4" value="14%3A03%3A19"/>
+			<String name="5" value="14%3A03%3A43"/>
+			<String name="6" value="14%3A04%3A12"/>
+			<String name="7" value="14%3A04%3A41"/>
+			<String name="8" value="14%3A01%3A29"/>
+			<String name="9" value="14%3A01%3A56"/>
+			<String name="10" value="14%3A02%3A22"/>
+			<String name="11" value="14%3A02%3A50"/>
+			<String name="12" value="14%3A13%3A19"/>
+			<String name="13" value="14%3A13%3A43"/>
+			<String name="14" value="14%3A12%3A22"/>
+			<String name="15" value="14%3A12%3A51"/>
+			<String name="16" value="14%3A05%3A05"/>
+			<String name="17" value="14%3A05%3A34"/>
+			<String name="18" value="14%3A10%3A33"/>
+			<String name="19" value="14%3A10%3A59"/>
+			<String name="20" value="13%3A53%3A49"/>
+			<String name="21" value="13%3A53%3A23"/>
+			<String name="22" value="13%3A54%3A46"/>
+			<String name="23" value="13%3A54%3A16"/>
+			<String name="24" value="13%3A55%3A39"/>
+			<String name="25" value="13%3A55%3A10"/>
+			<String name="26" value="13%3A56%3A31"/>
+			<String name="27" value="13%3A56%3A04"/>
+			<String name="28" value="14%3A10%3A03"/>
+			<String name="29" value="14%3A09%3A38"/>
+			<String name="30" value="13%3A57%3A23"/>
+			<String name="31" value="13%3A56%3A57"/>
+			<String name="32" value="13%3A58%3A20"/>
+			<String name="33" value="13%3A57%3A52"/>
+			<String name="34" value="13%3A59%3A17"/>
+			<String name="35" value="13%3A58%3A48"/>
+			<String name="36" value="14%3A00%3A09"/>
+			<String name="37" value="13%3A59%3A41"/>
+			<String name="38" value="14%3A01%3A02"/>
+			<String name="39" value="14%3A00%3A36"/>
+			<String name="40" value="14%3A06%3A28"/>
+			<String name="41" value="14%3A06%3A00"/>
+			<String name="42" value="14%3A09%3A09"/>
+			<String name="43" value="14%3A08%3A39"/>
+			<String name="44" value="14%3A08%3A14"/>
+			<String name="45" value="14%3A07%3A45"/>
+			<String name="46" value="14%3A07%3A20"/>
+			<String name="47" value="14%3A06%3A54"/>
+		</Choice>
+		<String name="23" value="%20"/>
+		<String name="24" value="GMT"/>
+		<String name="25" value="%0D%0A"/>
+		<String name="26" value="Content-type%3A"/>
+		<String name="27" value="%20"/>
+		<String name="28" value="application/octet-stream"/>
+		<String name="29" value="%0D%0A"/>
+		<String name="30" value="Content-Length%3A"/>
+		<String name="31" value="%20"/>
+		<Choice name="32" minOccurs="1" maxOccurs="1">
+			<String name="0" value="4"/>
+			<String name="1" value="4"/>
+			<String name="2" value="4"/>
+			<String name="3" value="4"/>
+			<String name="4" value="4"/>
+			<String name="5" value="3"/>
+			<String name="6" value="4"/>
+			<String name="7" value="4"/>
+			<String name="8" value="4"/>
+			<String name="9" value="4"/>
+			<String name="10" value="4"/>
+			<String name="11" value="4"/>
+			<String name="12" value="4"/>
+			<String name="13" value="4"/>
+			<String name="14" value="4"/>
+			<String name="15" value="4"/>
+			<String name="16" value="4"/>
+			<String name="17" value="4"/>
+			<String name="18" value="4"/>
+			<String name="19" value="4"/>
+			<String name="20" value="4"/>
+			<String name="21" value="4"/>
+			<String name="22" value="4"/>
+			<String name="23" value="4"/>
+			<String name="24" value="4"/>
+			<String name="25" value="4"/>
+			<String name="26" value="4"/>
+			<String name="27" value="4"/>
+			<String name="28" value="4"/>
+			<String name="29" value="4"/>
+			<String name="30" value="4"/>
+			<String name="31" value="4"/>
+			<String name="32" value="3"/>
+			<String name="33" value="4"/>
+			<String name="34" value="4"/>
+			<String name="35" value="4"/>
+			<String name="36" value="3"/>
+			<String name="37" value="4"/>
+			<String name="38" value="4"/>
+			<String name="39" value="4"/>
+			<String name="40" value="4"/>
+			<String name="41" value="3"/>
+			<String name="42" value="4"/>
+			<String name="43" value="4"/>
+			<String name="44" value="4"/>
+			<String name="45" value="4"/>
+			<String name="46" value="4"/>
+			<String name="47" value="4"/>
+		</Choice>
+		<String name="33" value="%0D%0A"/>
+		<String name="34" value="Last-Modified%3A"/>
+		<String name="35" value="%20"/>
+		<String name="36" value="Fri%2C"/>
+		<String name="37" value="%20"/>
+		<String name="38" value="24"/>
+		<String name="39" value="%20"/>
+		<String name="40" value="Jan"/>
+		<String name="41" value="%20"/>
+		<String name="42" value="2014"/>
+		<String name="43" value="%20"/>
+		<Choice name="44" minOccurs="1" maxOccurs="1">
+			<String name="0" value="14%3A11%3A20"/>
+			<String name="1" value="14%3A14%3A00"/>
+			<String name="2" value="14%3A11%3A40"/>
+			<String name="3" value="14%3A14%3A20"/>
+			<String name="4" value="14%3A02%3A59"/>
+			<String name="5" value="14%3A03%3A39"/>
+			<String name="6" value="14%3A03%3A59"/>
+			<String name="7" value="14%3A04%3A39"/>
+			<String name="8" value="14%3A01%3A19"/>
+			<String name="9" value="14%3A01%3A39"/>
+			<String name="10" value="14%3A02%3A19"/>
+			<String name="11" value="14%3A02%3A39"/>
+			<String name="12" value="14%3A13%3A00"/>
+			<String name="13" value="14%3A13%3A40"/>
+			<String name="14" value="14%3A12%3A20"/>
+			<String name="15" value="14%3A12%3A40"/>
+			<String name="16" value="14%3A04%3A59"/>
+			<String name="17" value="14%3A05%3A19"/>
+			<String name="18" value="14%3A10%3A20"/>
+			<String name="19" value="14%3A10%3A40"/>
+			<String name="20" value="13%3A53%3A38"/>
+			<String name="21" value="13%3A53%3A18"/>
+			<String name="22" value="13%3A54%3A39"/>
+			<String name="23" value="13%3A53%3A58"/>
+			<String name="24" value="13%3A55%3A39"/>
+			<String name="25" value="13%3A54%3A59"/>
+			<String name="26" value="13%3A56%3A19"/>
+			<String name="27" value="13%3A55%3A59"/>
+			<String name="28" value="14%3A10%3A00"/>
+			<String name="29" value="14%3A09%3A19"/>
+			<String name="30" value="13%3A57%3A19"/>
+			<String name="31" value="13%3A56%3A39"/>
+			<String name="32" value="13%3A58%3A19"/>
+			<String name="33" value="13%3A57%3A39"/>
+			<String name="34" value="13%3A58%3A59"/>
+			<String name="35" value="13%3A58%3A39"/>
+			<String name="36" value="13%3A59%3A59"/>
+			<String name="37" value="13%3A59%3A39"/>
+			<String name="38" value="14%3A00%3A59"/>
+			<String name="39" value="14%3A00%3A19"/>
+			<String name="40" value="14%3A06%3A19"/>
+			<String name="41" value="14%3A05%3A59"/>
+			<String name="42" value="14%3A08%3A59"/>
+			<String name="43" value="14%3A08%3A39"/>
+			<String name="44" value="14%3A07%3A59"/>
+			<String name="45" value="14%3A07%3A39"/>
+			<String name="46" value="14%3A07%3A19"/>
+			<String name="47" value="14%3A06%3A39"/>
+		</Choice>
+		<String name="45" value="%20"/>
+		<String name="46" value="GMT"/>
+		<String name="47" value="%0D%0A%0D%0A"/>
+		<Choice name="48" minOccurs="1" maxOccurs="1">
+			<String name="0" value="1111"/>
+			<String name="1" value="3798"/>
+			<String name="2" value="2516"/>
+			<String name="3" value="3910"/>
+			<String name="4" value="2951"/>
+			<String name="5" value="409"/>
+			<String name="6" value="2923"/>
+			<String name="7" value="4021"/>
+			<String name="8" value="2306"/>
+			<String name="9" value="4085"/>
+			<String name="10" value="3991"/>
+			<String name="11" value="2927"/>
+			<String name="12" value="3570"/>
+			<String name="13" value="2987"/>
+			<String name="14" value="2132"/>
+			<String name="15" value="4346"/>
+			<String name="16" value="1537"/>
+			<String name="17" value="3933"/>
+			<String name="18" value="2843"/>
+			<String name="19" value="3251"/>
+			<String name="20" value="4245"/>
+			<String name="21" value="4359"/>
+			<String name="22" value="4141"/>
+			<String name="23" value="4896"/>
+			<String name="24" value="1020"/>
+			<String name="25" value="4991"/>
+			<String name="26" value="2225"/>
+			<String name="27" value="3380"/>
+			<String name="28" value="3957"/>
+			<String name="29" value="3760"/>
+			<String name="30" value="1159"/>
+			<String name="31" value="4892"/>
+			<String name="32" value="645"/>
+			<String name="33" value="3106"/>
+			<String name="34" value="3698"/>
+			<String name="35" value="3123"/>
+			<String name="36" value="902"/>
+			<String name="37" value="2619"/>
+			<String name="38" value="4824"/>
+			<String name="39" value="4108"/>
+			<String name="40" value="3727"/>
+			<String name="41" value="249"/>
+			<String name="42" value="4498"/>
+			<String name="43" value="2889"/>
+			<String name="44" value="4317"/>
+			<String name="45" value="4597"/>
+			<String name="46" value="3592"/>
+			<String name="47" value="2668"/>
+		</Choice>
+	</DataModel>
+	<DataModel name="11:6:11">
+		<String name="0" value="HTTP/1.0"/>
+		<String name="1" value="%20"/>
+		<String name="2" value="200"/>
+		<String name="3" value="%20"/>
+		<String name="4" value="OK"/>
+		<String name="5" value="%0D%0A"/>
+		<String name="6" value="Server%3A"/>
+		<String name="7" value="%20"/>
+		<String name="8" value="SimpleHTTP/0.6"/>
+		<String name="9" value="%20"/>
+		<String name="10" value="Python/2.7.3"/>
+		<String name="11" value="%0D%0A"/>
+		<String name="12" value="Date%3A"/>
+		<String name="13" value="%20"/>
+		<String name="14" value="Fri%2C"/>
+		<String name="15" value="%20"/>
+		<String name="16" value="24"/>
+		<String name="17" value="%20"/>
+		<String name="18" value="Jan"/>
+		<String name="19" value="%20"/>
+		<String name="20" value="2014"/>
+		<String name="21" value="%20"/>
+		<Choice name="22" minOccurs="1" maxOccurs="1">
+			<String name="0" value="14%3A11%3A29"/>
+			<String name="1" value="14%3A14%3A15"/>
+			<String name="2" value="14%3A11%3A57"/>
+			<String name="3" value="14%3A03%3A19"/>
+			<String name="4" value="14%3A03%3A46"/>
+			<String name="5" value="14%3A04%3A16"/>
+			<String name="6" value="14%3A04%3A41"/>
+			<String name="7" value="14%3A01%3A32"/>
+			<String name="8" value="14%3A01%3A56"/>
+			<String name="9" value="14%3A02%3A25"/>
+			<String name="10" value="14%3A02%3A53"/>
+			<String name="11" value="14%3A13%3A19"/>
+			<String name="12" value="14%3A13%3A46"/>
+			<String name="13" value="14%3A12%3A25"/>
+			<String name="14" value="14%3A12%3A54"/>
+			<String name="15" value="14%3A05%3A08"/>
+			<String name="16" value="14%3A05%3A34"/>
+			<String name="17" value="14%3A10%3A33"/>
+			<String name="18" value="13%3A53%3A52"/>
+			<String name="19" value="13%3A53%3A23"/>
+			<String name="20" value="13%3A54%3A46"/>
+			<String name="21" value="13%3A55%3A39"/>
+			<String name="22" value="13%3A55%3A13"/>
+			<String name="23" value="13%3A56%3A31"/>
+			<String name="24" value="13%3A56%3A07"/>
+			<String name="25" value="14%3A10%3A06"/>
+			<String name="26" value="14%3A09%3A38"/>
+			<String name="27" value="13%3A57%3A26"/>
+			<String name="28" value="13%3A56%3A58"/>
+			<String name="29" value="13%3A58%3A23"/>
+			<String name="30" value="13%3A57%3A55"/>
+			<String name="31" value="13%3A59%3A17"/>
+			<String name="32" value="13%3A58%3A51"/>
+			<String name="33" value="14%3A00%3A12"/>
+			<String name="34" value="13%3A59%3A44"/>
+			<String name="35" value="14%3A01%3A05"/>
+			<String name="36" value="14%3A00%3A36"/>
+			<String name="37" value="14%3A06%3A29"/>
+			<String name="38" value="14%3A06%3A03"/>
+			<String name="39" value="14%3A09%3A12"/>
+			<String name="40" value="14%3A08%3A43"/>
+			<String name="41" value="14%3A08%3A14"/>
+			<String name="42" value="14%3A07%3A48"/>
+			<String name="43" value="14%3A07%3A20"/>
+			<String name="44" value="14%3A06%3A54"/>
+		</Choice>
+		<String name="23" value="%20"/>
+		<String name="24" value="GMT"/>
+		<String name="25" value="%0D%0A"/>
+		<String name="26" value="Content-type%3A"/>
+		<String name="27" value="%20"/>
+		<String name="28" value="application/octet-stream"/>
+		<String name="29" value="%0D%0A"/>
+		<String name="30" value="Content-Length%3A"/>
+		<String name="31" value="%20"/>
+		<Choice name="32" minOccurs="1" maxOccurs="1">
+			<String name="0" value="4"/>
+			<String name="1" value="4"/>
+			<String name="2" value="4"/>
+			<String name="3" value="4"/>
+			<String name="4" value="4"/>
+			<String name="5" value="7"/>
+			<String name="6" value="4"/>
+			<String name="7" value="4"/>
+			<String name="8" value="7"/>
+			<String name="9" value="4"/>
+			<String name="10" value="7"/>
+			<String name="11" value="4"/>
+			<String name="12" value="4"/>
+			<String name="13" value="7"/>
+			<String name="14" value="7"/>
+			<String name="15" value="4"/>
+			<String name="16" value="4"/>
+			<String name="17" value="7"/>
+			<String name="18" value="4"/>
+			<String name="19" value="4"/>
+			<String name="20" value="7"/>
+			<String name="21" value="4"/>
+			<String name="22" value="7"/>
+			<String name="23" value="4"/>
+			<String name="24" value="4"/>
+			<String name="25" value="4"/>
+			<String name="26" value="4"/>
+			<String name="27" value="4"/>
+			<String name="28" value="4"/>
+			<String name="29" value="4"/>
+			<String name="30" value="7"/>
+			<String name="31" value="4"/>
+			<String name="32" value="4"/>
+			<String name="33" value="4"/>
+			<String name="34" value="4"/>
+			<String name="35" value="4"/>
+			<String name="36" value="7"/>
+			<String name="37" value="4"/>
+			<String name="38" value="4"/>
+			<String name="39" value="4"/>
+			<String name="40" value="7"/>
+			<String name="41" value="4"/>
+			<String name="42" value="4"/>
+			<String name="43" value="7"/>
+			<String name="44" value="4"/>
+		</Choice>
+		<String name="33" value="%0D%0A"/>
+		<String name="34" value="Last-Modified%3A"/>
+		<String name="35" value="%20"/>
+		<String name="36" value="Fri%2C"/>
+		<String name="37" value="%20"/>
+		<String name="38" value="24"/>
+		<String name="39" value="%20"/>
+		<String name="40" value="Jan"/>
+		<String name="41" value="%20"/>
+		<String name="42" value="2014"/>
+		<String name="43" value="%20"/>
+		<String name="44" value="non-DataRule EXISTS"/>
+		<String name="45" value="%20"/>
+		<String name="46" value="GMT"/>
+		<String name="47" value="%0D%0A%0D%0A"/>
+		<Choice name="48" minOccurs="1" maxOccurs="1">
+			<String name="0" value="SPAM"/>
+			<String name="1" value="SPAM"/>
+			<String name="2" value="SPAM"/>
+			<String name="3" value="SPAM"/>
+			<String name="4" value="SPAM"/>
+			<String name="5" value="GET_CCN"/>
+			<String name="6" value="SPAM"/>
+			<String name="7" value="SPAM"/>
+			<String name="8" value="GET_CCN"/>
+			<String name="9" value="SPAM"/>
+			<String name="10" value="GET_CCN"/>
+			<String name="11" value="SCAN"/>
+			<String name="12" value="SCAN"/>
+			<String name="13" value="GET_CCN"/>
+			<String name="14" value="GET_CCN"/>
+			<String name="15" value="SCAN"/>
+			<String name="16" value="SCAN"/>
+			<String name="17" value="GET_CCN"/>
+			<String name="18" value="SPAM"/>
+			<String name="19" value="SCAN"/>
+			<String name="20" value="GET_CCN"/>
+			<String name="21" value="SCAN"/>
+			<String name="22" value="GET_CCN"/>
+			<String name="23" value="SCAN"/>
+			<String name="24" value="SCAN"/>
+			<String name="25" value="SCAN"/>
+			<String name="26" value="SPAM"/>
+			<String name="27" value="SPAM"/>
+			<String name="28" value="SCAN"/>
+			<String name="29" value="SPAM"/>
+			<String name="30" value="GET_CCN"/>
+			<String name="31" value="SPAM"/>
+			<String name="32" value="SPAM"/>
+			<String name="33" value="SCAN"/>
+			<String name="34" value="SPAM"/>
+			<String name="35" value="SCAN"/>
+			<String name="36" value="GET_CCN"/>
+			<String name="37" value="SCAN"/>
+			<String name="38" value="SPAM"/>
+			<String name="39" value="SPAM"/>
+			<String name="40" value="GET_CCN"/>
+			<String name="41" value="SCAN"/>
+			<String name="42" value="SPAM"/>
+			<String name="43" value="GET_CCN"/>
+			<String name="44" value="SCAN"/>
+		</Choice>
+	</DataModel>
+	<DataModel name="0:2:11">
+		<String name="0" value="HTTP/1.0"/>
+		<String name="1" value="%20"/>
+		<String name="2" value="200"/>
+		<String name="3" value="%20"/>
+		<String name="4" value="OK"/>
+		<String name="5" value="%0D%0A"/>
+		<String name="6" value="Server%3A"/>
+		<String name="7" value="%20"/>
+		<String name="8" value="SimpleHTTP/0.6"/>
+		<String name="9" value="%20"/>
+		<String name="10" value="Python/2.7.3"/>
+		<String name="11" value="%0D%0A"/>
+		<String name="12" value="Date%3A"/>
+		<String name="13" value="%20"/>
+		<String name="14" value="Fri%2C"/>
+		<String name="15" value="%20"/>
+		<String name="16" value="24"/>
+		<String name="17" value="%20"/>
+		<String name="18" value="Jan"/>
+		<String name="19" value="%20"/>
+		<String name="20" value="2014"/>
+		<String name="21" value="%20"/>
+		<Choice name="22" minOccurs="1" maxOccurs="1">
+			<String name="0" value="13%3A52%3A58"/>
+		</Choice>
+		<String name="23" value="%20"/>
+		<String name="24" value="GMT"/>
+		<String name="25" value="%0D%0A"/>
+		<String name="26" value="Content-type%3A"/>
+		<String name="27" value="%20"/>
+		<String name="28" value="application/octet-stream"/>
+		<String name="29" value="%0D%0A"/>
+		<String name="30" value="Content-Length%3A"/>
+		<String name="31" value="%20"/>
+		<Choice name="32" minOccurs="1" maxOccurs="1">
+			<String name="0" value="7"/>
+		</Choice>
+		<String name="33" value="%0D%0A"/>
+		<String name="34" value="Last-Modified%3A"/>
+		<String name="35" value="%20"/>
+		<String name="36" value="Fri%2C"/>
+		<String name="37" value="%20"/>
+		<String name="38" value="24"/>
+		<String name="39" value="%20"/>
+		<String name="40" value="Jan"/>
+		<String name="41" value="%20"/>
+		<String name="42" value="2014"/>
+		<String name="43" value="%20"/>
+		<String name="44" value="non-DataRule EXISTS"/>
+		<String name="45" value="%20"/>
+		<String name="46" value="GMT"/>
+		<String name="47" value="%0D%0A%0D%0A"/>
+		<Choice name="48" minOccurs="1" maxOccurs="1">
+			<String name="0" value="GET_CCN"/>
+		</Choice>
+	</DataModel>
+	<DataModel name="-1:-1:12">
+		<String name="0" value="GET"/>
+		<String name="1" value="%20"/>
+		<String name="2" value="/data/seed"/>
+		<String name="3" value="%20"/>
+		<String name="4" value="HTTP/1.0"/>
+		<String name="5" value="%0D%0A"/>
+		<String name="6" value="Host%3A"/>
+		<String name="7" value="%20"/>
+		<String name="8" value="10.0.0.1"/>
+		<String name="9" value="%0D%0A"/>
+		<String name="10" value="User-Agent%3A"/>
+		<String name="11" value="%20"/>
+		<String name="12" value="TOYBOT"/>
+		<String name="13" value="%20"/>
+		<String name="14" value="1.0"/>
+		<String name="15" value="%0D%0A%0D%0A"/>
+	</DataModel>
+
+	<!-- TODO: Create state model -->
+	<StateModel name="TheState" initialState="START|START">
+		<State name="-1:-1:-1 START|START">
+			<!-- find slurp Action -->
+			<!-- No slurp Action found -->
+			<!-- DataModel to be send -->
+			<!-- possible next States -->
+			<Action type="changeState" ref="-1:-1:1 START|None.UAC" when="random.randint(0,1) == 0"></Action>
+			<Action type="changeState" ref="-1:-1:12 START|1.UAC"></Action>
+		</State>
+		<State name="-1:-1:1 START|None.UAC">
+			<!-- find slurp Action -->
+			<!-- No slurp Action found -->
+<!-- DataModel to be received -->
+			<Action type="input"><DataModel ref="-1:-1:1"/></Action>
+			<!-- possible next States -->
+			<Action type="changeState" ref="-1:1:11 None.UAC|None.UAS"></Action>
+		</State>
+		<State name="-1:1:11 None.UAC|None.UAS">
+			<!-- find slurp Action -->
+			<Action type ="slurp" valueXpath="//-1:-1:1//2//Value" setXpath="//-1:1:11//2//Value"/> 
+			<!-- DataModel to be send -->
+			<Action type="output"><DataModel ref="-1:1:11"/></Action>
+			<!-- possible next States -->
+			<Action type="changeState" ref="1:11:6 None.UAS|None.UAC"></Action>
+		</State>
+		<State name="-1:-1:12 START|1.UAC">
+			<!-- find slurp Action -->
+			<!-- No slurp Action found -->
+<!-- DataModel to be received -->
+			<Action type="input"><DataModel ref="-1:-1:12"/></Action>
+			<!-- possible next States -->
+			<Action type="changeState" ref="-1:12:0 1.UAC|1.UAS" when="random.randint(0,1) == 0"></Action>
+			<Action type="changeState" ref="-1:12:8 1.UAC|2.UAS"></Action>
+		</State>
+		<State name="1:11:6 None.UAS|None.UAC">
+			<!-- find slurp Action -->
+			<!-- No slurp Action found -->
+<!-- DataModel to be received -->
+			<Action type="input"><DataModel ref="1:11:6"/></Action>
+			<!-- possible next States -->
+			<Action type="changeState" ref="11:6:5 None.UAC|None.UAC" when="random.randint(0,2) == 0"></Action>
+			<Action type="changeState" ref="11:6:11 None.UAC|None.UAS" when="random.randint(0,1) == 0"></Action>
+			<Action type="changeState" ref="11:6:00 None.UAC|END"></Action>
+		</State>
+		<State name="11:6:11 None.UAC|None.UAS">
+			<!-- find slurp Action -->
+			<!-- No slurp Action found -->
+			<!-- DataModel to be send -->
+			<Action type="output"><DataModel ref="11:6:11"/></Action>
+			<!-- possible next States -->
+			<Action type="changeState" ref="6:11:6 None.UAS|None.UAC"></Action>
+		</State>
+		<State name="11:6:5 None.UAC|None.UAC">
+			<!-- find slurp Action -->
+			<!-- No slurp Action found -->
+			<!-- DataModel to be send -->
+			<Action type="output"><DataModel ref="11:6:5"/></Action>
+			<!-- possible next States -->
+			<Action type="changeState" ref="6:5:00 None.UAC|END"></Action>
+		</State>
+		<State name="-1:12:0 1.UAC|1.UAS">
+			<!-- find slurp Action -->
+			<!-- No slurp Action found -->
+			<!-- DataModel to be send -->
+			<Action type="output"><DataModel ref="-1:12:0"/></Action>
+			<!-- possible next States -->
+			<Action type="changeState" ref="12:0:2 1.UAS|None.UAC"></Action>
+		</State>
+		<State name="6:11:6 None.UAS|None.UAC">
+			<!-- find slurp Action -->
+			<!-- No slurp Action found -->
+<!-- DataModel to be received -->
+			<Action type="input"><DataModel ref="6:11:6"/></Action>
+			<!-- possible next States -->
+			<Action type="changeState" ref="11:6:5 None.UAC|None.UAC" when="random.randint(0,2) == 0"></Action>
+			<Action type="changeState" ref="11:6:11 None.UAC|None.UAS" when="random.randint(0,1) == 0"></Action>
+			<Action type="changeState" ref="11:6:00 None.UAC|END"></Action>
+		</State>
+		<State name="12:0:2 1.UAS|None.UAC">
+			<!-- find slurp Action -->
+			<!-- No slurp Action found -->
+<!-- DataModel to be received -->
+			<Action type="input"><DataModel ref="12:0:2"/></Action>
+			<!-- possible next States -->
+			<Action type="changeState" ref="0:2:11 None.UAC|None.UAS"></Action>
+		</State>
+		<State name="-1:12:8 1.UAC|2.UAS">
+			<!-- find slurp Action -->
+			<!-- No slurp Action found -->
+			<!-- DataModel to be send -->
+			<Action type="output"><DataModel ref="-1:12:8"/></Action>
+			<!-- possible next States -->
+			<Action type="changeState" ref="12:8:3 2.UAS|2.UAC"></Action>
+		</State>
+		<State name="12:8:3 2.UAS|2.UAC">
+			<!-- find slurp Action -->
+			<!-- No slurp Action found -->
+<!-- DataModel to be received -->
+			<Action type="input"><DataModel ref="12:8:3"/></Action>
+			<!-- possible next States -->
+			<Action type="changeState" ref="8:3:00 2.UAC|END" when="random.randint(0,1) == 0"></Action>
+			<Action type="changeState" ref="8:3:9 2.UAC|2.UAS"></Action>
+		</State>
+		<State name="8:3:9 2.UAC|2.UAS">
+			<!-- find slurp Action -->
+			<!-- No slurp Action found -->
+			<!-- DataModel to be send -->
+			<Action type="output"><DataModel ref="8:3:9"/></Action>
+			<!-- possible next States -->
+			<Action type="changeState" ref="3:9:3 2.UAS|2.UAC"></Action>
+		</State>
+		<State name="0:2:11 None.UAC|None.UAS">
+			<!-- find slurp Action -->
+			<Action type ="slurp" valueXpath="//12:0:2//0//Value" setXpath="//0:2:11//2//Value"/> 
+			<!-- DataModel to be send -->
+			<Action type="output"><DataModel ref="0:2:11"/></Action>
+			<!-- possible next States -->
+			<Action type="changeState" ref="2:11:6 None.UAS|None.UAC"></Action>
+		</State>
+		<State name="2:11:6 None.UAS|None.UAC">
+			<!-- find slurp Action -->
+			<!-- No slurp Action found -->
+<!-- DataModel to be received -->
+			<Action type="input"><DataModel ref="2:11:6"/></Action>
+			<!-- possible next States -->
+			<Action type="changeState" ref="11:6:5 None.UAC|None.UAC" when="random.randint(0,2) == 0"></Action>
+			<Action type="changeState" ref="11:6:11 None.UAC|None.UAS" when="random.randint(0,1) == 0"></Action>
+			<Action type="changeState" ref="11:6:00 None.UAC|END"></Action>
+		</State>
+		<State name="3:9:3 2.UAS|2.UAC">
+			<!-- find slurp Action -->
+			<!-- No slurp Action found -->
+<!-- DataModel to be received -->
+			<Action type="input"><DataModel ref="3:9:3"/></Action>
+			<!-- possible next States -->
+			<Action type="changeState" ref="9:3:00 2.UAC|END" when="random.randint(0,1) == 0"></Action>
+			<Action type="changeState" ref="9:3:9 2.UAC|2.UAS"></Action>
+		</State>
+		<State name="9:3:9 2.UAC|2.UAS">
+			<!-- find slurp Action -->
+			<!-- No slurp Action found -->
+			<!-- DataModel to be send -->
+			<Action type="output"><DataModel ref="9:3:9"/></Action>
+			<!-- possible next States -->
+			<Action type="changeState" ref="3:9:3 2.UAS|2.UAC"></Action>
+		</State>
+		<State name="11:6:00 None.UAC|END">
+		</State>
+		<State name="6:5:00 None.UAC|END">
+		</State>
+		<State name="8:3:00 2.UAC|END">
+		</State>
+		<State name="9:3:00 2.UAC|END">
+		</State>
+	</StateModel>
+
+	<!-- TODO: Configure Agent -->
+	<Agent name="TheAgent" location="http://127.0.0.1:9000">
+		<!--<Monitor class="WindowsDebugger">
+			<Param name="CommandLine" value="mspaint.exe fuzzed.png" />
+			<Param name="WinDbgPath" value="C:\Program Files (x86)\Debugging Tools for Windows (x86)" />
+			<Param name="StartOnCall" value="ScoobySnacks"/>
+		</Monitor>
+		<Monitor class="PageHeap">
+			<Param name="Executable" value="mspaint.exe"/>
+			<Param name="WinDbgPath" value="C:\Program Files (x86)\Debugging Tools for Windows (x86)" />
+		</Monitor>-->
+	</Agent>
+
+	<Test name="Default">
+		<Agent ref="TheAgent"/>
+		<StateModel ref="TheState"/>
+
+		<!-- TODO: Configure a publisher -->
+		<!--<Publisher class="File">
+			<Param name="FileName" value="fuzzed.png"/>
+		</Publisher>-->
+
+		<!-- OPTIONAL: Configure a strategy -->
+		<!--<Strategy class="Random"/>-->
+		
+		<Logger class="File">
+			<Param name="Path" value="logs"/>
+		</Logger>
+	</Test>
+
+</Peach>
+<!-- end -->

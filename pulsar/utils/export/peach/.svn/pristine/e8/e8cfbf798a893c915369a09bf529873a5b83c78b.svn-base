@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Peach xmlns="http://peachfuzzer.com/2012/Peach" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://peachfuzzer.com/2012/Peach /peach/peach.xsd">
+
+	<!-- TODO: Create data model -->
+	<DataModel name="TheDataModel">
+		<!--<Blob/>-->
+	</DataModel>
+
+	<!-- TODO: Create state model -->
+	<StateModel name="TheState" initialState="Initial">
+		<State name="Initial">
+			
+			<Action type="output">
+				<DataModel ref="TheDataModel"/>
+				<!--<Data fileName="samples_png" />-->
+			</Action>
+
+			<!--<Action type="close"/>-->
+
+			<!--<Action type="call" method="ScoobySnacks" publisher="Peach.Agent"/>-->
+		</State>
+
+	</StateModel>
+
+	<!-- TODO: Configure Agent -->
+	<Agent name="TheAgent" location="http://127.0.0.1:9000">
+		<!--<Monitor class="WindowsDebugger">
+			<Param name="CommandLine" value="mspaint.exe fuzzed.png" />
+			<Param name="WinDbgPath" value="C:\Program Files (x86)\Debugging Tools for Windows (x86)" />
+			<Param name="StartOnCall" value="ScoobySnacks"/>
+		</Monitor>
+		<Monitor class="PageHeap">
+			<Param name="Executable" value="mspaint.exe"/>
+			<Param name="WinDbgPath" value="C:\Program Files (x86)\Debugging Tools for Windows (x86)" />
+		</Monitor>-->
+	</Agent>
+
+	<Test name="Default">
+		<Agent ref="TheAgent"/>
+		<StateModel ref="TheState"/>
+
+		<!-- TODO: Configure a publisher -->
+		<!--<Publisher class="File">
+			<Param name="FileName" value="fuzzed.png"/>
+		</Publisher>-->
+
+		<!-- OPTIONAL: Configure a strategy -->
+		<!--<Strategy class="Random"/>-->
+		
+		<Logger class="File">
+			<Param name="Path" value="logs"/>
+		</Logger>
+	</Test>
+
+</Peach>
+<!-- end -->

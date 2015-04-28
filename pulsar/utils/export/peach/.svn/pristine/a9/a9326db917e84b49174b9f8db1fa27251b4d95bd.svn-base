@@ -1,0 +1,215 @@
+#!/usr/bin/env python3
+# To change this license header, choose License Headers in Project Properties.
+# To change this template openFile, choose Tools | Templates
+# and open the template in the editor.
+
+__author__="dasmoep"
+__date__ ="$Jun 23, 2014 5:01:41 PM$"
+
+import os
+
+def createPIT(path=None):
+    if path==None:
+        path= os.getcwd()
+    f= openFile(path,'muster','r')
+    g= openFile(path,'pit','w') 
+    for line in f:
+        g.write(line)
+        if 'Create data model' in line:
+            insertDataModel(path,g)
+        if '<StateModel name="TheState"' in line:
+            insertStateModel(path,g)
+        
+    g.close()
+    f.close()
+        
+def insertStateModel(path,pitFile):
+    f=openFile(path,'markov','r')
+    #for each state find all transitions
+    states= []
+    flag=1
+    for line in f:
+        for i in range(len(states)):
+            if line.split('->')[0] in states[i][0]:
+                states[i][1].append(line.split('->')[1])
+                flag=0
+                break
+        if flag==1:
+            states.append([line.split('->')[0],[line.split('->')[1]]])
+        #print (states)
+        flag=1
+    
+    for i in states:
+        pitFile.write(gsecStates2Peach(i,path))
+    f.close()
+    return
+      
+def insertDataModel(path, pitFile):
+    f=openFile(path,'template','r')
+    s= ''
+    flag=0
+    for line in f:
+        #due to nature of TEMPLATE-file-format read text up to SECOND TEMPLATE in text and THEN work out the FIRST
+        if 'TEMPLATE' in line and flag==1:
+            pitFile.write(gsecData2Peach(s,path))
+            s= ''
+        s+= line
+        flag=1
+    pitFile.write(gsecData2Peach(s,path))
+    f.close()
+    return
+
+            
+
+def gsecStates2Peach(s,path):
+    #first find potential DataModels(templates) to be output by this state:
+    f=openFile(path,'template','r')
+    models=[]
+    allModels=[]
+    for line in f:
+        if 'TEMPLATE' in line:
+            t=line.split()
+            allModels.append(t[1]+' '+t[2].split(':')[1])
+            if t[2].split(':')[1]==s[0]:
+                models.append(t[1]+' '+t[2].split(':')[1])
+    f.close()
+    #print(allModels)
+    #print(models)
+    ret= '\t\t<State name=\"'+s[0]+'\">\n'
+    #ret+= '\t\t\t<!-- TODO: actaul action; we\'re implementing the client, right? -->\n'
+    #client needs to speak
+    if 'START|START' in s[0] or 'UAC' in s[0].split('|')[0]:
+        #get slurp action
+        ret+= '\t\t\t<!-- TODO: need to find out correct SLURP ACTION -->\n'
+        slurpAction = slurp(path,models,allModels)
+        if slurpAction != '':
+            ret += slurpAction
+        else: ret += '\t\t\t<!-- No slurp Action found -->\n'
+        ret+= '\t\t\t<!-- TODO: need to find out correct datamodel to be referenced -->\n'
+        for i in models:
+            ret+= '\t\t\t<Action type="output"><DataModel ref="'+i+'"/></Action>\n'
+    #client receives from server 
+    else:
+        #ToDo insert slurping here as well!
+        ret+= '\t\t\t<!-- TODO: need to find out correct SLURP ACTION -->\n'
+        slurpAction = slurp(path, models, allModels)
+        if slurpAction != '':
+            ret += slurpAction
+        else: ret += '\t\t\t<!-- No slurp Action found -->\n'
+        for i in models:
+            ret+= '\t\t\t<Action type="input"><DataModel ref="'+i+'"/></Action>\n'
+    ret += '\t\t\t<!-- transitions; need to figure out the when\'s -->\n'
+    for i in s[1]:
+        i=i.split(',')[0]
+        ret += '\t\t\t<Action type=\"changeState\" ref=\"'+i+'\" when=\"???\"></Action>\n'
+        #ret += '\t\t\t' +i+'\n'
+    
+    ret += '\t\t</State>\n'
+    return ret
+
+def gsecData2Peach(s,path):
+    s=s.split('\n')
+    t=s[0].split()
+    #unsure about naming...
+    ret= '\t<DataModel name=\"'+t[1]+' '+t[2].split(':')[1]+'\">\n'
+    #the 1 skips rest of TEMPLATE-line
+    for i in range(len(s[1:])-1):
+        if s[1+i] == '':
+            dataRules=[]
+            dataRules=isDataRuleAvailable(t[1].split(':')[1],i,path)
+            if len(dataRules) != 0:
+                #begin choice
+                ret+= '\t\t<Choice name="'+str(i)+'" minOccurs="1" maxOccurs="1">\n'
+                j=0
+                for k in dataRules:
+                    ret+= '\t\t\t<String name="'+str(j)+'" value="'+str(k)+'"/>\n'
+                    j+=1
+                #end choice
+                ret+= '\t\t</Choice>\n'
+            else:
+                ret+= '\t\t<String name="'+str(i)+'" value="non-DataRule EXISTS"/>\n'
+        else:
+            ret+='\t\t<String name="'+str(i)+'" value=\"'+s[1+i]+'\"/>\n'
+        #ret+='\t\t<String name="'+str(i)+'" value=\"'+s[1+i]+'\"/>\n'
+    ret+= '\t</DataModel>\n'
+    return ret
+
+def slurp(path,models,allModels):
+    ret = ''
+    f=openFile(path,'rules','r')
+    #find out whether template can be filled or not; IGNORE preState!?
+    #OF COURSE NOT; CONVOLUTE STATEMODEL WITH PREVIOUS SENT MESSAGE ID!
+    for line in f:
+        #search RULES for non-DATA rules
+        if 'RULE' in line and 'DataRule' not in line:
+            t=line.split()
+            #check whether this RULE applies to this TEMPLATE
+            for i in models:
+                #t[1][2] RULE applies to TEMPLATE with this ID
+                #i[0][1] TEMPLATE to be filled (ID)
+                if t[1].split(';')[2]==i.split()[0].split(':')[1]:
+                    #find SOURCE template
+                    #wille be NONE IFF SOURCE IS is negative
+                    FromDataModel=None
+                    for j in allModels:
+                        #print('id:'+t[2].split(':')[1]+' ',j)
+                        #t[2][1] SORUCETEMPLATE ID
+                        if 'id:'+t[2].split(':')[1]+' ' in j:
+                            FromDataModel=j
+                            break
+                    #find SOURCE field in template
+                    #t[3][1] FIELD in SOURCETEMPLATE
+                    FromAttributeName=t[3].split(':')[1]
+                    #find DESTINATION template
+                    #will be NONE IFF DESTINATION ID is negative
+                    ToDataModel=None
+                    for j in allModels:
+                        #t[1][2] ID of DESTINATIONTEMPLATE
+                        if 'id:'+t[1].split(';')[2]+' ' in j:
+                            ToDataModel=j
+                            break
+                    #find DESTINATION field in template
+                    #t[4][1] FIELD in DESTINATIONTEMPLATE
+                    ToAttributeName=t[4].split(':')[1]
+                    #print(ToDataModel)
+                    ret+= '\t\t\t<Action type ="slurp" valueXpath="//'+str(FromDataModel)+'//'+FromAttributeName+'//Value" setXpath="//'+ToDataModel+'//'+ToAttributeName+'//Value"/> \n'
+    f.close()
+    return ret
+
+def isDataRuleAvailable(id,field,path):
+    #return [1,2,3]
+    ret=[]
+    f=openFile(path,'rules','r')
+    flag=0
+    for line in f:
+        if 'RULE' in line and 'DataRule' in line:
+            t = line.split()
+            #print(t[1].split(';')[2],id,field,t[4].split(':')[1])
+            #print (t)
+            #print(id,t[1].split(';')[2],type(field),type(t[4].split(':')[1]),field==t[4].split(':')[1])
+            #t[1][2] TEMPLATE to be filled (ID)
+            if t[1].split(';')[2] == id and t[4].split(':')[1] == str(field):
+                #print('found DataRule')
+                flag=1
+                continue
+        if flag == 1:
+            #print('found fitting DataModel')
+            for t in line.split(','):
+                #maybe not accurate!
+                if 'data:' in t:
+                    t=t.split(':')[1]
+                ret.append(t.split('\n')[0])
+            flag = 0
+    f.close()
+    #print (ret)
+    return ret
+
+def openFile(path,name,mode):
+    for f in os.listdir(path):
+        if name in f:
+            f=open(path+'/'+f,mode)
+            return f
+
+if __name__ == "__main__":
+    #print ("Hello World!")
+    createPIT()

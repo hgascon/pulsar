@@ -1,0 +1,5 @@
+java.lib.path=
+main.file=peach.py
+platform.active=Python_3.4.1
+python.lib.path=
+src.dir=src
