@@ -52,7 +52,7 @@
 
 Generate the model of a communication channel from individual PCAP files or the recorded traces of one or more binaries run by cuckoo sandbox:
     
-    $> pulsar.py -m -f file.pcap (1 pcap file)
+    $> pulsar.py -l -p file.pcap (1 pcap file)
     $> pulsar.py -b 016169EBEBF1CEC2AAD6C7F0D0EE9026 (1 or more binaries from cuckoo storage)
     $> pulsar.py -a (all binaries from cuckoo storage)
 
