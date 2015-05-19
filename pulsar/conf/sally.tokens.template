@@ -19,10 +19,12 @@ input = {
 # Feature configuration
 features = {
 	# Length of n-grams.
-	ngram_len	= 1;
+	ngram_len = 2;
+
+    granularity = "tokens";
 
         # Delimiters for n-grams. An empty string triggers byte n-grams.
-	ngram_delim	= "%0a%0d%20%09";
+	token_delim	= "%0a%0d%20%09";
 
         # Embedding mode for vectors. Supported types "cnt", "bin", "tfidf"
 	vect_embed	= "bin";

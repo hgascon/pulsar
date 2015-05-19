@@ -20,9 +20,8 @@ input = {
 features = {
 	# Length of n-grams.
 	ngram_len	= 2;
-
-        # Delimiters for n-grams. An empty string triggers byte n-grams.
-	ngram_delim	= "";
+    
+    granularity = "bytes";
 
         # Embedding mode for vectors. Supported types "cnt", "bin", "tfidf"
 	vect_embed	= "bin";
