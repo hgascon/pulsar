@@ -1,7 +1,7 @@
-prisma
-cuckoo
+prisma (https://github.com/tammok/PRISMA)
+derrick (https://github.com/rieck/derrick)
+sally (https://github.com/rieck/sally)
+cuckoo (https://github.com/cuckoobox/cuckoo)
 mergecap
-derrick
-sally
 pygraphviz
 python-Levenshtein
