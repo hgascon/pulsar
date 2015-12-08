@@ -6,12 +6,12 @@ Pulsar is a network fuzzer with automatic protocol learning and simulation capab
 
 For detailed information about the method implemented by Pulsar, you can read the following publications:
 
-**[Pulsar: Stateful Black-Box Fuzzing of Proprietary Network Protocols](http://www.hugogascon.com/publications/2015-securecomm.pdf)**
-Hugo Gascon, Christian Wressnegger, Fabian Yamaguchi, Daniel Arp and Konrad Rieck
+**[Pulsar: Stateful Black-Box Fuzzing of Proprietary Network Protocols](http://www.hugogascon.com/publications/2015-securecomm.pdf)**  
+Hugo Gascon, Christian Wressnegger, Fabian Yamaguchi, Daniel Arp and Konrad Rieck  
 *Proc. of 11th EAI International Conference on Security and Privacy in Communication Networks (SECURECOMM) October 2015*
 
-**[Learning Stateful Models for Network Honeypots](http://www.hugogascon.com/publications/2012a-aisec.pdf)**
-Tammo Krueger, Hugo Gascon, Nicole Krämer and Konrad Rieck
+**[Learning Stateful Models for Network Honeypots](http://www.hugogascon.com/publications/2012a-aisec.pdf)**  
+Tammo Krueger, Hugo Gascon, Nicole Krämer and Konrad Rieck  
 *ACM Workshop on Security and Artificial Intelligence (AISEC) October 2012*
 
                      _
