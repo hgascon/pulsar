@@ -59,7 +59,7 @@ Tammo Krueger, Hugo Gascon, Nicole Krämer and Konrad Rieck
 
 ### Configuration
 
-The directory *pulsar/conf* contains a series of configuration files that defines the parameters and values for certain operations in each one of the Pulsar methods for automatic learning, simulation and fuzzing.
+The directory *pulsar/conf* contains a series of configuration files that define the parameters required for certain operations in each one of the Pulsar methods for automatic learning, simulation and fuzzing.
 
 ### Examples
 
