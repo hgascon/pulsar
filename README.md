@@ -2,7 +2,17 @@
 ## PULSAR
 #### Protocol Learning, Simulation and Stateful Fuzzer
 
+Pulsar is a network fuzzer with automatic protocol learning and simulation capabilites. The tool allows to model a protocol through machine learning techniques, such as clustering and hidden Markov models. These models can be used to simulate communication between Pulsar and a real client or server thanks to semantically correct messages which, in combination with a series of fuzzing primitives, allow to test the implementation of an unknown protocol for errors in deeper states of its protocol state machine.
 
+For detailed information about the method implemented by Pulsar, you can read the following publications:
+
+**[Pulsar: Stateful Black-Box Fuzzing of Proprietary Network Protocols]**(http://www.hugogascon.com/publications/2015-securecomm.pdf)
+Hugo Gascon, Christian Wressnegger, Fabian Yamaguchi, Daniel Arp and Konrad Rieck
+*Proc. of 11th EAI International Conference on Security and Privacy in Communication Networks (SECURECOMM) October 2015*
+
+**[Learning Stateful Models for Network Honeypots]**(http://www.hugogascon.com/publications/2012a-aisec.pdf)
+Tammo Krueger, Hugo Gascon, Nicole Krämer and Konrad Rieck
+*ACM Workshop on Security and Artificial Intelligence (AISEC) October 2012*
 
                      _
          _ __  _   _| |___  __ _ _ __
@@ -47,6 +57,9 @@
                             loaded for simulation or fuzzing.
 
 
+### Configuration
+
+The directory *pulsar/conf* contains a series of configuration files that defines the parameters and values for certain operations in each one of the Pulsar methods for automatic learning, simulation and fuzzing.
 
 ### Examples
 
