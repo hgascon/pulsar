@@ -715,7 +715,7 @@ class RuleList:
                 continue
 
             #save original not fuzzed values for the log trace
-            if dst_fields[dst] == data:
+            if len(dst_fields) > dst and dst_fields[dst] == data:
                 non_fuzzed_values += [data]
 
         # Fill new template fields with new content
