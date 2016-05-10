@@ -64,31 +64,32 @@ if __name__ == "__main__":
                           help="Simulate communication based on a given model.")
     sim_fuzz.add_argument("-z", "--fuzzer", action="store_true",
                           help="Start a fuzzing session based on a given model.")
-    sim_fuzz.add_argument("-m", "--model", default="",
+    sim_fuzz.add_argument("-m", "--model", default="models",
                           help="Path of the dir containing the model files to be\
-                          loaded for simulation or fuzzing.")
+                          loaded for simulation or fuzzing (default ./models)")
 
     args = parser.parse_args()
-    path_conf = os.path.realpath(args.conf)
-    models_dir = os.path.realpath(args.out)
+    conf_path = os.path.realpath(args.conf)
+    models_path = os.path.realpath(args.out)
+    model_path = os.path.realpath(args.model)
 
     if args.learner:
         mg = ""
         if args.pcap:
             pcaps = args.pcap.split(',')
             pcaps = [os.path.realpath(p) for p in pcaps]
-            mg = ModelGenerator(models_dir, path_conf,
+            mg = ModelGenerator(models_path, conf_path,
                                 pcaps=pcaps,
                                 nmf_components=args.dimension,
                                 process=args.process)
         elif args.binaries:
             binaries = args.binaries.split(',')
-            mg = ModelGenerator(models_dir, path_conf,
+            mg = ModelGenerator(models_path, conf_path,
                                 binaries=binaries,
                                 nmf_components=args.dimension,
                                 process=args.process)
         elif args.all_binaries:
-            mg = ModelGenerator(models_dir, path_conf,
+            mg = ModelGenerator(models_path, conf_path,
                                 binaries=[],
                                 nmf_components=args.dimension,
                                 process=args.process)
@@ -101,8 +102,7 @@ if __name__ == "__main__":
                    " analyzed by cuckoo (-b | -a).\n")
     elif args.simulate:
         if args.model:
-            #TODO implement the Simulator class as a subset of the fuzzer
-            s = Simulator(os.path.realpath(args.model), path_conf)
+            s = Simulator(model_path, conf_path)
             print_logo()
             s.run()
         else:
@@ -110,7 +110,8 @@ if __name__ == "__main__":
                    " model with option -m.\n")
     elif args.fuzzer:
         if args.model:
-            f = Fuzzer(os.path.realpath(args.model), path_conf)
+            f = Fuzzer(model_path, conf_path)
+            print_logo()
             f.run()
         else:
             print ("\nPlease, provide the path containing the communication"
