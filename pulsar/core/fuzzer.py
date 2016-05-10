@@ -255,11 +255,17 @@ class Fuzzer:
         terminated = ""
         # verify termination with cuckoo output
         if self.cuckoo_session:
-            # wait untl result from execution is stored in db
+            # wait until result from execution is stored in db
             for i in range(self.timer_termination):
                 time.sleep(1)
                 print "."
-            task = self.db.view_task(self.task_id)
+            try:
+                task = self.db.view_task(self.task_id)
+            except AttributeError:
+                print "Err: The cuckoo interface is active but no " \
+                      "cuckoo task has been found! You may consider " \
+                      "setting cuckoo_session to 0 in fuzzer.conf"
+                sys.exit()
             if task.completed_on:
                 terminated = True
                 print "Sample execution is terminated!"
