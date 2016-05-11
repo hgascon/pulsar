@@ -145,7 +145,6 @@ class Fuzzer:
                             if e.errno == errno.ETIMEDOUT:
                                 pass
 
-                    #if rcv_message != "":
                     print ">>> Consuming RECEIVED msg of length {}".format(len(rcv_message))
                     status = self.lens.consumeOtherSide(rcv_message)
                     print ">>> STATUS: {}".format(status)

@@ -966,7 +966,6 @@ class Lens:
         """ Trigger selected transition and return
         message or none if waiting.
         """
-#        print "Current state: {}".format(self.mm.getState())
         status = STATUS_NO_TRANSITION
         if chooseNextStateIndependentFromRole:
             roleForNextState = None
@@ -984,7 +983,7 @@ class Lens:
         else:
             raise "Unknown mode %d" % self.mode
 
-        # we first have to check, whether the choosen
+        # we first have to check, whether the chosen
         # state is according to our role...
         if not next_state[0].endswith("END"):
             if chooseNextStateIndependentFromRole and not(next_state[0].endswith(role)):
