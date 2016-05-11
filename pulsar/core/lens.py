@@ -398,7 +398,11 @@ class TemplateMessageMatcher:
 
     def match(self):
         # tokenize the message
-        if self.lexerType == LEXER_TOKENS:
+        # somehow self.lexerType is a boolean..?
+        # thus always ngrams was picked and failed
+        # due to token length missmatch
+        # if self.lexerType == LEXER_TOKENS:
+        if self.lexerType == False:
             tokens = scanTokens(self.msg, self.ws)
         else:
             tokens = scanNgrams(self.msg)
@@ -589,20 +593,20 @@ class RuleList:
             src_id = rule.src_id
             dst = rule.dst_field
             src = rule.src_field
-            if rule.typ == "rule.ExactRule":
+            if "rule.ExactRule" in rule.typ:
                 dst_fields[dst] = fields[src_id][src]
                 continue
-            if rule.typ == "rule.DataRule":
+            if "rule.DataRule" in rule.typ:
                 dst_fields[dst] = random.choice(rule.data[5:].split(","))
                 continue
-            if rule.typ == "rule.CopyCompleteRule":
+            if "rule.CopyCompleteRule" in rule.typ:
                 # Copy the exact content of a field 
                 if rule.data[6:20] == "COPY_AS_PREFIX":
                     dst_fields[dst] = fields[src_id][src]+random.choice(rule.data[26:].split(","))
                 else:
                     dst_fields[dst] = random.choice(rule.data[26:].split(","))+fields[src_id][src]
                 continue
-            if rule.typ == "rule.CopyPartialRule":
+            if "rule.CopyPartialRule" in rule.typ:
                 # Copy the front or back part of a field splitted
                 # by a separator s
                 split_data = fields[src_id][src].split(rule.data[26:], 1)
@@ -621,7 +625,7 @@ class RuleList:
                         # ... so we cannot enter anything at this point
                         dst_fields[dst] = ""
                 continue
-            if rule.typ == "rule.SeqRule":
+            if "rule.SeqRule" in rule.typ:
                 try:
                     dst_fields[dst] = int(fields[src_id][src])+int(rule.data[5:])
                 except:
@@ -661,21 +665,21 @@ class RuleList:
             src_id = rule.src_id
             dst = rule.dst_field
             src = rule.src_field
-            if rule.typ == "rule.ExactRule":
+            if "rule.ExactRule" in rule.typ:
                 try:
                     data = fields[src_id][src]
                 except:
                     data = ""
                 dst_fields[dst] = fuzzer.fuzz(rule, data, fuzz_fields)
                 continue
-            if rule.typ == "rule.DataRule":
+            if "rule.DataRule" in rule.typ:
                 try:
                     data = random.choice(rule.data[5:].split(","))
                 except:
                     data = ""
                 dst_fields[dst] = fuzzer.fuzz(rule, data, fuzz_fields)
                 continue
-            if rule.typ == "rule.CopyCompleteRule":
+            if "rule.CopyCompleteRule" in rule.typ:
                 try:
                     if rule.data[6:20] == "COPY_AS_PREFIX":
                         data = fields[src_id][src]+random.choice(rule.data[26:].split(","))
@@ -685,7 +689,7 @@ class RuleList:
                     data = ""
                 dst_fields[dst] = fuzzer.fuzz(rule, data, fuzz_fields)
                 continue
-            if rule.typ == "rule.CopyPartialRule":
+            if "rule.CopyPartialRule" in rule.typ:
                 try:
                     split_data = fields[src_id][src].split(rule.data[26:], 1)
                     if rule.data[6:20] == "COPY_THE_PREFIX":
@@ -706,7 +710,7 @@ class RuleList:
                     data = ""
                 dst_fields[dst] = fuzzer.fuzz(rule, data, fuzz_fields)
                 continue
-            if rule.typ == "rule.SeqRule":
+            if "rule.SeqRule" in rule.typ:
                 try:
                     data = int(fields[src_id][src])+int(rule.data[5:])
                 except:

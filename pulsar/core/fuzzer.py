@@ -381,8 +381,9 @@ class Fuzzer:
                 fuzzed_data = self._get_overflowed_integer(data)
             if self.fuzzer_mode == "non_utf8":
                 fuzzed_data = self._get_non_utf8_data()
-        else:
             return fuzzed_data
+        else:
+            return ""
 
     ######## Fuzzing Primitives ########
 
@@ -400,7 +401,7 @@ class Fuzzer:
         return ''.join(rand)
 
     def _get_constant_data(self):
-        length = self.fuzz_length
+        length = int(self.fuzz_length)
         return 'A' * length
 
     def _get_non_utf8_data(self):
