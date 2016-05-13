@@ -372,6 +372,11 @@ class Fuzzer:
 
     def fuzz(self, rule, data, fuzz_fields):
 
+        # if data is not fuzzed, return it properly
+        # not fuzzed either cause
+        #   - not fuzzed in this iteration
+        #   - for some reason fuzzer_mode could not be matched
+        fuzzed_data = data
         if rule.dst_field in fuzz_fields:
             if self.fuzzer_mode == "rand_overflow":
                 fuzzed_data = self._get_random_data()
@@ -381,9 +386,7 @@ class Fuzzer:
                 fuzzed_data = self._get_overflowed_integer(data)
             if self.fuzzer_mode == "non_utf8":
                 fuzzed_data = self._get_non_utf8_data()
-            return fuzzed_data
-        else:
-            return ""
+        return fuzzed_data
 
     ######## Fuzzing Primitives ########
 
