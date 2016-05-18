@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 # Network Server/Client interface for LENS module
 # Copyright (c) 2016 Hugo Gascon <hgascon@mail.de>
 
@@ -8,9 +6,10 @@ import os
 import socket
 import lens
 import time
+from ast import literal_eval
 
 
-class Simulator():
+class Simulator:
 
     def __init__(self, model_path, conf_path):
 
@@ -23,7 +22,14 @@ class Simulator():
         config.readfp(open(model_conf))
 
         # load model config
-        self.role = config.get("role")
+        self.role = config.get("model", "role")
+        self.sim_search = literal_eval(config.get('model', 'simsearch'))
+        self.transition_mode = literal_eval(config.get('model',
+                                                       'transitionmode'))
+        self.lexer_style = config.get('model', 'lexerstyle')
+        self.templates_no_fields = literal_eval(config.get('model',
+                                                           'nofieldstemplates'))
+
         if self.role == "client" or self.role == "server":
             self.host = config.get(self.role, "host")
             self.port = config.get(self.role, "port")
@@ -35,7 +41,14 @@ class Simulator():
 
     def run(self):
 
-        l = lens.Lens(self.model_path, self.role)
+        # initialize LENS object
+        l = lens.Lens(self.model_path,
+                      self.role,
+                      self.sim_search,
+                      self.transition_mode,
+                      self.lexer_style,
+                      self.templates_no_fields)
+
         if self.role == "client":
 
             # network client configuration

@@ -397,12 +397,7 @@ class TemplateMessageMatcher:
         self.ws = whitespace
 
     def match(self):
-        # tokenize the message
-        # somehow self.lexerType is a boolean..?
-        # thus always ngrams was picked and failed
-        # due to token length missmatch
-        # if self.lexerType == LEXER_TOKENS:
-        if self.lexerType == False:
+        if self.lexerType == LEXER_TOKENS:
             tokens = scanTokens(self.msg, self.ws)
         else:
             tokens = scanNgrams(self.msg)
@@ -827,8 +822,8 @@ MODE_FUZZING_TRANSITION = 3
 
 class Lens:
 
-    def __init__(self, modelPath, role, sim_search=False, mode=MODE_RANDOM_TRANSITION,
-                 lexerStyle=LEXER_TOKENS, templates_no_fields=False):
+    def __init__(self, modelPath, role, sim_search, mode,
+                 lexerStyle, templates_no_fields):
         markov_model, rule_list, template_list = ("%s.markovModel" % modelPath,
                                                   "%s.rules" % modelPath,
                                                   "%s.templates" % modelPath)

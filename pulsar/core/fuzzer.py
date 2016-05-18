@@ -52,25 +52,26 @@ class Fuzzer:
         self.timer_termination = literal_eval(config.get('fuzzer',
                                                          'terminationtimer'))
 
-        #load lens config
+        #load config and initialize LENS object
+        model_file = os.path.join(model_dir, os.path.basename(model_dir))
         role = config.get('fuzzer', 'role')
         if role == "client":
             role = "UAC"
         else:
             role = "UAS"
-        transition_mode = literal_eval(config.get('fuzzer', 'transitionmode'))
         sim_search = literal_eval(config.get('fuzzer', 'simsearch'))
+        transition_mode = literal_eval(config.get('fuzzer', 'transitionmode'))
+        lexer_style = config.get('fuzzer', 'lexerstyle')
         templates_no_fields = literal_eval(config.get('fuzzer',
                                                       'nofieldstemplates'))
-
-        # initialize LENS object
-        model_file = os.path.join(model_dir, os.path.basename(model_dir))
         self.lens = Lens(model_file,
                          role,
                          sim_search,
                          transition_mode,
+                         lexer_style,
                          templates_no_fields)
-        #TODO add the passing of the fuzzer  to the parameter of lens
+
+        #TODO add the passing of the fuzzer to the parameter of lens
         self.lens.set_fuzzer(self)
 
         #initialize Logger
