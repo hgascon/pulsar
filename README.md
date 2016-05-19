@@ -1,5 +1,9 @@
 
-## PULSAR
+## PULSAR 
+
+[![Join the chat at https://gitter.im/hgascon/pulsar](https://badges.gitter.im/hgascon/pulsar.svg)](https://gitter.im/hgascon/pulsar?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+
 #### Protocol Learning, Simulation and Stateful Fuzzer
 
 Pulsar is a network fuzzer with automatic protocol learning and simulation capabilites. The tool allows to model a protocol through machine learning techniques, such as clustering and hidden Markov models. These models can be used to simulate communication between Pulsar and a real client or server thanks to semantically correct messages which, in combination with a series of fuzzing primitives, allow to test the implementation of an unknown protocol for errors in deeper states of its protocol state machine.
