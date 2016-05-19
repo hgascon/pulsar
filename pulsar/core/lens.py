@@ -581,8 +581,8 @@ class RuleList:
         dst_fields = {}
         # this is a bit sick... model.py generates the rules in the right
         # sequence, such that all fields in the current message are already
-        #filled, if their values are referenced by rules; i.e. we can just
-        #add a reference to dst_fields as the "-1" (=current) fields
+        # filled, if their values are referenced by rules; i.e. we can just
+        # add a reference to dst_fields as the "-1" (=current) fields
         fields["-1"] = dst_fields
         for rule in current_rules:
             src_id = rule.src_id
