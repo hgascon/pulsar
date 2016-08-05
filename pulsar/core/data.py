@@ -1,15 +1,17 @@
 import operator
 import csv
+import os
 import sys
 
-from util import WS, TOK, scanNgrams, scanTokens, readDerrick
+from util import scanNgrams, scanTokens, readDerrick
 
 csv.field_size_limit(sys.maxsize)
-
 START_STATE = "START"
 END_STATE = "END"
+
+
 class DataHandler:
-    
+
     def __init__(self, datapath, ngram, whitespace):
         self.datapath = datapath
         self.ngram = ngram
@@ -29,6 +31,12 @@ class DataHandler:
 
     def _readClusterAssignments(self):
         path = "%s.cluster" % self.datapath
+        if not os.path.exists(path):
+            print "Error during clustering (not enough data?)"
+            print "Cluster file not generated:", path
+            print "Exiting learning module..."
+            sys.exit(1)
+
         def clusterProcessor(clusterRow):
             return clusterRow[0]
         self.clusterAssignments = self._processData(path, clusterProcessor,
@@ -38,12 +46,15 @@ class DataHandler:
 
     def _readHarry(self):
         path = "%s.harry" % self.datapath
+
         def harryProcessor(harryRow):
             return [harryRow[0], int(harryRow[1]), harryRow[2]]
-        self.harry = self._processData(path, harryProcessor, self.N, skipFirstLine=True)
+        self.harry = self._processData(path, harryProcessor,
+                                       self.N, skipFirstLine=True)
         self.comms = {}
+
         for i, h in enumerate(self.harry):
-            self.comms.setdefault(h[0], []).append( (i, h[1], h[2]) )
+            self.comms.setdefault(h[0], []).append((i, h[1], h[2]))
         for oneComm in self.comms.values():
             oneComm.sort(key=operator.itemgetter(1))
 
@@ -64,7 +75,9 @@ class DataHandler:
             # we want at least one start/end marker
             padding = 1
         ret = [START_STATE] * padding
-        ret.extend(["%s.%s" % tup for tup in zip(self.getMsgClustForComm(commId), self.getMsgDirForComm(commId))])
+        ret.extend(["%s.%s" % tup
+                    for tup in zip(self.getMsgClustForComm(commId),
+                                   self.getMsgDirForComm(commId))])
         ret.append(END_STATE)
         return ret
 
