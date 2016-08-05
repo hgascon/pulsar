@@ -6,7 +6,7 @@ class Client:
 
     def __init__(self, host, port, timeout, bsize):
 
-        #network client configuration
+        # network client configuration
         self.connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.connection.connect((host, port))
         self.connection.settimeout(timeout)
@@ -38,11 +38,11 @@ class Server:
 
     def send(self, msg):
         self.connection.send(msg)
-#        print "[*] Sent msg:\n{}".format(msg)
+        #print "[*] Sent msg:\n{}".format(msg)
 
     def recv(self):
         msg = self.connection.recv(self.bsize)
-#        print "[*] Received msg:\n{}".format(msg)
+        #print "[*] Received msg:\n{}".format(msg)
         return msg
 
     def close(self):
