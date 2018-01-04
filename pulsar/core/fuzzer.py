@@ -335,7 +335,7 @@ class Fuzzer:
         self._load_tracker()
         fields_len = len(self.lens.tl.template_dic[template_id].fields)
         fuzz_mask_int = self.tracker[template_id]
-        fuzz_mask_bin = np.binary_repr(np.invert(np.array([fuzz_mask_int])),
+        fuzz_mask_bin = np.binary_repr(int(np.invert(np.array([fuzz_mask_int]))),
                                        fields_len)
         fuzz_mask_bin = [int(i) for i in fuzz_mask_bin]
         return np.nonzero(fuzz_mask_bin)[0]
