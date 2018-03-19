@@ -8,3 +8,6 @@ python-Levenshtein
 
 # Optional
 cuckoo (https://github.com/cuckoobox/cuckoo)
+
+# On Centos, R can be installed by;
+sudo yum install R
