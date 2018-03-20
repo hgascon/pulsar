@@ -4,7 +4,22 @@ sally (https://github.com/rieck/sally)
 R
 mergecap
 pygraphviz
+progressBar
+numpy
 python-Levenshtein
 
 # Optional
 cuckoo (https://github.com/cuckoobox/cuckoo)
+
+# The derrick, Sallary tools need to be installed one-by-one
+# On Centos, R, mergecap, pygraphviz and python-Levenshtein can be installed by;
+sudo yum install R wireshark python python-pip graphviz graphviz-devel
+sudo pip install --upgrade pip  # Optional
+sudo pip install pygraphviz
+sudo pip install progressBar
+sudo pip install numpy  # Some errors and warnings present
+sudo pip install python-Levenshtein  # Some errors and warnings present
+# The PRISMA tool needs to be installed as follows:
+cd pulsar  # Your pulsar (github clone) directory
+mkdir modules
+git clone --depth=1 https://github.com/tammok/PRISMA.git
