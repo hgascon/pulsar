@@ -49,6 +49,6 @@ Some computations implemented by the PRISMA module require the R Framework to be
 installed.  You can get started here: https://www.r-project.org/
 
 
-# Optional Dependencies
+## Optional Dependencies
 cuckoo sandbox (https://github.com/cuckoobox/cuckoo)
 
