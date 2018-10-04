@@ -5,7 +5,7 @@ First, you can start by cloning the repository:
 
     git clone https://github.com/hgascon/pulsar.git
 
-Then, the following dependencies, tools and modules need to installed.
+Then, the following dependencies, tools and modules need to be installed.
 
 ## PRISMA
 
