@@ -1,5 +1,5 @@
 
-# INSTALL
+# INSTALLATION
 
 First, you can start by cloning the repository:
 
