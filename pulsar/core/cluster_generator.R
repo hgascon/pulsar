@@ -40,4 +40,16 @@ pmf = prismaNMF(data, ncomp)
 
 #compute and write clusters to a file
 clusters = calcDatacluster(pmf)
-write.table(clusters, clusters_file, row.names=FALSE, col.names=FALSE)
+
+processed = filterDataByTestAndCor(data$unprocessed, 0.05, FALSE)
+if (inherits(processed$mat, "Matrix")) {
+    classes = calcClassForSparseMatrix(processed$mat)
+}else {
+    classes = sapply(1:ncol(processed$mat), function(colIndex) paste(which(processed$mat[, colIndex] == 1), collapse=" "))
+}
+classCount = table(classes)
+uniqueClasses = names(classCount)
+lines = sapply(names(data$remapper), function(x) colnames(data$data)[match(x, uniqueClasses)])
+lineClusters = sapply(lines, function(x) clusters[match(x, names(clusters))])
+names(lineClusters) = paste("line", 1:length(lineClusters), sep="")
+write.table(lineClusters, clusters_file, row.names=FALSE, col.names=FALSE)
