@@ -41,19 +41,19 @@ class Signal(object):
         try:
             reactor.callFromThread(self.callback, *self.parameters)
         except:
-            print datetime.now(), 'Signal: unhandled exception in signal callback'
-            print '-' * 70
+            print(datetime.now(), 'Signal: unhandled exception in signal callback')
+            print('-' * 70)
             print_exc(file = stdout)
-            print '-' * 70
+            print('-' * 70)
             stdout.flush()
         if self.previous_handler not in (SIG_IGN, SIG_DFL):
             try:
                 self.previous_handler(signum, *frame)
             except:
-                print datetime.now(), 'Signal: unhandled exception in signal chain'
-                print '-' * 70
+                print(datetime.now(), 'Signal: unhandled exception in signal chain')
+                print('-' * 70)
                 print_exc(file = stdout)
-                print '-' * 70
+                print('-' * 70)
                 stdout.flush()
 
 if __name__ == '__main__':

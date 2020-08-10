@@ -22,8 +22,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from SdpBody import SdpBody
-from types import StringType
+from .SdpBody import SdpBody
+#from types import StringType
 
 b_types = {'application/sdp':SdpBody}
 
@@ -48,7 +48,7 @@ class MsgBody(object):
     def parse(self):
         if not self.parsed:
             self.parsed = True
-            if b_types.has_key(self.mtype):
+            if self.mtype in b_types:
                 self.content = b_types[self.mtype](self.content)
 
     def __str__(self):

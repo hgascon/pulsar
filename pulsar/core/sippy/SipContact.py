@@ -22,11 +22,11 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from SipAddressHF import SipAddressHF
-from SipConf import SipConf
-from SipAddress import SipAddress
-from SipURL import SipURL
-from ESipHeaderIgnore import ESipHeaderIgnore
+from .SipAddressHF import SipAddressHF
+from .SipConf import SipConf
+from .SipAddress import SipAddress
+from .SipURL import SipURL
+from .ESipHeaderIgnore import ESipHeaderIgnore
 
 class SipContact(SipAddressHF):
     hf_names = ('contact', 'm')

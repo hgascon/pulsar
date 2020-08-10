@@ -55,10 +55,10 @@ class Cli_session(Protocol):
                 try:
                     self.cb_busy = self.command_cb(self, cmd)
                 except:
-                    print 'Cli_session: unhandled exception when processing incoming data'
-                    print '-' * 70
+                    print('Cli_session: unhandled exception when processing incoming data')
+                    print('-' * 70)
                     traceback.print_exc(file = sys.stdout)
-                    print '-' * 70
+                    print('-' * 70)
 
     def done(self):
         self.cb_busy = False

@@ -1,4 +1,4 @@
-import urllib
+import urllib.request, urllib.parse, urllib.error
 
 # controls, when a partial match is considered for a rule,
 # i.e. a partial match must have at least length PARTIAL_MATCH_LEN to be
@@ -21,17 +21,17 @@ class RuleSet:
         target = fieldsForMessages[-1]
         targetId = self.templateIds[-1]
         self.rules = []
-        fieldsToFill = range(target.getNumberOfFields())
+        fieldsToFill = list(range(target.getNumberOfFields()))
         if isNgramProcessing:
             theRules = [ExactRule, SeqRule]
         else:
             theRules = [ExactRule, SeqRule, CopyCompleteRule, CopyPartialRule]
         for currentRule in theRules:
             # we start with the nearest message in time and then go backwards:
-            for index in xrange(-2, -total-1, -1):
+            for index in range(-2, -total-1, -1):
                 source = fieldsForMessages[index]
                 sourceId = self.templateIds[index]
-                for fromField in xrange(source.getNumberOfFields()):
+                for fromField in range(source.getNumberOfFields()):
                     for toField in fieldsToFill[:]:
                         r = currentRule(index, targetId, fromField, toField)
                         if r.isValid(source.getValuesForField(fromField),
@@ -86,7 +86,7 @@ class Rule:
         self.targetField = targetField
 
     def getSpecificSaveString(self):
-        raise(Exception("Not Implemented Yet"))
+        raise Exception
 
 
 class ExactRule(Rule):
@@ -108,7 +108,7 @@ class SeqRule(Rule):
 
     def isValid(self, sourceVals, targetVals):
         similar = [False] * len(sourceVals)
-        for index in xrange(len(sourceVals)):
+        for index in range(len(sourceVals)):
             if sourceVals[index].isdigit() and targetVals[index].isdigit():
                 similar[index] = ((int(targetVals[index]) - int(sourceVals[index])) == 1)
         similar = sum(similar)
@@ -132,7 +132,7 @@ class CopyCompleteRule(Rule):
     def isValid(self, sourceVals, targetVals):
         nvalues = len(sourceVals)
         similar = [0] * nvalues
-        for index in xrange(nvalues):
+        for index in range(nvalues):
             curVal = 0
             if len(sourceVals[index]) >= PARTIAL_MATCH_LEN:
                 if targetVals[index].startswith(sourceVals[index]):
@@ -145,19 +145,19 @@ class CopyCompleteRule(Rule):
         if sum([s == SOURCE_IS_PREFIX for s in similar]) >= threshold:
             self.ptype = "COPY_AS_PREFIX"
             self.rest = [t[len(s):] for (s, t, i) in
-                         zip(sourceVals, targetVals, xrange(nvalues))
+                         zip(sourceVals, targetVals, range(nvalues))
                          if similar[i] == SOURCE_IS_PREFIX]
             ret = True
         elif sum([s == SOURCE_IS_SUFFIX for s in similar]) >= threshold:
             self.ptype = "COPY_AS_SUFFIX"
             self.rest = [t[0:(len(t)-len(s))] for (s, t, i) in
-                         zip(sourceVals, targetVals, xrange(nvalues))
+                         zip(sourceVals, targetVals, range(nvalues))
                          if similar[i] == SOURCE_IS_SUFFIX]
             ret = True
         return ret
 
     def getSpecificSaveString(self):
-        return "ptype:%s rest:%s" % (self.ptype, ",".join(map(urllib.quote, self.rest)))
+        return "ptype:%s rest:%s" % (self.ptype, ",".join(map(urllib.parse.quote, self.rest)))
 
 
 TARGET_IS_PREFIX = 1
@@ -201,7 +201,7 @@ class CopyPartialRule(Rule):
     def isValid(self, sourceVals, targetVals):
         nvalues = len(sourceVals)
         similar = [0] * nvalues
-        for index in xrange(nvalues):
+        for index in range(nvalues):
             curVal = 0
             if len(targetVals[index]) >= PARTIAL_MATCH_LEN:
                 if sourceVals[index].startswith(targetVals[index]):
@@ -214,21 +214,21 @@ class CopyPartialRule(Rule):
         if sum([s == TARGET_IS_PREFIX for s in similar]) >= threshold:
             self.ptype = "COPY_THE_PREFIX"
             rest = [s[len(t):] for (s, t, i) in
-                    zip(sourceVals, targetVals, xrange(nvalues))
+                    zip(sourceVals, targetVals, range(nvalues))
                     if similar[i] == TARGET_IS_PREFIX]
             self.sep = self.findLongestCommonStart(rest)
             ret = (self.sep != "")
         elif sum([s == TARGET_IS_SUFFIX for s in similar]) >= threshold:
             self.ptype = "COPY_THE_SUFFIX"
             rest = [s[0:(len(s)-len(t))] for (s, t, i) in
-                    zip(sourceVals, targetVals, xrange(nvalues))
+                    zip(sourceVals, targetVals, range(nvalues))
                     if similar[i] == TARGET_IS_SUFFIX]
             self.sep = self.findLongestCommonEnd(rest)
             ret = (self.sep != "")
         return ret
 
     def getSpecificSaveString(self):
-        return "ptype:%s sep:%s" % (self.ptype, urllib.quote(self.sep))
+        return "ptype:%s sep:%s" % (self.ptype, urllib.parse.quote(self.sep))
 
 class DataRule(Rule):
 
@@ -240,4 +240,4 @@ class DataRule(Rule):
         return True
 
     def getSpecificSaveString(self):
-        return "data:%s" % (",".join(map(urllib.quote, self.model)))
+        return "data:%s" % (",".join(map(urllib.parse.quote, self.model)))

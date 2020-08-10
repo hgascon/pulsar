@@ -1,5 +1,5 @@
 # -*- coding: latin-1 -*-
-import urllib
+import urllib.request, urllib.parse, urllib.error
 from zipfile import ZipFile
 
 
@@ -28,7 +28,7 @@ def presallyQuote(msg):
 
 def ngramSplit(msg, ngramSize):
     n = len(msg)
-    return [msg[ind:(ind+ngramSize)] for ind in xrange(n - ngramSize + 1)]
+    return [msg[ind:(ind+ngramSize)] for ind in range(n - ngramSize + 1)]
 
 
 def rawWrite(messages, path, ngramSize):
@@ -43,7 +43,7 @@ def rawWriteBin(messages, path, ngramSize):
     rawFile = ZipFile(rawFileName, "w")
     rawQuotedFile = file("%s.rawquoted" % path, "w")
     for (ind, m) in enumerate(messages):
-        raw = urllib.unquote(m.msg)
+        raw = urllib.parse.unquote(m.msg)
         # write the complete stuff into one file
         rawFile.writestr("%09d" % ind, raw)
         tokens = ngramSplit(raw, ngramSize)
@@ -57,10 +57,10 @@ def rawWriteBin(messages, path, ngramSize):
 # splits the message by whitespaces and writes them out in one line seperated by space
 def rawWriteText(messages, path):
     rawFileName = "%s.raw" % path
-    rawFile = file(rawFileName, "w")
-    rawQuotedFile = file("%s.rawquoted" % path, "w")
+    rawFile = open(rawFileName, "w")
+    rawQuotedFile = open("%s.rawquoted" % path, "w")
     for m in messages:
-        raw = urllib.unquote(m.msg)
+        raw = urllib.parse.unquote(m.msg)
         # we split the message by standard whitespace characters
         # an quote %00 bytes...
         tokens = [presallyQuote(t) for t in raw.split()]
@@ -74,8 +74,8 @@ def rawWriteText(messages, path):
 
 
 def fsallyPreprocessing(sallyFile, fsallyFile):
-    sallyIn = file(sallyFile)
-    sallyOut = file(fsallyFile, "w")
+    sallyIn = open(sallyFile)
+    sallyOut = open(fsallyFile, "w")
     sallyIn.readline()
     allNgrams = {}
     count = 0
@@ -88,6 +88,6 @@ def fsallyPreprocessing(sallyFile, fsallyFile):
             curNgrams = [ngramInfo.split(":")[1] for ngramInfo in info[0].split(",")]
             allNgrams.update(allNgrams.fromkeys(curNgrams))
         sallyOut.write("%s\n" % " ".join(curNgrams))
-    sallyOut.write("%s\n" % " ".join(allNgrams.keys()))
+    sallyOut.write("%s\n" % " ".join(list(allNgrams.keys())))
     sallyOut.close()
     sallyIn.close()

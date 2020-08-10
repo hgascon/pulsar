@@ -25,7 +25,7 @@
 from random import random
 from hashlib import md5
 from time import time
-from SipGenericHF import SipGenericHF
+from .SipGenericHF import SipGenericHF
 
 class SipCiscoGUID(SipGenericHF):
     hf_names = ('cisco-guid', 'h323-conf-id')
@@ -39,8 +39,8 @@ class SipCiscoGUID(SipGenericHF):
         if ciscoGUID != None:
             self.ciscoGUID = ciscoGUID
         else:
-            s = md5(str((random() * 1000000000L) + time())).hexdigest()
-            self.ciscoGUID = (long(s[0:8], 16), long(s[8:16], 16), long(s[16:24], 16), long(s[24:32], 16))
+            s = md5(str((random() * 1000000000) + time())).hexdigest()
+            self.ciscoGUID = (int(s[0:8], 16), int(s[8:16], 16), int(s[16:24], 16), int(s[24:32], 16))
 
     def parse(self):
         self.parsed = True

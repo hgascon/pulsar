@@ -22,10 +22,10 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from UaStateGeneric import UaStateGeneric
-from CCEvents import CCEventRing, CCEventConnect, CCEventFail, CCEventRedirect, CCEventDisconnect
-from SipContact import SipContact
-from SipAddress import SipAddress
+from .UaStateGeneric import UaStateGeneric
+from .CCEvents import CCEventRing, CCEventConnect, CCEventFail, CCEventRedirect, CCEventDisconnect
+from .SipContact import SipContact
+from .SipAddress import SipAddress
 
 class UasStateRinging(UaStateGeneric):
     sname = 'Ringing(UAS)'
@@ -128,9 +128,9 @@ class UasStateRinging(UaStateGeneric):
                 pass
         self.ua.emitEvent(event)
 
-if not globals().has_key('UaStateFailed'):
-    from UaStateFailed import UaStateFailed
-if not globals().has_key('UaStateConnected'):
-    from UaStateConnected import UaStateConnected
-if not globals().has_key('UaStateDisconnected'):
-    from UaStateDisconnected import UaStateDisconnected
+if 'UaStateFailed' not in globals():
+    from .UaStateFailed import UaStateFailed
+if 'UaStateConnected' not in globals():
+    from .UaStateConnected import UaStateConnected
+if 'UaStateDisconnected' not in globals():
+    from .UaStateDisconnected import UaStateDisconnected

@@ -22,34 +22,34 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from SipGenericHF import SipGenericHF
-from SipCSeq import SipCSeq
-from SipCallId import SipCallId
-from SipFrom import SipFrom
-from SipTo import SipTo
-from SipMaxForwards import SipMaxForwards
-from SipVia import SipVia
-from SipContentLength import SipContentLength
-from SipContentType import SipContentType
-from SipExpires import SipExpires
-from SipRecordRoute import SipRecordRoute
-from SipRoute import SipRoute
-from SipContact import SipContact
-from SipWWWAuthenticate import SipWWWAuthenticate
-from SipAuthorization import SipAuthorization
-from SipServer import SipServer
-from SipUserAgent import SipUserAgent
-from SipCiscoGUID import SipCiscoGUID
-from SipAlso import SipAlso
-from SipReferTo import SipReferTo
-from SipCCDiversion import SipCCDiversion
-from SipReferredBy import SipReferredBy
-from SipProxyAuthenticate import SipProxyAuthenticate
-from SipProxyAuthorization import SipProxyAuthorization
-from SipReplaces import SipReplaces
-from SipPAssertedIdentity import SipPAssertedIdentity
-from SipReason import SipReason
-from ESipHeaderCSV import ESipHeaderCSV
+from .SipGenericHF import SipGenericHF
+from .SipCSeq import SipCSeq
+from .SipCallId import SipCallId
+from .SipFrom import SipFrom
+from .SipTo import SipTo
+from .SipMaxForwards import SipMaxForwards
+from .SipVia import SipVia
+from .SipContentLength import SipContentLength
+from .SipContentType import SipContentType
+from .SipExpires import SipExpires
+from .SipRecordRoute import SipRecordRoute
+from .SipRoute import SipRoute
+from .SipContact import SipContact
+from .SipWWWAuthenticate import SipWWWAuthenticate
+from .SipAuthorization import SipAuthorization
+from .SipServer import SipServer
+from .SipUserAgent import SipUserAgent
+from .SipCiscoGUID import SipCiscoGUID
+from .SipAlso import SipAlso
+from .SipReferTo import SipReferTo
+from .SipCCDiversion import SipCCDiversion
+from .SipReferredBy import SipReferredBy
+from .SipProxyAuthenticate import SipProxyAuthenticate
+from .SipProxyAuthorization import SipProxyAuthorization
+from .SipReplaces import SipReplaces
+from .SipPAssertedIdentity import SipPAssertedIdentity
+from .SipReason import SipReason
+from .ESipHeaderCSV import ESipHeaderCSV
 
 _hf_types = (SipCSeq, SipCallId, SipFrom, SipTo, SipMaxForwards, SipVia, SipContentLength, \
              SipContentType, SipExpires, SipRecordRoute, SipRoute, SipContact, SipWWWAuthenticate, \
@@ -77,7 +77,7 @@ class SipHeader(object):
                     body = hf_types[self.name](bodys)
                 except KeyError:
                     body = SipGenericHF(bodys, name)
-            except ESipHeaderCSV, einst:
+            except ESipHeaderCSV as einst:
                 einst.name = self.name
                 raise einst
         self.body = body

@@ -1,5 +1,5 @@
-import urllib
-from session import SipMsg
+import urllib.request, urllib.parse, urllib.error
+from .session import SipMsg
 
 
 class Filter(object):
@@ -60,7 +60,7 @@ class ContentFilter(StatelessFilter):
         StatelessFilter.__init__(self)
 
     def predicate(self, msg):
-        msgContent = urllib.unquote(msg.msg)
+        msgContent = urllib.parse.unquote(msg.msg)
         return msgContent.strip() != ""
 
 
@@ -146,7 +146,7 @@ class PacketMerger(StatefulFilter):
 #            if src_dst_dic.has_key(dst_src):
             if dst_src in src_dst_dic:
                 response[dst_src] = 1
-        for (k, msg) in src_dst_dic.iteritems():
+        for (k, msg) in src_dst_dic.items():
             if response[k] == 0:
                 mergedMessages.append(msg)
         mergedMessages.sort(key=lambda m: m.ntime)

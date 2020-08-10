@@ -22,8 +22,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from SipConf import SipConf
-from urllib import quote, unquote
+from .SipConf import SipConf
+from urllib.parse import quote, unquote
 
 class SipURL(object):
     username = None
@@ -176,7 +176,7 @@ class SipURL(object):
             w(';%s' % v)
         if self.headers:
             w('?')
-            w('&'.join([('%s=%s' % (h.capitalize(), quote(v))) for (h, v) in self.headers.items()]))
+            w('&'.join([('%s=%s' % (h.capitalize(), quote(v))) for (h, v) in list(self.headers.items())]))
         return ''.join(l)
 
     def getCopy(self):

@@ -22,15 +22,15 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from Timeout import TimeoutAbs
-from UaStateGeneric import UaStateGeneric
-from CCEvents import CCEventTry, CCEventFail, CCEventRedirect, CCEventDisconnect
-from SipContact import SipContact
-from SipAddress import SipAddress
-from SipURL import SipURL
-from SipTo import SipTo
-from SipFrom import SipFrom
-from SipCallId import SipCallId
+from .Timeout import TimeoutAbs
+from .UaStateGeneric import UaStateGeneric
+from .CCEvents import CCEventTry, CCEventFail, CCEventRedirect, CCEventDisconnect
+from .SipContact import SipContact
+from .SipAddress import SipAddress
+from .SipURL import SipURL
+from .SipTo import SipTo
+from .SipFrom import SipFrom
+from .SipCallId import SipCallId
 
 class UacStateIdle(UaStateGeneric):
     sname = 'Idle(UAC)'
@@ -92,7 +92,7 @@ class UacStateIdle(UaStateGeneric):
             return (UaStateDead, self.ua.disc_cbs, event.rtime, event.origin)
         return None
 
-if not globals().has_key('UacStateTrying'):
-    from UacStateTrying import UacStateTrying
-if not globals().has_key('UaStateDead'):
-    from UaStateDead import UaStateDead
+if 'UacStateTrying' not in globals():
+    from .UacStateTrying import UacStateTrying
+if 'UaStateDead' not in globals():
+    from .UaStateDead import UaStateDead

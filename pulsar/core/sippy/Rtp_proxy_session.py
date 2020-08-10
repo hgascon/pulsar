@@ -22,7 +22,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from SdpOrigin import SdpOrigin
+from .SdpOrigin import SdpOrigin
 
 from hashlib import md5
 from random import random
@@ -30,6 +30,7 @@ from time import time
 from datetime import datetime
 from traceback import print_exc
 import sys
+from functools import reduce
 
 class Rtp_proxy_session(object):
     rtp_proxy_client = None
@@ -51,7 +52,7 @@ class Rtp_proxy_session(object):
     def __init__(self, global_config, call_id = None, from_tag = None, to_tag = None,
       notify_socket = None, notify_tag = None):
         self.global_config = global_config
-        if global_config.has_key('_rtp_proxy_clients'):
+        if '_rtp_proxy_clients' in global_config:
             rtp_proxy_clients = [x for x in global_config['_rtp_proxy_clients'] if x.online]
             n = len(rtp_proxy_clients)
             if n == 0:
@@ -232,13 +233,13 @@ class Rtp_proxy_session(object):
         sects = []
         try:
             sdp_body.parse()
-        except Exception, exception:
-            print datetime.now(), 'can\'t parse SDP body: %s:' % str(exception)
-            print '-' * 70
+        except Exception as exception:
+            print(datetime.now(), 'can\'t parse SDP body: %s:' % str(exception))
+            print('-' * 70)
             print_exc(file = sys.stdout)
-            print '-' * 70
-            print sdp_body.content
-            print '-' * 70
+            print('-' * 70)
+            print(sdp_body.content)
+            print('-' * 70)
             sys.stdout.flush()
             return
         for i in range(0, len(sdp_body.content.sections)):

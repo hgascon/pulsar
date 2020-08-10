@@ -67,7 +67,7 @@ class AsyncSender(Thread):
                 try:
                     if self.userv.skt.sendto(data, address) == len(data):
                         break
-                except socket.error, why:
+                except socket.error as why:
                     if why[0] not in (EWOULDBLOCK, ENOBUFS, EAGAIN):
                         break
                 sleep(0.01)
@@ -88,16 +88,16 @@ class AsyncReceiver(Thread):
                 data, address = self.userv.skt.recvfrom(8192)
                 if not data:
                     break
-            except Exception, why:
+            except Exception as why:
                 if isinstance(why, socket.error) and why[0] in (ECONNRESET, ENOTCONN, ESHUTDOWN):
                     break
                 if isinstance(why, socket.error) and why[0] in (EINTR,):
                     continue
                 else:
-                    print datetime.now(), 'Udp_server: unhandled exception when receiving incoming data'
-                    print '-' * 70
+                    print(datetime.now(), 'Udp_server: unhandled exception when receiving incoming data')
+                    print('-' * 70)
                     traceback.print_exc(file = sys.stdout)
-                    print '-' * 70
+                    print('-' * 70)
                     sys.stdout.flush()
                     sleep(1)
                     continue
@@ -160,10 +160,10 @@ class Udp_server(object):
         try:
             self.data_callback(data, address, self)
         except:
-            print datetime.now(), 'Udp_server: unhandled exception when processing incoming data'
-            print '-' * 70
+            print(datetime.now(), 'Udp_server: unhandled exception when processing incoming data')
+            print('-' * 70)
             traceback.print_exc(file = sys.stdout)
-            print '-' * 70
+            print('-' * 70)
             sys.stdout.flush()
 
     def shutdown(self):
@@ -179,13 +179,13 @@ if __name__ == '__main__':
     npongs = 2
 
     def ping_received(data, address, udp_server):
-        print 'ping_received'
+        print('ping_received')
         if not (data == 'ping!' and address == ('127.0.0.1', 54321)):
             exit(1)
         udp_server.send_to('pong!', address)
 
     def pong_received(data, address, udp_server):
-        print 'pong_received'
+        print('pong_received')
         if not (data == 'pong!' and address == ('127.0.0.1', 12345)):
             exit(1)
         global npongs
@@ -194,13 +194,13 @@ if __name__ == '__main__':
             reactor.stop()
 
     def ping_received6(data, address, udp_server):
-        print 'ping_received6', address
+        print('ping_received6', address)
         if not (data == 'ping!' and address == ('[::1]', 54321)):
             exit(1)
         udp_server.send_to('pong!', address)
 
     def pong_received6(data, address, udp_server):
-        print 'pong_received6', address
+        print('pong_received6', address)
         if not (data == 'pong!' and address == ('[::1]', 12345)):
             exit(1)
         global npongs

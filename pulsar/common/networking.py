@@ -11,7 +11,7 @@ class Client:
         self.connection.connect((host, port))
         self.connection.settimeout(timeout)
         self.bsize = bsize
-        print "\n[*] Connected to server..."
+        print("\n[*] Connected to server...")
 
     def send(self, msg):
         self.connection.send(msg)
@@ -49,9 +49,9 @@ class Server:
         self.connection.close()
 
     def accept(self):
-        print "\n[ ] Waiting for client connection..."
+        print("\n[ ] Waiting for client connection...")
         self.connection, self.address = self.s.accept()
-        print "[*] Connected to client..."
+        print("[*] Connected to client...")
 
     def settimeout(self, timeout):
         self.connection.settimeout(timeout)

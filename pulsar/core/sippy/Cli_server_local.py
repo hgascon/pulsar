@@ -24,7 +24,7 @@
 
 from twisted.internet.protocol import Factory
 from twisted.internet import reactor
-from Cli_session import Cli_session
+from .Cli_session import Cli_session
 from os import chown, unlink
 from os.path import exists
 
@@ -49,7 +49,7 @@ class Cli_server_local(Factory):
 
 if __name__ == '__main__':
     def callback(clm, cmd):
-        print cmd
+        print(cmd)
         return False
     f = Cli_server_local(callback)
     reactor.run()

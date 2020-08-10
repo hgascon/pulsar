@@ -22,10 +22,10 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from SdpMediaDescription import SdpMediaDescription
-from SdpGeneric import SdpGeneric
-from SdpOrigin import SdpOrigin
-from SdpConnecton import SdpConnecton
+from .SdpMediaDescription import SdpMediaDescription
+from .SdpGeneric import SdpGeneric
+from .SdpOrigin import SdpOrigin
+from .SdpConnecton import SdpConnecton
 
 f_types = {'v':SdpGeneric, 'o':SdpOrigin, 's':SdpGeneric, 'i':SdpGeneric, \
   'u':SdpGeneric, 'e':SdpGeneric, 'p':SdpGeneric, 'c':SdpConnecton, \

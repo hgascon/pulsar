@@ -22,7 +22,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from Timeout import Timeout
+from .Timeout import Timeout
 from threading import Thread, Condition
 from errno import EINTR
 from twisted.internet import reactor
@@ -45,7 +45,7 @@ class _RTPPLWorker(Thread):
             try:
                 s.send(command)
                 break
-            except socket.error, why:
+            except socket.error as why:
                 if why[0] == EINTR:
                     continue
                 raise why
@@ -53,7 +53,7 @@ class _RTPPLWorker(Thread):
             try:
                 rval = s.recv(1024).strip()
                 break
-            except socket.error, why:
+            except socket.error as why:
                 if why[0] == EINTR:
                     continue
                 raise why
@@ -109,7 +109,7 @@ class Rtp_proxy_client_local(object):
 
 if __name__ == '__main__':
     def display(*args):
-        print args
+        print(args)
     r = Rtp_proxy_client_local({'_sip_address':'1.2.3.4'})
     r.send_command('VF 123456', display, 'abcd')
     from twisted.internet import reactor

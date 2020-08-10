@@ -21,9 +21,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from SdpConnecton import SdpConnecton
-from SdpMedia import SdpMedia
-from SdpGeneric import SdpGeneric
+from .SdpConnecton import SdpConnecton
+from .SdpMedia import SdpMedia
+from .SdpGeneric import SdpGeneric
 
 f_types = {'m':SdpMedia, 'i':SdpGeneric, 'c':SdpConnecton, 'b':SdpGeneric, \
   'k':SdpGeneric}

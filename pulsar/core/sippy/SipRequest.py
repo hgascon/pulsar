@@ -22,14 +22,14 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from SipMsg import SipMsg
-from SipHeader import SipHeader
-from SipCSeq import SipCSeq
-from SipTo import SipTo
-from SipResponse import SipResponse
-from SipURL import SipURL
-from SipAddress import SipAddress
-from SipExpires import SipExpires
+from .SipMsg import SipMsg
+from .SipHeader import SipHeader
+from .SipCSeq import SipCSeq
+from .SipTo import SipTo
+from .SipResponse import SipResponse
+from .SipURL import SipURL
+from .SipAddress import SipAddress
+from .SipExpires import SipExpires
 
 class SipRequest(SipMsg):
     method = None

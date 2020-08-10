@@ -22,8 +22,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from Timeout import Timeout
-from UaStateGeneric import UaStateGeneric
+from .Timeout import Timeout
+from .UaStateGeneric import UaStateGeneric
 
 class UaStateDisconnected(UaStateGeneric):
     sname = 'Disconnected'
@@ -46,5 +46,5 @@ class UaStateDisconnected(UaStateGeneric):
         #print 'Time in Disconnected state expired, going to the Dead state'
         self.ua.changeState((UaStateDead,))
 
-if not globals().has_key('UaStateDead'):
-    from UaStateDead import UaStateDead
+if 'UaStateDead' not in globals():
+    from .UaStateDead import UaStateDead

@@ -188,7 +188,7 @@ def gsecStates2Peach(s,path,pitFile):
         retName = '\t\t<State name="'+hist+' '+s[0]+'">\n'
     for i in nextStates:
         #print('>>>',i,s,hist)
-        if i in history.keys() and history[i]!=hist:
+        if i in list(history.keys()) and history[i]!=hist:
             #print('>>>>>>',history[i]+[1])
             #print('CRITICAL WARNING!')
             #print(i,hist,history[i])

@@ -3,7 +3,7 @@
 import time
 import os.path
 import os
-import ConfigParser
+import configparser
 
 from ast import literal_eval
 
@@ -25,7 +25,7 @@ class Harry():
         self.path_conf = path_conf
 
         # open conf file
-        config = ConfigParser.RawConfigParser()
+        config = configparser.RawConfigParser()
         harry_conf = os.path.join(path_conf, "harry.conf")
         config.readfp(open(harry_conf))
 

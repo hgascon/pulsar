@@ -5,9 +5,9 @@ import sys
 import socket
 import time
 import json
-import urllib
+import urllib.request, urllib.parse, urllib.error
 import errno
-import ConfigParser
+import configparser
 import numpy as np
 
 from ast import literal_eval
@@ -35,7 +35,7 @@ class Fuzzer:
         self.path_conf = path_conf
 
         # open conf file
-        config = ConfigParser.RawConfigParser()
+        config = configparser.RawConfigParser()
         fuzzer_conf = os.path.join(path_conf, "fuzzer.conf")
         config.readfp(open(fuzzer_conf))
 
@@ -111,11 +111,11 @@ class Fuzzer:
                                     self.timeout, self.bsize)
                 # generate first client message and send to the server
                 snd_message = self.lens.transitionSelf()
-                print "\n>>> SENDING msg:\n{}".format(snd_message[1])
+                print("\n>>> SENDING msg:\n{}".format(snd_message[1]))
                 try:
                     connection.send(str(snd_message[1]))
                 except socket.error as e:
-                    print "socket: {} in send operation".format(e)
+                    print("socket: {} in send operation".format(e))
 
                 while self.status == FUZZ_STATUS_OK:
                     #time.sleep(0.3)
@@ -126,12 +126,12 @@ class Fuzzer:
                             e.errno = 0
                             raise e
                         deco = '#'*80
-                        quoted_rcv_msg = urllib.quote(rcv_message)
-                        print ">>> RECEIVED message:\n{}\n{}\n{}".format(deco,
+                        quoted_rcv_msg = urllib.parse.quote(rcv_message)
+                        print(">>> RECEIVED message:\n{}\n{}\n{}".format(deco,
                                                                          quoted_rcv_msg,
-                                                                         deco)
+                                                                         deco))
                     except Exception as e:
-                        print "socket: {}\n".format(e)
+                        print("socket: {}\n".format(e))
                         self._termination_check()
                         if self.status is FUZZ_STATUS_TERMINATED:
                             connection.close()
@@ -146,29 +146,29 @@ class Fuzzer:
                             if e.errno == errno.ETIMEDOUT:
                                 pass
 
-                    print ">>> Consuming RECEIVED msg of length {}".format(len(rcv_message))
+                    print(">>> Consuming RECEIVED msg of length {}".format(len(rcv_message)))
                     status = self.lens.consumeOtherSide(rcv_message)
-                    print ">>> STATUS: {}".format(status)
+                    print(">>> STATUS: {}".format(status))
                     if status == "END":
                         self.new_iteration(reset=1)
                         status = self.lens.consumeOtherSide(rcv_message)
-                        print ">>> STATUS: {}".format(status)
+                        print(">>> STATUS: {}".format(status))
                     if status == "NO TRANSITION":
-                        print "Consuming empty message..."
+                        print("Consuming empty message...")
                         status = self.lens.consumeOtherSide("")
                     self.log_trace()
                     status, msg, transition = self.lens.transitionSelf()
-                    print ">>> STATUS: {}, TRANSITION: {}".format(status,
-                                                                  transition)
+                    print(">>> STATUS: {}, TRANSITION: {}".format(status,
+                                                                  transition))
                     if msg is not None:
                         try:
                             connection.send(str(msg))
-                            print ">>> SENDING msg of length {}".format(len(msg))
+                            print(">>> SENDING msg of length {}".format(len(msg)))
                             if len(msg) < 5000:
                                 deco = '#'*80
-                                print "{}\n{}\n{}".format(deco, msg, deco)
+                                print("{}\n{}\n{}".format(deco, msg, deco))
                         except socket.error as e:
-                            print "socket: {} in send operation".format(e)
+                            print("socket: {} in send operation".format(e))
                             connection.close()
                             break
 
@@ -186,19 +186,19 @@ class Fuzzer:
                 rcv_message = ""
                 while self.status == FUZZ_STATUS_OK:
                     try:
-                        print ">>> RECEIVING message... "
+                        print(">>> RECEIVING message... ")
                         rcv_message = connection.recv()
                         if len(rcv_message) == 0:
                             e = SocketError("Received empty message")
                             e.errno = 0
                             raise e
                         deco = '#'*80
-                        quoted_rcv_msg = urllib.quote(rcv_message)
-                        print ">>> RECEIVED message:\n{}\n{}\n{}".format(deco,
+                        quoted_rcv_msg = urllib.parse.quote(rcv_message)
+                        print(">>> RECEIVED message:\n{}\n{}\n{}".format(deco,
                                                                          quoted_rcv_msg,
-                                                                         deco)
+                                                                         deco))
                     except Exception as e:
-                        print "socket: {}".format(e)
+                        print("socket: {}".format(e))
                         self._termination_check()
                         if self.status is FUZZ_STATUS_TERMINATED:
                             connection.close()
@@ -214,29 +214,29 @@ class Fuzzer:
                                 pass
 
                     #if rcv_message != "":
-                    print ">>> Consuming RECEIVED msg of length {}".format(len(rcv_message))
+                    print(">>> Consuming RECEIVED msg of length {}".format(len(rcv_message)))
                     status = self.lens.consumeOtherSide(rcv_message)
-                    print ">>> STATUS: {}".format(status)
+                    print(">>> STATUS: {}".format(status))
                     if status == "END":
                         self.new_iteration(reset=1)
                         status = self.lens.consumeOtherSide(rcv_message)
-                        print ">>> STATUS: {}".format(status)
+                        print(">>> STATUS: {}".format(status))
                     if status == "NO TRANSITION":
-                        print "Consuming empty message..."
+                        print("Consuming empty message...")
                         status = self.lens.consumeOtherSide("")
                     self.log_trace()
                     status, msg, transition = self.lens.transitionSelf()
-                    print ">>> STATUS: {}, TRANSITION: {}".format(status,
-                                                                  transition)
+                    print(">>> STATUS: {}, TRANSITION: {}".format(status,
+                                                                  transition))
                     if msg is not None:
                         try:
                             connection.send(str(msg))
-                            print ">>> SENDING msg of length {}".format(len(msg))
+                            print(">>> SENDING msg of length {}".format(len(msg)))
                             if len(msg) < 5000:
                                 deco = '#'*80
-                                print "{}\n{}\n{}".format(deco, msg, deco)
+                                print("{}\n{}\n{}".format(deco, msg, deco))
                         except socket.error as e:
-                            print "socket: {} in send operation".format(e)
+                            print("socket: {} in send operation".format(e))
                             connection.close()
                             break
 
@@ -244,37 +244,37 @@ class Fuzzer:
 
     def _run_sample(self):
         self.task_id = self.db.add_path(self.bin_name)
-        print "Running binary in sandbox with ID {}:\n{}".format(self.task_id,
-                                                                 self.bin_name)
+        print("Running binary in sandbox with ID {}:\n{}".format(self.task_id,
+                                                                 self.bin_name))
 
     ######## Tracking Functions ########
 
     def _termination_check(self):
 
-        print ">>> CHECKING FOR TERMINATED EXECUTION"
+        print(">>> CHECKING FOR TERMINATED EXECUTION")
         terminated = ""
         # verify termination with cuckoo output
         if self.cuckoo_session:
             # wait until result from execution is stored in db
             for i in range(self.timer_termination):
                 time.sleep(1)
-                print "."
+                print(".")
             try:
                 task = self.db.view_task(self.task_id)
             except AttributeError:
-                print "Err: The cuckoo interface is active but no " \
+                print("Err: The cuckoo interface is active but no " \
                       "cuckoo task has been found! You may consider " \
-                      "setting cuckoo_session to 0 in fuzzer.conf"
+                      "setting cuckoo_session to 0 in fuzzer.conf")
                 sys.exit()
             if task.completed_on:
                 terminated = True
-                print "Sample execution is terminated!"
+                print("Sample execution is terminated!")
             else:
                 return
         # verify termination manually
         else:
             while terminated == "":
-                inp = raw_input('Connection terminated? [y/n]: ')
+                inp = input('Connection terminated? [y/n]: ')
                 if inp == 'y':
                     terminated = True
                 elif inp == 'n':
@@ -287,7 +287,7 @@ class Fuzzer:
         last fuzzing input. This function should be read the exit
         code of the sample from the sandbox report.
         """
-        print ">>> CHECKING FOR CRASH"
+        print(">>> CHECKING FOR CRASH")
         crash = ""
         if self.cuckoo_session:
             task = self.db.view_task(self.task_id)
@@ -305,14 +305,14 @@ class Fuzzer:
                                     crash = True
         else:
             while crash == "":
-                inp = raw_input('Binary crashed? [y/n]: ')
+                inp = input('Binary crashed? [y/n]: ')
                 if inp == 'y':
                     crash = True
                 elif inp == 'n':
                     crash = False
         if crash:
             self.status = FUZZ_STATUS_CRASH
-        print "Fuzzer status: {}".format(self.status)
+        print("Fuzzer status: {}".format(self.status))
 
     def _load_tracker(self):
         self.tracker = pz.load(self.tracker_path)
@@ -327,7 +327,7 @@ class Fuzzer:
         if not reset:
             self.iteration += 1
             self.status = FUZZ_STATUS_OK
-        print ">>> RESETING MODEL..."
+        print(">>> RESETING MODEL...")
         self.lens.reset_model()
 
     def get_fuzz_fields(self, template_id):
@@ -365,7 +365,7 @@ class Fuzzer:
         trace = [int(time.time()), self.iteration,
                  self.status, state, template_id, fields_to_fuzz, fields_data]
         self.logger.write_trace(trace)
-        print trace
+        print(trace)
         self.previous_trace = self.trace
         self.trace = [], []
 
@@ -409,10 +409,10 @@ class Fuzzer:
         return 'A' * length
 
     def _get_non_utf8_data(self):
-        return "\xe7\x9f\x9b\xe7\x9b\u0178\xe4\u0153\xbf\
-                \xe4\u017e\u20ac\xe5\u20ac\xa7IT\xe5\xb7\
-                \u0161\xe5\u20ac\u017d\xe4\xb9\x8b\xe9\x97\
-                \u017d\xe4\xba\x89"
+        return "\xe7\x9f\x9b\xe7\x9b\\u0178\xe4\\u0153\xbf\
+                \xe4\\u017e\\u20ac\xe5\\u20ac\xa7IT\xe5\xb7\
+                \\u0161\xe5\\u20ac\\u017d\xe4\xb9\x8b\xe9\x97\
+                \\u017d\xe4\xba\x89"
 
     def _get_overflowed_integer(self, data):
         if self.is_integer(data):

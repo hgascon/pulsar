@@ -22,8 +22,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from Radius_client import Radius_client
+from .Radius_client import Radius_client
 from time import time
+from functools import reduce
 
 class RadiusAuthorisation(Radius_client):
     def do_auth(self, username, caller, callee, h323_cid, sip_cid, remote_ip, res_cb, \

@@ -22,15 +22,15 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from Timeout import TimeoutAbs
-from SipAddress import SipAddress
-from SipRoute import SipRoute
-from UaStateGeneric import UaStateGeneric
-from CCEvents import CCEventTry
-from SipContact import SipContact
-from SipCiscoGUID import SipCiscoGUID
-from SipFrom import SipFrom
-from SipTo import SipTo
+from .Timeout import TimeoutAbs
+from .SipAddress import SipAddress
+from .SipRoute import SipRoute
+from .UaStateGeneric import UaStateGeneric
+from .CCEvents import CCEventTry
+from .SipContact import SipContact
+from .SipCiscoGUID import SipCiscoGUID
+from .SipFrom import SipFrom
+from .SipTo import SipTo
 
 class UasStateIdle(UaStateGeneric):
     sname = 'Idle(UAS)'
@@ -103,5 +103,5 @@ class UasStateIdle(UaStateGeneric):
         self.ua.setup_ts = req.rtime
         return (UasStateTrying,)
 
-if not globals().has_key('UasStateTrying'):
-    from UasStateTrying import UasStateTrying
+if 'UasStateTrying' not in globals():
+    from .UasStateTrying import UasStateTrying

@@ -23,8 +23,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from ConfigParser import RawConfigParser
-from SipConf import SipConf
+from configparser import RawConfigParser
+from .SipConf import SipConf
 
 SUPPORTED_OPTIONS = { \
  'acct_enable':       ('B', 'enable or disable Radius accounting'), \
@@ -119,7 +119,7 @@ class MyConfigParser(RawConfigParser):
 
     def __contains__(self, key):
         if key.startswith('_'):
-            return self._private_keys.has_key(key)
+            return key in self._private_keys
         return self.has_option(self.default_section, key)
 
     def get(self, *args):
@@ -133,7 +133,7 @@ class MyConfigParser(RawConfigParser):
         return default_value
 
     def get_longopts(self):
-        return tuple([x + '=' for x in SUPPORTED_OPTIONS.keys()])
+        return tuple([x + '=' for x in list(SUPPORTED_OPTIONS.keys())])
 
     def read(self, fname):
         RawConfigParser.readfp(self, open(fname))
@@ -146,22 +146,22 @@ class MyConfigParser(RawConfigParser):
         if compat:
             if key == 'rtp_proxy_client':
                 # XXX compatibility option
-                if self.has_key('_rtp_proxy_clients'):
+                if '_rtp_proxy_clients' in self:
                     self['_rtp_proxy_clients'].append(value)
                 else:
                     self['_rtp_proxy_clients'] = [value,]
-                if self.has_key('rtp_proxy_clients'):
+                if 'rtp_proxy_clients' in self:
                     self['rtp_proxy_clients'] += ',' + value
                 else:
                     self['rtp_proxy_clients'] = value
                 return
             elif key == 'pass_header':
                 # XXX compatibility option
-                if self.has_key('_pass_headers'):
+                if '_pass_headers' in self:
                     self['_pass_headers'].append(value)
                 else:
                     self['_pass_headers'] = [value,]
-                if self.has_key('pass_headers'):
+                if 'pass_headers' in self:
                     self['pass_headers'] += ',' + value
                 else:
                     self['pass_headers'] = value
@@ -170,15 +170,15 @@ class MyConfigParser(RawConfigParser):
         value_type  = SUPPORTED_OPTIONS[key][0]
         if value_type == 'B':
             if value.lower() not in self._boolean_states:
-                raise ValueError, 'Not a boolean: %s' % value
+                raise ValueError('Not a boolean: %s' % value)
         elif value_type == 'I':
             _value = int(value)
         if key in ('keepalive_ans', 'keepalive_orig'):
             if _value < 0:
-                raise ValueError, 'keepalive_ans should be non-negative'
+                raise ValueError('keepalive_ans should be non-negative')
         elif key == 'max_credit_time':
             if _value <= 0:
-                raise ValueError, 'max_credit_time should be more than zero'
+                raise ValueError('max_credit_time should be more than zero')
         elif key == 'allowed_pts':
             self['_allowed_pts'] = [int(x) for x in value.split(',')]
         elif key in ('accept_ips', 'pass_headers', 'rtp_proxy_clients'):
@@ -193,12 +193,12 @@ class MyConfigParser(RawConfigParser):
                 self['_sip_address'] = value
         elif key == 'sip_port':
             if _value <= 0 or _value > 65535:
-                raise ValueError, 'sip_port should be in the range 1-65535'
+                raise ValueError('sip_port should be in the range 1-65535')
             self['_sip_port'] = _value
         self[key] = value
 
     def options_help(self):
-        supported_options = SUPPORTED_OPTIONS.items()
+        supported_options = list(SUPPORTED_OPTIONS.items())
         supported_options.sort()
         for option, (value_type, helptext) in supported_options:
             if value_type == 'B':
@@ -207,7 +207,7 @@ class MyConfigParser(RawConfigParser):
                 value = 'number'
             else:
                 value = '"string"'
-            print '--%s=%s\n\t%s\n' % (option, value, helptext)
+            print('--%s=%s\n\t%s\n' % (option, value, helptext))
 
 if __name__ == '__main__':
     m = MyConfigParser()
@@ -215,7 +215,7 @@ if __name__ == '__main__':
     m['b2bua_socket'] = 'bar1'
     m['acct_enable'] = True
     m['auth_enable'] = 'False'
-    assert m.has_key('_foo')
+    assert '_foo' in m
     assert m['_foo'] == 'bar'
     assert m['b2bua_socket'] == 'bar1'
     assert m.get('_foo') == 'bar'

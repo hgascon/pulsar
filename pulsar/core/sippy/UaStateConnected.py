@@ -22,15 +22,15 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from Timeout import Timeout
-from UaStateGeneric import UaStateGeneric
-from SipAlso import SipAlso
-from SipAddress import SipAddress
-from SipHeader import SipHeader
-from SipReferTo import SipReferTo
-from SipReferredBy import SipReferredBy
-from SipProxyAuthorization import SipProxyAuthorization
-from CCEvents import CCEventDisconnect, CCEventFail, CCEventRedirect, CCEventUpdate, CCEventInfo, CCEventConnect
+from .Timeout import Timeout
+from .UaStateGeneric import UaStateGeneric
+from .SipAlso import SipAlso
+from .SipAddress import SipAddress
+from .SipHeader import SipHeader
+from .SipReferTo import SipReferTo
+from .SipReferredBy import SipReferredBy
+from .SipProxyAuthorization import SipProxyAuthorization
+from .CCEvents import CCEventDisconnect, CCEventFail, CCEventRedirect, CCEventUpdate, CCEventInfo, CCEventConnect
 
 class UaStateConnected(UaStateGeneric):
     sname = 'Connected'
@@ -214,10 +214,10 @@ class UaStateConnected(UaStateGeneric):
         self.keepalives += 1
         if code in (408, 481, 486):
             if self.keepalives == 1:
-                print '%s: Remote UAS at %s:%d does not support re-INVITES, disabling keep alives' % (self.ua.cId, self.ua.rAddr[0], self.ua.rAddr[1])
+                print('%s: Remote UAS at %s:%d does not support re-INVITES, disabling keep alives' % (self.ua.cId, self.ua.rAddr[0], self.ua.rAddr[1]))
                 Timeout(self.ua.disconnect, 600)
                 return
-            print '%s: Received %d response to keep alive from %s:%d, disconnecting the call' % (self.ua.cId, code, self.ua.rAddr[0], self.ua.rAddr[1])
+            print('%s: Received %d response to keep alive from %s:%d, disconnecting the call' % (self.ua.cId, code, self.ua.rAddr[0], self.ua.rAddr[1]))
             self.ua.disconnect()
             return
         Timeout(self.keepAlive, self.ua.kaInterval)
@@ -233,9 +233,9 @@ class UaStateConnected(UaStateGeneric):
         self.ua.global_config['_sip_tm'].newTransaction(req, \
           laddress = self.ua.source_address)
 
-if not globals().has_key('UaStateDisconnected'):
-    from UaStateDisconnected import UaStateDisconnected
-if not globals().has_key('UasStateUpdating'):
-    from UasStateUpdating import UasStateUpdating
-if not globals().has_key('UacStateUpdating'):
-    from UacStateUpdating import UacStateUpdating
+if 'UaStateDisconnected' not in globals():
+    from .UaStateDisconnected import UaStateDisconnected
+if 'UasStateUpdating' not in globals():
+    from .UasStateUpdating import UasStateUpdating
+if 'UacStateUpdating' not in globals():
+    from .UacStateUpdating import UacStateUpdating
