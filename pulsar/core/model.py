@@ -3,11 +3,11 @@
 
 import os
 import shutil
-import ConfigParser
-import urllib
-import data
-import rule
-import DFA
+import configparser
+import urllib.request, urllib.parse, urllib.error
+from . import data
+from . import rule
+from . import DFA
 
 from ast import literal_eval
 from pulsar.core.harry import Harry
@@ -28,7 +28,7 @@ class ModelGenerator():
         self.nmf_components = nmf_components
 
         # open conf file
-        config = ConfigParser.RawConfigParser()
+        config = configparser.RawConfigParser()
         model_conf = os.path.join(path_conf, "model.conf")
         config.readfp(open(model_conf))
 
@@ -42,8 +42,8 @@ class ModelGenerator():
         self.analyses_ival = literal_eval(config.get('data',
                                                      'analyses_interval'))
         if self.analyses_ival:
-            self.analyses_ival = range(self.analyses_ival[0],
-                                       self.analyses_ival[-1]+1)
+            self.analyses_ival = list(range(self.analyses_ival[0],
+                                       self.analyses_ival[-1]+1))
         self.whitespace = config.get('model', 'whitespace')
         self.order = literal_eval(config.get('model', 'order'))
         self.ngram = literal_eval(config.get('model', 'ngram'))
@@ -68,7 +68,7 @@ class ModelGenerator():
             pcap_noext = pcap.split('.')[0]
             pcap_named_dir = os.path.join(self.models_dir, pcap_noext)
             if not os.path.exists(pcap_named_dir):
-                print ">>> Creating dir {}".format(pcap_named_dir)
+                print(">>> Creating dir {}".format(pcap_named_dir))
                 os.makedirs(pcap_named_dir)
             pcap_path_model = os.path.join(pcap_named_dir, pcap)
             shutil.copyfile(pcap_origin, pcap_path_model)
@@ -98,7 +98,7 @@ class ModelGenerator():
         # find all pcaps associated to the same binary within
         # a range of executions
         else:
-            print "finding pcaps in {}".format(self.analyses_ival)
+            print("finding pcaps in {}".format(self.analyses_ival))
             for d in self.analyses_ival:
                 path = os.path.join(self.analyses_dir, str(d))
                 files = os.listdir(os.path.abspath(path))
@@ -111,7 +111,7 @@ class ModelGenerator():
                             pcaps[binary_name] += [pcap_path]
 
         # generate model from each binary pcaps
-        for bin_name, pcap_list in pcaps.items():
+        for bin_name, pcap_list in list(pcaps.items()):
             self._merge_pcaps(bin_name, pcap_list)
             self._extract_derrick(bin_name)
             self._generate_prisma_input(bin_name)
@@ -130,7 +130,7 @@ class ModelGenerator():
             shutil.copyfile(bin_path_storage, bin_path_model)
         merged_pcap_file = os.path.join(bin_named_dir,
                                         "{}.pcap".format(bin_name))
-        print ">>> Merging PCAPS from {}".format(bin_name)
+        print(">>> Merging PCAPS from {}".format(bin_name))
         cmd = "mergecap {} -w {}".format(' '.join(pcaps), merged_pcap_file)
         os.system(cmd)
 
@@ -142,7 +142,7 @@ class ModelGenerator():
                                  "{}.pcap".format(bin_name))
         drk_file = os.path.join(self.models_dir, bin_name,
                                 "{}.drk".format(bin_name))
-        print ">>> Extracting DERRICK files from {}".format(bin_name)
+        print(">>> Extracting DERRICK files from {}".format(bin_name))
         cmd = "derrick -r {} -l {}".format(pcap_file, drk_file)
         os.system(cmd)
 
@@ -155,7 +155,7 @@ class ModelGenerator():
         drk_file = os.path.join(self.models_dir, bin_name,
                                 "{}.drk".format(bin_name))
         h = Harry(drk_file, self.path_conf)
-        print ">>> Generating PRISMA input files from {}".format(bin_name)
+        print(">>> Generating PRISMA input files from {}".format(bin_name))
         h.generate_prisma_input(drk_file)
 
     def _generate_clusters(self, bin_name):
@@ -167,7 +167,7 @@ class ModelGenerator():
         core_dir = os.path.dirname(os.path.abspath(__file__))
         cluster_generator_path = os.path.join(core_dir,
                                               "cluster_generator.R")
-        print ">>> Clustering data..."
+        print(">>> Clustering data...")
         cmd = "R --no-save --args {} {} {} {} < {}".format(self.prisma_dir,
                                                            data_dir,
                                                            clusters_file,
@@ -181,7 +181,7 @@ class ModelGenerator():
         """
         data_dir = os.path.join(self.models_dir, bin_name, bin_name)
         m = ModelFilesGenerator(data_dir, self.order, self.ngram,
-                                urllib.unquote(self.whitespace), self.subrules)
+                                urllib.parse.unquote(self.whitespace), self.subrules)
 
         m.saveModel()
         if self.dograph:
@@ -194,17 +194,17 @@ class ModelGenerator():
                 m.setColorStates()
                 G = pygraphviz.AGraph(directed=True)
                 cs = set(m.colorStates)
-                print "Colouring {} states:".format(len(cs))
-                for node, neighs in graph.items():
+                print("Colouring {} states:".format(len(cs)))
+                for node, neighs in list(graph.items()):
                     if node in cs:
-                        print node
+                        print(node)
                         if node.endswith("UAC"):
                             G.add_node(node, style="filled", fillcolor="grey")
                         if node.endswith("UAS"):
                             G.add_node(node, style="filled", fillcolor="pink")
                     else:
                         G.add_node(node)
-                for node, neighs in graph.items():
+                for node, neighs in list(graph.items()):
                     for neig in neighs:
                         G.add_edge(node, neig)
             else:
@@ -230,7 +230,7 @@ class ModelFilesGenerator:
         self.rules = {}
         if subrules:
             # generate all subrules
-            subrulesOrder = range(self.order, -1, -1)
+            subrulesOrder = list(range(self.order, -1, -1))
         else:
             # just the rules for this particular order
             subrulesOrder = [self.order]
@@ -247,8 +247,8 @@ class ModelFilesGenerator:
     def saveModel(self):
         # write out the markov model:
         f = file(self.datapath + ".markovModel", "w")
-        for state, nextStates in self.mc.iteritems():
-            for nextState, count in nextStates.iteritems():
+        for state, nextStates in self.mc.items():
+            for nextState, count in nextStates.items():
                 f.write("%s->%s,%d\n" % (state, nextState, count))
         f.close()
         # write out the templates:
@@ -259,10 +259,10 @@ class ModelFilesGenerator:
                      template.numberOfMessages, len(template.tokens),
                      ",".join(map(str, template.getFieldIndices()))))
             for tok in template.tokens:
-                f.write("%s\n" % urllib.quote(tok))
+                f.write("%s\n" % urllib.parse.quote(tok))
         f.close()
         f = file(self.datapath + ".rules", "w")
-        for ruleSet in self.rules.itervalues():
+        for ruleSet in self.rules.values():
             for r in ruleSet.rules:
                 f.write("RULE transition:%s srcId:%d srcField:%d dstField:%d type:%s\n" %
                         (ruleSet.fingerprint, r.sourceId, r.sourceField,
@@ -322,14 +322,14 @@ class ModelFilesGenerator:
         self.msg4templateIds = {}
         self.structureTemplates = []
         templateId = 0
-        for (state, msgs) in self.msgs4state.iteritems():
+        for (state, msgs) in self.msgs4state.items():
             # get all tokenized messages associated with this state
             tokens = [self.dh.getTokensForMsg(m) for m in msgs]
             # cluster them according to the number of tokens
             len2tokens = {}
             for (tok, msg) in zip(tokens, msgs):
                 len2tokens.setdefault(len(tok), []).append((tok, msg))
-            for (theLen, sameLengthMsgs) in len2tokens.iteritems():
+            for (theLen, sameLengthMsgs) in len2tokens.items():
                 # construct an empty template capable of holding theLen tokens
                 curTemplate = StructureTemplate(state, templateId, theLen)
                 # merge the messages
@@ -350,7 +350,7 @@ class ModelFilesGenerator:
             msgs = ([-1] * theOrder) + msgs
             tids = ([-1] * theOrder) + tids
 
-            for ind in xrange(len(msgs) - theOrder):
+            for ind in range(len(msgs) - theOrder):
                 curTids = [str(t) for t in tids[ind:(ind+theOrder+1)]]
                 curMsgs = msgs[ind:(ind+theOrder+1)]
                 templateCombinations.setdefault(TEMPLATE_SEP.join(curTids),
@@ -371,7 +371,7 @@ class ModelFilesGenerator:
             else:
                 return self.structureTemplates[tid].getFieldIndices()
 
-        for (templateIds, msgs) in templateCombinations.iteritems():
+        for (templateIds, msgs) in templateCombinations.items():
             tids = [int(tid) for tid in templateIds.split(TEMPLATE_SEP)]
             fieldsForMessages = [None] * len(tids)
             for (ind, tid) in enumerate(tids):
@@ -406,7 +406,7 @@ class StructureTemplate:
     def __init__(self, state, templateId, nTokens):
         self.state = state
         self.templateId = templateId
-        self.tokens = [set() for _ in xrange(nTokens)]
+        self.tokens = [set() for _ in range(nTokens)]
         self.numberOfMessages = 0
 
     def addTokenizedMessage(self, toks):
@@ -420,7 +420,7 @@ class StructureTemplate:
         self.fields = [ind for (ind, f) in enumerate(self.tokens)
                        if len(f) > 1]
         # convert the token sets to list of strings
-        for ind in xrange(len(self.tokens)):
+        for ind in range(len(self.tokens)):
             cur = self.tokens[ind]
             if len(cur) == 1:
                 self.tokens[ind] = cur.pop()

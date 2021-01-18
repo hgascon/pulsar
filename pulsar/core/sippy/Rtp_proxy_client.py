@@ -22,9 +22,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from Timeout import Timeout
-from Rtp_proxy_client_udp import Rtp_proxy_client_udp
-from Rtp_proxy_client_local import Rtp_proxy_client_local
+from .Timeout import Timeout
+from .Rtp_proxy_client_udp import Rtp_proxy_client_udp
+from .Rtp_proxy_client_local import Rtp_proxy_client_local
 
 from time import time
 from hashlib import md5

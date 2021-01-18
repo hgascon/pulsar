@@ -1,7 +1,7 @@
-import urllib
+import urllib.request, urllib.parse, urllib.error
 import random
-from sippy.SipRequest import SipRequest
-from sippy.SipResponse import SipResponse
+from .sippy.SipRequest import SipRequest
+from .sippy.SipResponse import SipResponse
 from operator import itemgetter
 
 class SessionInfo:
@@ -39,7 +39,7 @@ class SessionHandler:
         pass
 
     def writeSessionInformation(self, path, what=None):
-        f = file(path, "w")
+        f = open(path, "w")
         f.write("%s\n" % "\t".join(["dialogId", "msgNumber", "origin", "type"]))
         if what is None:
             for s in self.session:
@@ -70,7 +70,7 @@ class UniversalSessionHandler(SessionHandler):
             else:
                 msgType = "NONE"
 
-            if dialogId_dic.has_key(src_dst) and \
+            if src_dst in dialogId_dic and \
                    msg.ntime - dialogId_timestamp_dic[dialogId_dic[src_dst]] < self.step:
                 dId = dialogId_dic[src_dst]
                 dialogId_len_dic[dId] += 1
@@ -79,7 +79,7 @@ class UniversalSessionHandler(SessionHandler):
                 dialogId_timestamp_dic[dId] = msg.ntime
                 continue
 
-            if dialogId_dic.has_key(dst_src):
+            if dst_src in dialogId_dic:
                 dId = dialogId_dic[dst_src]     
                 dialogId_len_dic[dId] += 1
                 self.addSessionInformation(SessionInfo(str(dId), dialogId_len_dic[dId],
@@ -107,7 +107,7 @@ class SipSessionHandler(SessionHandler):
             d = "%s | %s" % (cid, fromTag)
             dialogs.setdefault(d, SipDialog(cid)).addMessage(m, i)
         # now merge the two sides of a communication, if they exist:
-        for k in dialogs.keys():
+        for k in list(dialogs.keys()):
             if k in dialogs:
                 d = dialogs[k]
                 toTag = d.getToTag()
@@ -139,7 +139,7 @@ class SipMsg:
     def __init__(self, derrickMsg):
         self.ntime = derrickMsg.ntime
         self.proto = derrickMsg.proto
-        msg = urllib.unquote(derrickMsg.msg)
+        msg = urllib.parse.unquote(derrickMsg.msg)
         self.msg = None
         if len(msg) > 3:
             if msg[0:3] == "SIP":
@@ -261,7 +261,7 @@ class SipDialog:
                     self.msgAnnotation[index][0],
                     self.msgAnnotation[index][1],
                     self.messages[index][1])
-        return([tupelizer(i) for i in xrange(N)])
+        return([tupelizer(i) for i in range(N)])
     
     def addMessage(self, msg, lineNumber):
         self.messages.append( (msg, lineNumber) )

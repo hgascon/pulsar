@@ -25,9 +25,9 @@
 from random import random
 from hashlib import md5
 from time import time
-from SipGenericHF import SipGenericHF
-from SipConf import SipConf
-from ESipHeaderCSV import ESipHeaderCSV
+from .SipGenericHF import SipGenericHF
+from .SipConf import SipConf
+from .ESipHeaderCSV import ESipHeaderCSV
 
 class SipVia(SipGenericHF):
     hf_names = ('via', 'v')
@@ -97,7 +97,7 @@ class SipVia(SipGenericHF):
                 s += ':' + str(local_port)
             else:
                 s += ':' + str(self.port)
-        for key, val in self.params.items():
+        for key, val in list(self.params.items()):
             s += ';' + key
             if val != None:
                 s += '=' + val
@@ -109,7 +109,7 @@ class SipVia(SipGenericHF):
         return SipVia(sipver = self.sipver, hostname = self.hostname, port = self.port, params = self.params.copy())
 
     def genBranch(self):
-        self.params['branch'] = 'z9hG4bK' + md5(str((random() * 1000000000L) + time())).hexdigest()
+        self.params['branch'] = 'z9hG4bK' + md5(str((random() * 1000000000) + time())).hexdigest()
 
     def getBranch(self):
         return self.params.get('branch', None)

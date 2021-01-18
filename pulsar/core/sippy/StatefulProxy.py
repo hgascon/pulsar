@@ -22,15 +22,15 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from SipVia import SipVia
-from SipHeader import SipHeader
+from .SipVia import SipVia
+from .SipHeader import SipHeader
 
 class StatefulProxy:
     global_config = None
     destination = None
 
     def __init__(self, global_config, destination):
-        print destination
+        print(destination)
         self.global_config = global_config
         self.destination = destination
 
@@ -40,7 +40,7 @@ class StatefulProxy:
         via1 = req.getHF('via')
         req.insertHeaderBefore(via1, SipHeader(name = 'via', body = via0))
         req.setTarget(self.destination)
-        print req
+        print(req)
         self.global_config['_sip_tm'].newTransaction(req, self.recvResponse)
         return (None, None, None)
 

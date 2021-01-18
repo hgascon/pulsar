@@ -22,10 +22,10 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from Timeout import Timeout
-from UaStateGeneric import UaStateGeneric
-from SipAddress import SipAddress
-from SipRoute import SipRoute
+from .Timeout import Timeout
+from .UaStateGeneric import UaStateGeneric
+from .SipAddress import SipAddress
+from .SipRoute import SipRoute
 
 class UacStateCancelling(UaStateGeneric):
     sname = 'Cancelling(UAC)'
@@ -92,7 +92,7 @@ class UacStateCancelling(UaStateGeneric):
         #print 'wrong event %s in the Cancelling state' % event
         return None
 
-if not globals().has_key('UaStateDead'):
-    from UaStateDead import UaStateDead
-if not globals().has_key('UaStateDisconnected'):
-    from UaStateDisconnected import UaStateDisconnected
+if 'UaStateDead' not in globals():
+    from .UaStateDead import UaStateDead
+if 'UaStateDisconnected' not in globals():
+    from .UaStateDisconnected import UaStateDisconnected

@@ -22,11 +22,11 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from UaStateGeneric import UaStateGeneric
-from CCEvents import CCEventRing, CCEventConnect, CCEventFail, CCEventRedirect, CCEventDisconnect
-from SipContact import SipContact
-from SipAddress import SipAddress
-from Timeout import TimeoutAbs
+from .UaStateGeneric import UaStateGeneric
+from .CCEvents import CCEventRing, CCEventConnect, CCEventFail, CCEventRedirect, CCEventDisconnect
+from .SipContact import SipContact
+from .SipAddress import SipAddress
+from .Timeout import TimeoutAbs
 
 class UasStateTrying(UaStateGeneric):
     sname = 'Trying(UAS)'
@@ -122,11 +122,11 @@ class UasStateTrying(UaStateGeneric):
                 pass
         self.ua.emitEvent(event)
 
-if not globals().has_key('UasStateRinging'):
-    from UasStateRinging import UasStateRinging
-if not globals().has_key('UaStateFailed'):
-    from UaStateFailed import UaStateFailed
-if not globals().has_key('UaStateConnected'):
-    from UaStateConnected import UaStateConnected
-if not globals().has_key('UaStateDisconnected'):
-    from UaStateDisconnected import UaStateDisconnected
+if 'UasStateRinging' not in globals():
+    from .UasStateRinging import UasStateRinging
+if 'UaStateFailed' not in globals():
+    from .UaStateFailed import UaStateFailed
+if 'UaStateConnected' not in globals():
+    from .UaStateConnected import UaStateConnected
+if 'UaStateDisconnected' not in globals():
+    from .UaStateDisconnected import UaStateDisconnected

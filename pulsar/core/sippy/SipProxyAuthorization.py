@@ -22,7 +22,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from SipAuthorization import SipAuthorization
+from .SipAuthorization import SipAuthorization
 
 class SipProxyAuthorization(SipAuthorization):
     hf_names = ('proxy-authorization',)

@@ -10,7 +10,7 @@
 import os
 import sys
 import datetime
-import urllib
+import urllib.request, urllib.parse, urllib.error
 import gzip
 
 
@@ -40,7 +40,7 @@ for f in files:
     for line in lines:
         try:
             ts = line[:15].split(':')
-            msg = urllib.quote(line[16:])
+            msg = urllib.parse.quote(line[16:])
             msg = msg.replace("%20", " ")
             d = datetime.datetime(2014, 6, 1,
                                   int(ts[0]),
@@ -51,16 +51,16 @@ for f in files:
             last_seen_time = d
             drk_dic[d] = ' '.join(['T', src, dst, msg])
         except Exception as e:
-            print e
+            print(e)
             if last_seen_time in drk_dic:
                 prev_line = drk_dic[last_seen_time]
-                drk_dic[last_seen_time] = urllib.quote('\r\n').join([prev_line,
+                drk_dic[last_seen_time] = urllib.parse.quote('\r\n').join([prev_line,
                                                                      msg])
             else:
                 drk_dic[last_seen_time] = ' '.join(['T', src, dst, msg])
 
 fd = gzip.open("file.drk", "w")
-keys = drk_dic.keys()
+keys = list(drk_dic.keys())
 keys.sort()
 for k in keys:
     if k == 0:

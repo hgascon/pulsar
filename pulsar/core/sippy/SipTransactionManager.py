@@ -22,27 +22,28 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from Timeout import Timeout
-from Udp_server import Udp_server
-from SipHeader import SipHeader
-from SipResponse import SipResponse
-from SipRequest import SipRequest
-from SipAddress import SipAddress
-from SipRoute import SipRoute
-from SipHeader import SipHeader
+from .Timeout import Timeout
+from .Udp_server import Udp_server
+from .SipHeader import SipHeader
+from .SipResponse import SipResponse
+from .SipRequest import SipRequest
+from .SipAddress import SipAddress
+from .SipRoute import SipRoute
+from .SipHeader import SipHeader
 from datetime import datetime
 from hashlib import md5
 from traceback import print_exc
 from time import time
 import sys, socket
+from functools import reduce
 
 class NETS_1918(object):
-    nets = (('10.0.0.0', 0xffffffffl << 24), ('172.16.0.0',  0xffffffffl << 20), ('192.168.0.0', 0xffffffffl << 16))
-    nets = [(reduce(lambda z, v: (int(z) << 8l) | int(v), x[0].split('.', 4)) & x[1], x[1]) for x in nets]
+    nets = (('10.0.0.0', 0xffffffff << 24), ('172.16.0.0',  0xffffffff << 20), ('192.168.0.0', 0xffffffff << 16))
+    nets = [(reduce(lambda z, v: (int(z) << 8) | int(v), x[0].split('.', 4)) & x[1], x[1]) for x in nets]
 
 def check1918(addr):
     try:
-        addr = reduce(lambda x, y: (int(x) << 8l) | int(y), addr.split('.', 4))
+        addr = reduce(lambda x, y: (int(x) << 8) | int(y), addr.split('.', 4))
         for naddr, mask in NETS_1918.nets:
             if addr & mask == naddr:
                 return True
@@ -125,7 +126,7 @@ class local4remote(object):
 
     def getServer(self, address, is_local = False):
         if self.fixed:
-            return self.cache_l2s.items()[0][1]
+            return list(self.cache_l2s.items())[0][1]
         if not is_local:
             laddress = self.cache_r2l.get(address[0], None)
             if laddress == None:
@@ -208,24 +209,24 @@ class SipTransactionManager(object):
             try:
                 resp = SipResponse(data)
                 tid = resp.getTId(True, True)
-            except Exception, exception:
-                print datetime.now(), 'can\'t parse SIP response from %s:%d: %s:' % (address[0], address[1], str(exception))
-                print '-' * 70
+            except Exception as exception:
+                print(datetime.now(), 'can\'t parse SIP response from %s:%d: %s:' % (address[0], address[1], str(exception)))
+                print('-' * 70)
                 print_exc(file = sys.stdout)
-                print '-' * 70
-                print data
-                print '-' * 70
+                print('-' * 70)
+                print(data)
+                print('-' * 70)
                 sys.stdout.flush()
                 self.l1rcache[checksum] = (None, None, None)
                 return
             if resp.getSCode()[0] < 100 or resp.getSCode()[0] > 999:
-                print datetime.now(), 'invalid status code in SIP response from %s:%d:' % address
-                print data
+                print(datetime.now(), 'invalid status code in SIP response from %s:%d:' % address)
+                print(data)
                 sys.stdout.flush()
                 self.l1rcache[checksum] = (None, None, None)
                 return
             resp.rtime = rtime
-            if not self.tclient.has_key(tid):
+            if tid not in self.tclient:
                 #print 'no transaction with tid of %s in progress' % str(tid)
                 self.l1rcache[checksum] = (None, None, None)
                 return
@@ -242,13 +243,13 @@ class SipTransactionManager(object):
             try:
                 req = SipRequest(data)
                 tids = req.getTIds()
-            except Exception, exception:
-                print datetime.now(), 'can\'t parse SIP request from %s:%d: %s:' % (address[0], address[1], str(exception))
-                print '-' * 70
+            except Exception as exception:
+                print(datetime.now(), 'can\'t parse SIP request from %s:%d: %s:' % (address[0], address[1], str(exception)))
+                print('-' * 70)
                 print_exc(file = sys.stdout)
-                print '-' * 70
-                print data
-                print '-' * 70
+                print('-' * 70)
+                print(data)
+                print('-' * 70)
                 sys.stdout.flush()
                 self.l1rcache[checksum] = (None, None, None)
                 return
@@ -260,7 +261,7 @@ class SipTransactionManager(object):
                 req.nated = True
             if ahost != rhost:
                 via0.params['received'] = rhost
-            if via0.params.has_key('rport') or req.nated:
+            if 'rport' in via0.params or req.nated:
                 via0.params['rport'] = str(rport)
             if self.nat_traversal and req.countHFs('contact') > 0 and req.countHFs('via') == 1:
                 curl = req.getHFBody('contact').getUrl()
@@ -274,7 +275,7 @@ class SipTransactionManager(object):
     def newTransaction(self, msg, resp_cb = None, laddress = None, userv = None):
         t = SipTransaction()
         t.tid = msg.getTId(True, True)
-        if self.tclient.has_key(t.tid):
+        if t.tid in self.tclient:
             raise ValueError('BUG: Attempt to initiate transaction with the same TID as existing one!!!')
         t.tout = 0.5
         t.fcode = None
@@ -430,7 +431,7 @@ class SipTransactionManager(object):
     # 2. Server transaction methods
     def incomingRequest(self, msg, checksum, tids, server):
         for tid in tids:
-            if self.tclient.has_key(tid):
+            if tid in self.tclient:
                 resp = msg.genResponse(482, 'Loop Detected')
                 self.transmitMsg(server, resp, resp.getHFBody('via').getTAddr(), checksum)
                 return
@@ -485,7 +486,7 @@ class SipTransactionManager(object):
             # Some ACK that doesn't match any existing transaction.
             # Drop and forget it - upper layer is unlikely to be interested
             # to seeing this anyway.
-            print datetime.now(), 'unmatched ACK transaction - ignoring'
+            print(datetime.now(), 'unmatched ACK transaction - ignoring')
             sys.stdout.flush()
             self.l1rcache[checksum] = (None, None, None)
         elif msg.getMethod() == 'CANCEL':
@@ -538,7 +539,7 @@ class SipTransactionManager(object):
             if rval == None:
                 if t.teA != None or t.teD != None or t.teE != None or t.teF != None:
                     return
-                if self.tserver.has_key(t.tid):
+                if t.tid in self.tserver:
                     del self.tserver[t.tid]
                 t.cleanup()
                 return

@@ -25,8 +25,8 @@
 from random import random
 from hashlib import md5
 from time import time
-from SipGenericHF import SipGenericHF
-from SipConf import SipConf
+from .SipGenericHF import SipGenericHF
+from .SipConf import SipConf
 
 class SipWWWAuthenticate(SipGenericHF):
     hf_names = ('www-authenticate',)
@@ -40,7 +40,7 @@ class SipWWWAuthenticate(SipGenericHF):
         self.parsed = True
         if nonce == None:
             ctime = time()
-            nonce = md5(str((random() * 1000000000L) + ctime)).hexdigest() + hex(int(ctime))[2:]
+            nonce = md5(str((random() * 1000000000) + ctime)).hexdigest() + hex(int(ctime))[2:]
         if realm == None:
             realm = SipConf.my_address
         self.realm = realm

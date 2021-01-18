@@ -46,10 +46,10 @@ class Timeout(object):
         try:
             self._timeout_callback(*callback_arguments)
         except:
-            print datetime.now(), 'Timeout: unhandled exception in timeout callback'
-            print '-' * 70
+            print(datetime.now(), 'Timeout: unhandled exception in timeout callback')
+            print('-' * 70)
             print_exc(file = stdout)
-            print '-' * 70
+            print('-' * 70)
             stdout.flush()
         if self._ticks_left == 1:
             self.cancel()
@@ -60,10 +60,10 @@ class Timeout(object):
         try:
             self._timeout_callback(*callback_arguments)
         except:
-            print datetime.now(), 'Timeout: unhandled exception in timeout callback'
-            print '-' * 70
+            print(datetime.now(), 'Timeout: unhandled exception in timeout callback')
+            print('-' * 70)
             print_exc(file = stdout)
-            print '-' * 70
+            print('-' * 70)
             stdout.flush()
         self._task = None
         self._timeout_callback = None
@@ -93,10 +93,10 @@ class TimeoutAbs:
         try:
             self._timeout_callback(*callback_arguments)
         except:
-            print datetime.now(), 'Timeout: unhandled exception in timeout callback'
-            print '-' * 70
+            print(datetime.now(), 'Timeout: unhandled exception in timeout callback')
+            print('-' * 70)
             print_exc(file = stdout)
-            print '-' * 70
+            print('-' * 70)
             stdout.flush()
         self._task = None
         self._timeout_callback = None
@@ -115,19 +115,19 @@ class Timeout_debug(Timeout):
 
     def cancel(self):
         if self._task == None:
-            print self._traceback
+            print(self._traceback)
         Timeout.cancel(self)
 
 if __name__ == '__main__':
     from twisted.internet import reactor
     
     def test1(arguments, testnum):
-        print testnum
+        print(testnum)
         arguments['test'] = True
         reactor.crash()
 
     def test2(arguments, testnum):
-        print testnum
+        print(testnum)
         arguments['test'] = 'bar'
         reactor.crash()
 

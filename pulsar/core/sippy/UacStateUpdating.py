@@ -22,8 +22,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from UaStateGeneric import UaStateGeneric
-from CCEvents import CCEventDisconnect, CCEventRing, CCEventConnect, CCEventFail, CCEventRedirect
+from .UaStateGeneric import UaStateGeneric
+from .CCEvents import CCEventDisconnect, CCEventRing, CCEventConnect, CCEventFail, CCEventRedirect
 
 class UacStateUpdating(UaStateGeneric):
     sname = 'Updating(UAC)'
@@ -109,7 +109,7 @@ class UacStateUpdating(UaStateGeneric):
         #print 'wrong event %s in the Updating state' % event
         return None
 
-if not globals().has_key('UaStateConnected'):
-    from UaStateConnected import UaStateConnected
-if not globals().has_key('UaStateDisconnected'):
-    from UaStateDisconnected import UaStateDisconnected
+if 'UaStateConnected' not in globals():
+    from .UaStateConnected import UaStateConnected
+if 'UaStateDisconnected' not in globals():
+    from .UaStateDisconnected import UaStateDisconnected

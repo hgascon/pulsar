@@ -47,14 +47,14 @@ from sippy.Rtp_proxy_session import Rtp_proxy_session
 from sippy.Rtp_proxy_client import Rtp_proxy_client
 from signal import SIGHUP, SIGPROF, SIGUSR1, SIGUSR2
 from twisted.internet import reactor
-from urllib import unquote
+from urllib.parse import unquote
 from sippy.Cli_server_local import Cli_server_local
 from sippy.SipTransactionManager import SipTransactionManager
 from sippy.SipCallId import SipCallId
 import gc, getopt, os, sys
 from re import sub
 from time import time
-from urllib import quote
+from urllib.parse import quote
 from hashlib import md5
 from sippy.MyConfigParser import MyConfigParser
 
@@ -143,7 +143,7 @@ class CallController(object):
                     self.uaA.recvEvent(CCEventFail((500, 'Body-less INVITE is not supported'), rtime = event.rtime))
                     self.state = CCStateDead
                     return
-                if self.global_config.has_key('_allowed_pts'):
+                if '_allowed_pts' in self.global_config:
                     try:
                         body.parse()
                     except:
@@ -162,10 +162,10 @@ class CallController(object):
                     self.cld = self.cld[4:]
                     body.content += 'a=nated:yes\r\n'
                     event.data = (self.cId, cGUID, self.cli, self.cld, body, auth, self.caller_name)
-                if self.global_config.has_key('static_tr_in'):
+                if 'static_tr_in' in self.global_config:
                     self.cld = re_replace(self.global_config['static_tr_in'], self.cld)
                     event.data = (self.cId, cGUID, self.cli, self.cld, body, auth, self.caller_name)
-                if self.global_config.has_key('_rtp_proxy_clients'):
+                if '_rtp_proxy_clients' in self.global_config:
                     self.rtp_proxy_session = Rtp_proxy_session(self.global_config, call_id = self.cId, \
                       notify_socket = global_config['b2bua_socket'], \
                       notify_tag = quote('r %s' % str(self.id)))
@@ -238,7 +238,7 @@ class CallController(object):
             global_credit_time = int(credit_time[0][1])
         else:
             global_credit_time = None
-        if not self.global_config.has_key('static_route'):
+        if 'static_route' not in self.global_config:
             routing = [x for x in results[0] if x[0] == 'h323-ivr-in' and x[1].startswith('Routing:')]
             if len(routing) == 0:
                 self.uaA.recvEvent(CCEventFail((500, 'Internal Server Error (2)')))
@@ -307,7 +307,7 @@ class CallController(object):
                     parameters['group_timeout'] = (int(timeout), rnum + int(skip))
                 else:
                     parameters[a] = v
-            if self.global_config.has_key('max_credit_time'):
+            if 'max_credit_time' in self.global_config:
                 if credit_time == None or credit_time > self.global_config['max_credit_time']:
                     credit_time = self.global_config['max_credit_time']
             if credit_time == 0 or expires == 0:
@@ -327,7 +327,7 @@ class CallController(object):
         rnum, host, cld, credit_time, expires, no_progress_expires, forward_on_fail, user, passw, cli, \
           parameters = args
         self.huntstop_scodes = parameters.get('huntstop_scodes', ())
-        if self.global_config.has_key('static_tr_out'):
+        if 'static_tr_out' in self.global_config:
             cld = re_replace(self.global_config['static_tr_out'], cld)
         if host == 'sip-ua':
             host = self.source[0]
@@ -375,7 +375,7 @@ class CallController(object):
             body.content += 'a=nortpproxy:yes\r\n'
             self.proxied = True
         self.uaO.kaInterval = self.global_config['keepalive_orig']
-        if parameters.has_key('group_timeout'):
+        if 'group_timeout' in parameters:
             timeout, skipto = parameters['group_timeout']
             Timeout(self.group_expires, timeout, 1, skipto)
         if self.global_config.getdefault('hide_call_id', False):
@@ -413,7 +413,7 @@ class CallController(object):
     def aDead(self, ua):
         if (self.uaO == None or isinstance(self.uaO.state, UaStateDead)):
             if self.global_config['_cmap'].debug_mode:
-                print 'garbadge collecting', self
+                print('garbadge collecting', self)
             self.acctA = None
             self.acctO = None
             self.global_config['_cmap'].ccmap.remove(self)
@@ -421,7 +421,7 @@ class CallController(object):
     def oDead(self, ua):
         if ua == self.uaO and isinstance(self.uaA.state, UaStateDead):
             if self.global_config['_cmap'].debug_mode:
-                print 'garbadge collecting', self
+                print('garbadge collecting', self)
             self.acctA = None
             self.acctO = None
             self.global_config['_cmap'].ccmap.remove(self)
@@ -477,7 +477,7 @@ class CallMap(object):
 
             # First check if request comes from IP that
             # we want to accept our traffic from
-            if self.global_config.has_key('_accept_ips') and \
+            if '_accept_ips' in self.global_config and \
               not source[0] in self.global_config['_accept_ips']:
                 resp = req.genResponse(403, 'Forbidden')
                 return (resp, None, None)
@@ -515,33 +515,33 @@ class CallMap(object):
 
     def discAll(self, signum = None):
         if signum != None:
-            print 'Signal %d received, disconnecting all calls' % signum
+            print('Signal %d received, disconnecting all calls' % signum)
         for cc in tuple(self.ccmap):
             cc.disconnect()
 
     def toggleDebug(self, signum):
         if self.debug_mode:
-            print 'Signal %d received, toggling extra debug output off' % signum
+            print('Signal %d received, toggling extra debug output off' % signum)
         else:
-            print 'Signal %d received, toggling extra debug output on' % signum
+            print('Signal %d received, toggling extra debug output on' % signum)
         self.debug_mode = not self.debug_mode
 
     def safeRestart(self, signum):
-        print 'Signal %d received, scheduling safe restart' % signum
+        print('Signal %d received, scheduling safe restart' % signum)
         self.safe_restart = True
 
     def GClector(self):
-        print 'GC is invoked, %d calls in map' % len(self.ccmap)
+        print('GC is invoked, %d calls in map' % len(self.ccmap))
         if self.debug_mode:
-            print self.global_config['_sip_tm'].tclient, self.global_config['_sip_tm'].tserver
+            print(self.global_config['_sip_tm'].tclient, self.global_config['_sip_tm'].tserver)
             for cc in tuple(self.ccmap):
                 try:
-                    print cc.uaA.state, cc.uaO.state
+                    print(cc.uaA.state, cc.uaO.state)
                 except AttributeError:
-                    print None
+                    print(None)
         else:
-            print '%d client, %d server transactions in memory' % \
-              (len(self.global_config['_sip_tm'].tclient), len(self.global_config['_sip_tm'].tserver))
+            print('%d client, %d server transactions in memory' % \
+              (len(self.global_config['_sip_tm'].tclient), len(self.global_config['_sip_tm'].tserver)))
         if self.safe_restart:
             if len(self.ccmap) == 0:
                 self.global_config['_sip_tm'].userv.close()
@@ -553,7 +553,7 @@ class CallMap(object):
             self.el.ival = 1
         #print gc.collect()
         if len(gc.garbage) > 0:
-            print gc.garbage
+            print(gc.garbage)
 
     def recvCommand(self, clim, cmd):
         args = cmd.split()
@@ -614,16 +614,16 @@ class CallMap(object):
         return False
 
 def reopen(signum, logfile):
-    print 'Signal %d received, reopening logs' % signum
+    print('Signal %d received, reopening logs' % signum)
     fd = os.open(logfile, os.O_WRONLY | os.O_CREAT | os.O_APPEND)
     os.dup2(fd, sys.__stdout__.fileno())
     os.dup2(fd, sys.__stderr__.fileno())
     os.close(fd)
 
 def usage(global_config, brief = False):
-    print 'usage: b2bua.py [--option1=value1] [--option2=value2] ... [--optionN==valueN]'
+    print('usage: b2bua.py [--option1=value1] [--option2=value2] ... [--optionN==valueN]')
     if not brief:
-        print '\navailable options:\n'
+        print('\navailable options:\n')
         global_config.options_help()
     sys.exit(1)
 
@@ -749,7 +749,7 @@ if __name__ == '__main__':
             writeconf = a.strip()
             continue
 
-    if global_config.has_key('_rtp_proxy_clients'):
+    if '_rtp_proxy_clients' in global_config:
         for a in global_config['_rtp_proxy_clients']:
             if a.startswith('udp:'):
                 a = a.split(':', 2)
@@ -761,7 +761,7 @@ if __name__ == '__main__':
             else:
                 rtp_proxy_clients.append(a)
 
-    if not global_config['auth_enable'] and not global_config.has_key('static_route'):
+    if not global_config['auth_enable'] and 'static_route' not in global_config:
         sys.__stderr__.write('ERROR: static route should be specified when Radius auth is disabled\n')
         usage(global_config, True)
 

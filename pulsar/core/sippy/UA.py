@@ -22,19 +22,19 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from SipHeader import SipHeader
-from SipAuthorization import SipAuthorization
-from UasStateIdle import UasStateIdle
-from UacStateIdle import UacStateIdle
-from SipRequest import SipRequest
-from SipContentType import SipContentType
-from SipProxyAuthorization import SipProxyAuthorization
-from CCEvents import CCEventTry, CCEventFail, CCEventDisconnect, CCEventInfo
-from MsgBody import MsgBody
+from .SipHeader import SipHeader
+from .SipAuthorization import SipAuthorization
+from .UasStateIdle import UasStateIdle
+from .UacStateIdle import UacStateIdle
+from .SipRequest import SipRequest
+from .SipContentType import SipContentType
+from .SipProxyAuthorization import SipProxyAuthorization
+from .CCEvents import CCEventTry, CCEventFail, CCEventDisconnect, CCEventInfo
+from .MsgBody import MsgBody
 from hashlib import md5
 from random import random
 from time import time
-from Timeout import TimeoutAbs
+from .Timeout import TimeoutAbs
 
 class UA(object):
     global_config = None
@@ -128,7 +128,7 @@ class UA(object):
         if ltag != None:
             self.lTag = ltag
         else:
-            self.lTag = md5(str((random() * 1000000000L) + time())).hexdigest()
+            self.lTag = md5(str((random() * 1000000000) + time())).hexdigest()
         self.reqs = {}
         self.extra_headers = extra_headers
         self.expire_time = expire_time
@@ -163,7 +163,7 @@ class UA(object):
         self.update_ua(resp)
         code, reason = resp.getSCode()
         cseq, method = resp.getHFBody('cseq').getCSeq()
-        if method == 'INVITE' and self.reqs.has_key(cseq) and code == 401 and resp.countHFs('www-authenticate') != 0 and \
+        if method == 'INVITE' and cseq in self.reqs and code == 401 and resp.countHFs('www-authenticate') != 0 and \
           self.username != None and self.password != None and self.reqs[cseq].countHFs('authorization') == 0:
             challenge = resp.getHFBody('www-authenticate')
             req = self.genRequest('INVITE', self.lSDP, challenge.getNonce(), challenge.getRealm())
@@ -172,7 +172,7 @@ class UA(object):
               laddress = self.source_address)
             del self.reqs[cseq]
             return None
-        if method == 'INVITE' and self.reqs.has_key(cseq) and code == 407 and resp.countHFs('proxy-authenticate') != 0 and \
+        if method == 'INVITE' and cseq in self.reqs and code == 407 and resp.countHFs('proxy-authenticate') != 0 and \
           self.username != None and self.password != None and self.reqs[cseq].countHFs('proxy-authorization') == 0:
             challenge = resp.getHFBody('proxy-authenticate')
             req = self.genRequest('INVITE', self.lSDP, challenge.getNonce(), challenge.getRealm(), SipProxyAuthorization)
@@ -181,7 +181,7 @@ class UA(object):
               laddress = self.source_address)
             del self.reqs[cseq]
             return None
-        if code >= 200 and self.reqs.has_key(cseq):
+        if code >= 200 and cseq in self.reqs:
             del self.reqs[cseq]
         newstate = self.state.recvResponse(resp)
         if newstate != None:
@@ -373,7 +373,7 @@ class UA(object):
             self.credit_times[0] = rtime + self.credit_time
             self.credit_time = None
         try:
-            credit_time = min([x for x in self.credit_times.values() if x != None])
+            credit_time = min([x for x in list(self.credit_times.values()) if x != None])
         except ValueError:
             return
         self.credit_timer = TimeoutAbs(self.credit_expires, credit_time, credit_time)

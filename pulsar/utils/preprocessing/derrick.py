@@ -22,7 +22,7 @@ def expand(drk_file):
     allows feeding the learning algorithm a larger amount of data without
     altering their properties.  """
 
-    print ">>> Expanding data..."
+    print(">>> Expanding data...")
     expansion_times = DEFAULT_EXPANSION_COEF
     drk_expanded = "{}.exp".format(drk_file)
 

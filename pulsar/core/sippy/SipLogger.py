@@ -22,12 +22,13 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from Signal import Signal
+from .Signal import Signal
 from time import time, localtime, strftime
 from fcntl import flock, LOCK_EX, LOCK_UN
 from signal import SIGUSR1
 from errno import EINTR
 import sys, os
+from functools import reduce
 
 SIPLOG_DBUG = 0
 SIPLOG_INFO = 1
@@ -72,14 +73,14 @@ class SipLogger(object):
           reduce(lambda x, y: x + y, [str(x) for x in args]))
         try:
             self.flock(self.log, LOCK_EX)
-        except IOError, e:
+        except IOError as e:
             # Catch ENOTSUP
             if e.args[0] != 45:
                 raise e
             self.flock = lambda x, y: None
         try:
             self.log.write(obuf)
-        except IOError, e:
+        except IOError as e:
             if e.args[0] != EINTR:
                 raise e
         self.log.flush()

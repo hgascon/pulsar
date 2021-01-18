@@ -25,10 +25,10 @@
 from random import random
 from hashlib import md5
 from time import time
-from SipAddressHF import SipAddressHF
-from SipAddress import SipAddress
-from SipURL import SipURL
-from SipConf import SipConf
+from .SipAddressHF import SipAddressHF
+from .SipAddress import SipAddress
+from .SipURL import SipURL
+from .SipConf import SipConf
 
 class SipFrom(SipAddressHF):
     hf_names = ('from', 'f')
@@ -42,7 +42,7 @@ class SipFrom(SipAddressHF):
         return self.address.getParam('tag')
 
     def genTag(self):
-        self.address.setParam('tag', md5(str((random() * 1000000000L) + time())).hexdigest())
+        self.address.setParam('tag', md5(str((random() * 1000000000) + time())).hexdigest())
 
     def setTag(self, value):
         self.address.setParam('tag', value)

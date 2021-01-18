@@ -3,9 +3,9 @@
 
 import re
 import random
-import urllib
+import urllib.request, urllib.parse, urllib.error
 import operator
-from util import scanTokens, scanNgrams
+from .util import scanTokens, scanNgrams
 from Levenshtein import distance
 from random import choice
 
@@ -34,13 +34,13 @@ class MarkovModel:
         self.init()
         # setup auxilliary structures:
         self.simplifiedModel = {}
-        for (state, suc) in self.markov_model.iteritems():
+        for (state, suc) in self.markov_model.items():
             self.simplifiedModel[state] = {}.fromkeys([s[0] for s in suc],
                                                       True)
         self.allStates = self.simplifiedModel.copy()
-        for trans in self.simplifiedModel.values():
+        for trans in list(self.simplifiedModel.values()):
             self.allStates.update(trans)
-        self.allStates = self.allStates.keys()
+        self.allStates = list(self.allStates.keys())
 
         self.fuzzer = ""
 
@@ -64,9 +64,9 @@ class MarkovModel:
             ret = self.simplifiedModel
         else:
             ret = {}
-            for k in self.simplifiedModel.keys():
+            for k in list(self.simplifiedModel.keys()):
                 if k in stateFilter:
-                    ret[k] = dict([kv for kv in self.simplifiedModel[k].items()
+                    ret[k] = dict([kv for kv in list(self.simplifiedModel[k].items())
                                    if kv[0] in stateFilter])
         return ret
 
@@ -76,7 +76,7 @@ class MarkovModel:
     def getMarkovMatrix(self):
         allStates = self.getAllStates()
         nStates = len(allStates)
-        ret = [[0] * nStates for _ in xrange(nStates)]
+        ret = [[0] * nStates for _ in range(nStates)]
         for (ind, state) in enumerate(allStates):
             counts = self.markov_model.get(state, [])
             for (s, c) in counts:
@@ -134,27 +134,27 @@ class MarkovModel:
     def choose_most_probable_next_state(self, role):
         """ Choose the most probable state """
         next_states = self.get_next_states(role)
-        print "Selecting next MOST probable state from: {}".format(next_states)
+        print("Selecting next MOST probable state from: {}".format(next_states))
         sorted_states = [(s, c) for s, c in sorted(next_states,
-                                              key=lambda (k, v): (v, k))]
+                                              key=lambda k_v: (k_v[1], k_v[0]))]
         return sorted_states[-1]
 
     def choose_least_probable_next_state(self, role):
         """ Choose the least probable state """
         next_states = self.get_next_states(role)
-        print "Selecting next LEAST probable state from: {}".format(next_states)
+        print("Selecting next LEAST probable state from: {}".format(next_states))
         sorted_states = [(s, c) for s, c in sorted(next_states,
-                                              key=lambda (k, v): (v, k))]
+                                              key=lambda k_v1: (k_v1[1], k_v1[0]))]
         state = sorted_states[0]
-        print "State selected: {}".format(state)
+        print("State selected: {}".format(state))
         return state
 
     def choose_random_next_state(self, role):
         """ Choose the next state randomly. """
         next_states = self.get_next_states(role)
-        print "Selecting next state in mode RANDOM from: {}".format(next_states)
+        print("Selecting next state in mode RANDOM from: {}".format(next_states))
         state = choice(next_states)
-        print "State selected: {}".format(state)
+        print("State selected: {}".format(state))
         return state
 
     def choose_next_state_OFS(self, role, lens, transition=OFS_TRANSITION):
@@ -168,10 +168,10 @@ class MarkovModel:
         # Choose the state with the highest OFS weight. If two or more
         # states have the same value, choose randomly between them.
         # Even if all of them have a zero weight, a random choice is made.
-        print ">>> Selecting next state in OFS mode..."
-        state = choice([k for k, v in states.items() if v is max(states.values())])
+        print(">>> Selecting next state in OFS mode...")
+        state = choice([k for k, v in list(states.items()) if v is max(states.values())])
         #print states
-        print "State selected: {}".format(state)
+        print("State selected: {}".format(state))
         return state
 
     def get_subtree_weight_OFS(self, lens, state, transition=OFS_TRANSITION):
@@ -306,7 +306,7 @@ class TemplateList:
                 fields, dist = matcher.match()
                 templates += [(template, fields, distance)]
             sorted_templates = [(t, f, d) for t, f, d in sorted(templates,
-                                              key=lambda (t, f, d): (d, t, f))]
+                                              key=lambda t_f_d: (t_f_d[2], t_f_d[0], t_f_d[1]))]
             template, fields = sorted_templates[0][:2]
             return (template, fields)
 
@@ -343,14 +343,14 @@ class TemplateList:
             if interactive:
                 choice = ""
                 while choice not in templates_ids:
-                    print "Manually selecting from templates: {}".format(templates_ids)
+                    print("Manually selecting from templates: {}".format(templates_ids))
                     if len(templates_ids) == 1:
                         choice = templates_ids[0]
                     else:
-                        choice = raw_input('Selection: ')
+                        choice = input('Selection: ')
                 ind = templates_ids.index(choice)
             else:
-                print "Probability-based selection from templates: {}".format(templates_ids)
+                print("Probability-based selection from templates: {}".format(templates_ids))
                 ind = pickIndex([t.count for t in templates])
             return templates[ind]
         else:
@@ -375,14 +375,14 @@ class TemplateList:
         if interactive:
             choice = ""
             while choice not in fuzz_templates_ids:
-                print "Manually selecting from templates: {}".format(fuzz_templates_ids)
+                print("Manually selecting from templates: {}".format(fuzz_templates_ids))
                 if len(fuzz_templates_ids) == 1:
                     choice = fuzz_templates_ids[0]
                 else:
-                    choice = raw_input('Selection: ')
+                    choice = input('Selection: ')
             ind = fuzz_templates_ids.index(choice)
         else:
-            print "Probability-based selection from templates: {}".format(fuzz_templates_ids)
+            print("Probability-based selection from templates: {}".format(fuzz_templates_ids))
             ind = pickIndex([t.count for t in fuzz_templates])
         return fuzz_templates[ind]
 
@@ -412,7 +412,7 @@ class TemplateMessageMatcher:
             if tok == "":
                 fields.append(curVal)
             else:
-                if urllib.quote(curVal) != tok:
+                if urllib.parse.quote(curVal) != tok:
                     match = False
                     break
         if match:
@@ -473,7 +473,7 @@ class Template:
         return str(self).strip()
 
     def __str__(self):
-        tokens = [urllib.unquote(t) if t != "" else "|_|" for t in self.content]
+        tokens = [urllib.parse.unquote(t) if t != "" else "|_|" for t in self.content]
         return "".join(tokens)
 
     def fillFields(self, fields):
@@ -485,10 +485,10 @@ class Template:
 
         fuzz = None
         if self.ID in self.fuzzer.tracker:
-            print self.fuzzer.tracker
+            print(self.fuzzer.tracker)
             if self.fuzzer.interactive:
                 while fuzz is None:
-                    inp = raw_input('Fuzz template {}? [y/n]: '.format(self.ID))
+                    inp = input('Fuzz template {}? [y/n]: '.format(self.ID))
                     if inp == 'y':
                         fuzz = True
                     elif inp == 'n':
@@ -501,11 +501,11 @@ class Template:
 
         if not fuzz:
             ret = self.content[:]
-            for (k, v) in fields.iteritems():
+            for (k, v) in fields.items():
                 try:
                     ret[self.fields[k]] = v
                 except IndexError:
-                    print "Warning: trying to assign value to non-existing field"
+                    print("Warning: trying to assign value to non-existing field")
                     pass
         return ret
 
@@ -514,11 +514,11 @@ class Template:
         """
 
         ret = self.content[:]
-        for (k, v) in fields.iteritems():
+        for (k, v) in fields.items():
             try:
                 ret[self.fields[k]] = v
             except IndexError:
-                print "Warning: trying to assign value to non-existing field"
+                print("Warning: trying to assign value to non-existing field")
                 pass
 
         return ret
@@ -567,8 +567,8 @@ class RuleList:
         # 23;12;15
         # -3 -2 -1
         # so "-1" is the current message, -2 the previous message and so on.
-        fields = dict(zip([str(ind) for ind in range(-len(previousFields)-1,
-                                                     -1)], previousFields))
+        fields = dict(list(zip([str(ind) for ind in range(-len(previousFields)-1,
+                                                     -1)], previousFields)))
         # Find rules matching current transition
         if transition not in self.rules:
             if not next_template.has_fields():
@@ -629,9 +629,9 @@ class RuleList:
 
         # Fill new template fields with new content
         message = next_template.fillFields(dst_fields)
-        fields = dst_fields.items()
+        fields = list(dst_fields.items())
         fields.sort(key=operator.itemgetter(0))
-        msg = urllib.unquote(''.join(str(n) for n in message))
+        msg = urllib.parse.unquote(''.join(str(n) for n in message))
         return (msg, [f[1] for f in fields], transition)
 
     def create_fuzzed_message(self, previousTemplates, previousFields,
@@ -646,10 +646,10 @@ class RuleList:
         except:
             transition = None
 
-        fields = dict(zip([str(ind) for ind in range(-len(previousFields)-1,
-                                                     -1)], previousFields))
+        fields = dict(list(zip([str(ind) for ind in range(-len(previousFields)-1,
+                                                     -1)], previousFields)))
 
-        template_rules = [r for t, r in self.rules.items() if t.endswith(next_template.ID)]
+        template_rules = [r for t, r in list(self.rules.items()) if t.endswith(next_template.ID)]
         rules = [item for sublist in template_rules for item in sublist]
         dst_fields = {}
         fields["-1"] = dst_fields
@@ -719,16 +719,16 @@ class RuleList:
 
         # Fill new template fields with new content
         message = next_template.fillFields(dst_fields)
-        fields = dst_fields.items()
+        fields = list(dst_fields.items())
         fields.sort(key=operator.itemgetter(0))
 
         #update tracker
         fuzzer.update_tracker(next_template.ID)
         fuzzer.trace = list(fuzz_fields), non_fuzzed_values
-        print "fields_to_fuzz: ", fuzz_fields
-        print ">>> FUZZING msg..."
+        print("fields_to_fuzz: ", fuzz_fields)
+        print(">>> FUZZING msg...")
 
-        return (urllib.unquote(''.join(str(n) for n in message)),
+        return (urllib.parse.unquote(''.join(str(n) for n in message)),
                 [f[1] for f in fields], transition)
 
     def generateTransitionLabel(self, previousTemplates, nextTemplate):
@@ -920,7 +920,7 @@ class Lens:
             if self.similarity_search:
                 if template is not None:
                     self.sim_matched_template = False
-                    print ">>> EXACT MATCHED TEMPLATE: {}".format(template.ID)
+                    print(">>> EXACT MATCHED TEMPLATE: {}".format(template.ID))
                 elif template is None:
                     try:
                         next_OFS_states = []
@@ -937,7 +937,7 @@ class Lens:
                         status = STATUS_END
                     if template is not None:
                         self.sim_matched_template = True
-                        print ">>> SIMILARITY MATCHED TEMPLATE: {}".format(template.ID)
+                        print(">>> SIMILARITY MATCHED TEMPLATE: {}".format(template.ID))
 
             # wether an exact or a similar matching has been found,
             # the templates and fields are added to the ringBuffer
@@ -946,7 +946,7 @@ class Lens:
                 self.templates.append(template)
                 self.fields.append(fields)
                 self.mm.update_state(template.state)
-                print ">>> TRANSITION TO STATE: {}".format(self.mm.state)
+                print(">>> TRANSITION TO STATE: {}".format(self.mm.state))
                 if template.state.endswith("END"):
                     status = STATUS_END
                 else:
@@ -954,9 +954,9 @@ class Lens:
             else:
                 # Only possible if similarity matching is deactivated or STATUS_END
                 if status == STATUS_END:
-                    print ">>> END STATE REACHED."
+                    print(">>> END STATE REACHED.")
                 else:
-                    print ">>> CAN'T MATCH MESSAGE TO TEMPLATE!"
+                    print(">>> CAN'T MATCH MESSAGE TO TEMPLATE!")
         else:
             status = STATUS_END
         return status
@@ -997,10 +997,10 @@ class Lens:
         if msg is not None:
             # set the state!
             self.templates.append(template)
-            print ">>> SELECTED TEMPLATE: {}".format(template.ID)
+            print(">>> SELECTED TEMPLATE: {}".format(template.ID))
             self.fields.append(fields)
             self.mm.update_state(state)
-            print ">>> TRANSITION TO STATE: {}".format(self.mm.state)
+            print(">>> TRANSITION TO STATE: {}".format(self.mm.state))
             status = STATUS_OK
 
         return (status, msg, transition)
@@ -1020,7 +1020,7 @@ class Lens:
                     # If a transition may have been triggered by similarity matching
                     # a special function is called to find a template and create a
                     # message without explicit rules.
-                    print ">>> Searching template with no rules"
+                    print(">>> Searching template with no rules")
                     next_template = self.tl.find_next_template_no_rules(next_state,
                                                                         self.templates_no_fields,
                                                                         self.fuzzer.interactive)
@@ -1060,7 +1060,7 @@ class Lens:
         if template.ID in self.fuzzer.tracker:
             if self.fuzzer.interactive:
                 while fuzz is None:
-                    inp = raw_input('Fuzz template {}? [y/n]: '.format(template.ID))
+                    inp = input('Fuzz template {}? [y/n]: '.format(template.ID))
                     if inp == 'y':
                         fuzz = True
                     elif inp == 'n':

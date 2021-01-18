@@ -3,7 +3,7 @@ import csv
 import os
 import sys
 
-from util import scanNgrams, scanTokens, readDerrick
+from .util import scanNgrams, scanTokens, readDerrick
 
 csv.field_size_limit(sys.maxsize)
 START_STATE = "START"
@@ -32,9 +32,9 @@ class DataHandler:
     def _readClusterAssignments(self):
         path = "%s.cluster" % self.datapath
         if not os.path.exists(path):
-            print "Error during clustering (not enough data?)"
-            print "Cluster file not generated:", path
-            print "Exiting learning module..."
+            print("Error during clustering (not enough data?)")
+            print("Cluster file not generated:", path)
+            print("Exiting learning module...")
             sys.exit(1)
 
         def clusterProcessor(clusterRow):
@@ -55,11 +55,11 @@ class DataHandler:
 
         for i, h in enumerate(self.harry):
             self.comms.setdefault(h[0], []).append((i, h[1], h[2]))
-        for oneComm in self.comms.values():
+        for oneComm in list(self.comms.values()):
             oneComm.sort(key=operator.itemgetter(1))
 
     def getCommunicationIds(self):
-        return self.comms.keys()
+        return list(self.comms.keys())
 
     def getMsgIndexForComm(self, commId):
         return [c[0] for c in self.comms[commId]]
@@ -88,7 +88,7 @@ class DataHandler:
             return scanNgrams(self.messages[msgIndex])
 
     def _processData(self, fname, process, init, skipFirstLine=False):
-        f = file(fname, "r")
+        f = open(fname, "r")
         data = csv.reader(f, delimiter="\t", quotechar=None, escapechar=None)
         if init is None:
             res = []

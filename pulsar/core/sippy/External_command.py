@@ -75,7 +75,7 @@ class _Worker(Thread):
             while True:
                 try:
                     line = pipe.stdout.readline().strip()
-                except IOError, e:
+                except IOError as e:
                     # Catch EINTR
                     if e.args[0] != EINTR:
                         raise e
@@ -141,10 +141,10 @@ class External_command(object):
         try:
             result_callback(result, *callback_parameters)
         except:
-            print datetime.now(), 'External_command: unhandled exception in external command results callback'
-            print '-' * 70
+            print(datetime.now(), 'External_command: unhandled exception in external command results callback')
+            print('-' * 70)
             print_exc(file = stdout)
-            print '-' * 70
+            print('-' * 70)
             stdout.flush()
 
 if __name__ == '__main__':

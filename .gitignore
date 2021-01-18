@@ -10,3 +10,4 @@
 *.rel
 .DS_Store
 ._.DS_Store
+*.pcap

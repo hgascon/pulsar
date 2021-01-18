@@ -22,15 +22,15 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from SipURL import SipURL
-from string import maketrans
+from .SipURL import SipURL
+#from string import maketrans
 
 class SipAddress(object):
     name = None
     url = None
     params = None
     hadbrace = None
-    transtable = maketrans('-.!%*_+`\'~', 'a' * 10)
+    transtable = str.maketrans('-.!%*_+`\'~', 'a' * 10)
 
     def __init__(self, address = None, name = None, url = None, params = None, hadbrace = None):
         self.params = {}
@@ -90,7 +90,7 @@ class SipAddress(object):
             od = '<'
             cd = '>'
         s += od + self.url.localStr(local_addr, local_port) + cd
-        for k, v in self.params.items():
+        for k, v in list(self.params.items()):
             s += ';' + k + '=' + v
         return s
 

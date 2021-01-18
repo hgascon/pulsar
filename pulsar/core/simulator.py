@@ -1,10 +1,10 @@
 # Network Server/Client interface for LENS module
 # Copyright (c) 2016 Hugo Gascon <hgascon@mail.de>
 
-import ConfigParser
+import configparser
 import os
 import socket
-import lens
+from . import lens
 import time
 from ast import literal_eval
 
@@ -17,7 +17,7 @@ class Simulator:
         self.conf_path = conf_path
 
         # open and load conf file
-        config = ConfigParser.RawConfigParser()
+        config = configparser.RawConfigParser()
         model_conf = os.path.join(self.conf_path, "simulator.conf")
         config.readfp(open(model_conf))
 
@@ -36,8 +36,8 @@ class Simulator:
             self.tout = config.get(self.role, "timeout")
             self.bsize = config.get(self.role, "bsize")
         else:
-            print "Err: set the Simulator role to 'client' \
-                   or 'server' in {}".format(self.model_path)
+            print("Err: set the Simulator role to 'client' \
+                   or 'server' in {}".format(self.model_path))
 
     def run(self):
 
@@ -55,24 +55,24 @@ class Simulator:
             connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             connection.connect((self.host, self.port))
             connection.settimeout(self.tout)
-            print "[*] Connected to server..."
+            print("[*] Connected to server...")
 
             # client starts communications
             snd_message = l.transitionSelf()
-            print "first client msg: "+str(snd_message[1])
+            print("first client msg: "+str(snd_message[1]))
             connection.send(str(snd_message[1]))
 
             while 1:
                 time.sleep(0.3)
                 try:
                     rcv_message = connection.recv(self.bsize)
-                    print "rcv msg: "+str(rcv_message)
+                    print("rcv msg: "+str(rcv_message))
                 except socket.timeout:
                     rcv_message = ""
                 if rcv_message != "":
                     l.consumeOtherSide(rcv_message)
                 snd_message = l.transitionSelf()
-                print "snd mesg: " + str(snd_message[1])
+                print("snd mesg: " + str(snd_message[1]))
                 connection.send(str(snd_message[1]))
 
         elif self.role == "server":
@@ -84,34 +84,34 @@ class Simulator:
             s.listen(backlog)
             connection, address = s.accept()
             connection.settimeout(self.tout)
-            print "[*] Connected to client..."
+            print("[*] Connected to client...")
 
             while 1:
                 time.sleep(0.3)
                 try:
                     rcv_message = connection.recv(self.bsize)
                 except socket.timeout:
-                    print "\n>>> TIMEOUT IN RECEIVE\n"
+                    print("\n>>> TIMEOUT IN RECEIVE\n")
                     rcv_message = ""
                     if snd_message[1] is None:
-                        print ">>> NO TRANSITION POSSIBLE."
-                        print ">>> WAITING FOR NEW CONNECTION...\n"
+                        print(">>> NO TRANSITION POSSIBLE.")
+                        print(">>> WAITING FOR NEW CONNECTION...\n")
                         connection.close()
                         connection, address = s.accept()
                         connection.settimeout(self.tout)
                         continue
                 if rcv_message != "":
-                    print "\n>>> CONSUMING RECEIVED \
-                            MESSAGE:\n{}".format(rcv_message)
+                    print("\n>>> CONSUMING RECEIVED \
+                            MESSAGE:\n{}".format(rcv_message))
                     l.consumeOtherSide(rcv_message)
                 snd_message = l.transitionSelf()
                 #            print "snd_message:\n{}".format(snd_message)
                 if snd_message[1] is not None:
-                    print "\n>>> SENDING MESSAGE:\n{}".format(snd_message[1])
+                    print("\n>>> SENDING MESSAGE:\n{}".format(snd_message[1]))
                     connection.send(str(snd_message[1]))
 
         try:
             connection.close()
         except:
-            print "Err: No active connection to close."
+            print("Err: No active connection to close.")
             pass

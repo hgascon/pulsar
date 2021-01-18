@@ -9,7 +9,7 @@ import sys, re, random, socket
 import parser
 import select
 import time
-import urllib
+import urllib.request, urllib.parse, urllib.error
 from this import s
 from gzip import GzipFile
 from optparse import OptionParser
@@ -51,7 +51,7 @@ if __name__ == "__main__":
         line = line[0:5]
         
         #check if there's an entry for this combination of SRC and DST
-        if src_dst_dic.has_key(src_dst):
+        if src_dst in src_dst_dic:
             
             if response[src_dst] == 0 and float(line[0]) - float(src_dst_dic[src_dst][0]) < step:
                 src_dst_dic[src_dst][4] += line[4]
@@ -66,7 +66,7 @@ if __name__ == "__main__":
             response[src_dst] = 0
         
         #check if there's an entry for the combination of DST to SRC in order to set RESPONSE to 1 for this combination
-        if src_dst_dic.has_key(dst_src):
+        if dst_src in src_dst_dic:
             response[dst_src] = 1        
              
     fd.close()
@@ -75,5 +75,5 @@ if __name__ == "__main__":
     fd = GzipFile(filename, 'wb')
     fd.write(output)
     fd.close()
-    print "Generated file: "+filename
+    print("Generated file: "+filename)
 

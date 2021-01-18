@@ -1,5 +1,5 @@
 from gzip import GzipFile
-import urllib
+import urllib.request, urllib.parse, urllib.error
 
 WS = 0
 TOK = 1
@@ -51,6 +51,6 @@ def readDerrick(path):
         g = GzipFile(path, "rb")
         messages = [] 
         for l in g:
-            messages.append(urllib.unquote(l.rstrip("\r\n").split(" ", 4)[-1]))
+            messages.append(urllib.parse.unquote(l.rstrip("\r\n").split(" ", 4)[-1]))
         g.close()
         return messages

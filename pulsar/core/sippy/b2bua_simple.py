@@ -93,7 +93,7 @@ if __name__ == '__main__':
     try:
         opts, args = getopt.getopt(sys.argv[1:], 'fl:p:n:')
     except getopt.GetoptError:
-        print 'usage: b2bua.py [-l addr] [-p port] [-n addr] [-f]'
+        print('usage: b2bua.py [-l addr] [-p port] [-n addr] [-f]')
         sys.exit(1)
     laddr = None
     lport = None

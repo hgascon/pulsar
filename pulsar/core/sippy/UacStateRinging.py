@@ -22,10 +22,10 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from SipAddress import SipAddress
-from SipRoute import SipRoute
-from UaStateGeneric import UaStateGeneric
-from CCEvents import CCEventRing, CCEventConnect, CCEventFail, CCEventRedirect, CCEventDisconnect
+from .SipAddress import SipAddress
+from .SipRoute import SipRoute
+from .UaStateGeneric import UaStateGeneric
+from .CCEvents import CCEventRing, CCEventConnect, CCEventFail, CCEventRedirect, CCEventDisconnect
 
 class UacStateRinging(UaStateGeneric):
     sname = 'Ringing(UAC)'
@@ -108,9 +108,9 @@ class UacStateRinging(UaStateGeneric):
         #print 'wrong event %s in the Ringing state' % event
         return None
 
-if not globals().has_key('UaStateFailed'):
-    from UaStateFailed import UaStateFailed
-if not globals().has_key('UaStateConnected'):
-    from UaStateConnected import UaStateConnected
-if not globals().has_key('UacStateCancelling'):
-    from UacStateCancelling import UacStateCancelling
+if 'UaStateFailed' not in globals():
+    from .UaStateFailed import UaStateFailed
+if 'UaStateConnected' not in globals():
+    from .UaStateConnected import UaStateConnected
+if 'UacStateCancelling' not in globals():
+    from .UacStateCancelling import UacStateCancelling

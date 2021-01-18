@@ -22,11 +22,11 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from SipAddress import SipAddress
-from SipRoute import SipRoute
-from UaStateGeneric import UaStateGeneric
-from Timeout import TimeoutAbs
-from CCEvents import CCEventRing, CCEventConnect, CCEventFail, CCEventRedirect, CCEventDisconnect
+from .SipAddress import SipAddress
+from .SipRoute import SipRoute
+from .UaStateGeneric import UaStateGeneric
+from .Timeout import TimeoutAbs
+from .CCEvents import CCEventRing, CCEventConnect, CCEventFail, CCEventRedirect, CCEventDisconnect
 
 class UacStateTrying(UaStateGeneric):
     sname = 'Trying(UAC)'
@@ -130,11 +130,11 @@ class UacStateTrying(UaStateGeneric):
         #print 'wrong event %s in the Trying state' % event
         return None
 
-if not globals().has_key('UacStateRinging'):
-    from UacStateRinging import UacStateRinging
-if not globals().has_key('UaStateFailed'):
-    from UaStateFailed import UaStateFailed
-if not globals().has_key('UaStateConnected'):
-    from UaStateConnected import UaStateConnected
-if not globals().has_key('UacStateCancelling'):
-    from UacStateCancelling import UacStateCancelling
+if 'UacStateRinging' not in globals():
+    from .UacStateRinging import UacStateRinging
+if 'UaStateFailed' not in globals():
+    from .UaStateFailed import UaStateFailed
+if 'UaStateConnected' not in globals():
+    from .UaStateConnected import UaStateConnected
+if 'UacStateCancelling' not in globals():
+    from .UacStateCancelling import UacStateCancelling
