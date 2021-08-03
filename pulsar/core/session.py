@@ -13,7 +13,7 @@ class SessionInfo:
         self.msgType = msgType
 
     def __str__(self):
-        return "\t".join([self.sessionId, str(self.msgNumber), self.role, self.msgType])
+        return "\t".join([self.sessionId, str(self.msgNumber), self.role, str(self.msgType)])
 
 class SessionHandler:
 
@@ -62,8 +62,8 @@ class UniversalSessionHandler(SessionHandler):
         dialogId_timestamp_dic = {}   #keys: dialogID, values: last appearing timestamp
         dialogId = 0
         for (index, msg) in enumerate(messages):
-            src_dst = msg.src + "_" + msg.dst
-            dst_src = msg.dst + "_" + msg.src
+            src_dst = msg.src + b"_" + msg.dst
+            dst_src = msg.dst + b"_" + msg.src
             msgType = msg.msg.split(None, 1)
             if len(msgType) > 0:
                 msgType = msgType[0]

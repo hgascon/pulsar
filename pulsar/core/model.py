@@ -246,13 +246,13 @@ class ModelFilesGenerator:
 
     def saveModel(self):
         # write out the markov model:
-        f = file(self.datapath + ".markovModel", "w")
+        f = open(self.datapath + ".markovModel", "w")
         for state, nextStates in self.mc.items():
             for nextState, count in nextStates.items():
                 f.write("%s->%s,%d\n" % (state, nextState, count))
         f.close()
         # write out the templates:
-        f = file(self.datapath + ".templates", "w")
+        f = open(self.datapath + ".templates", "w")
         for template in self.structureTemplates:
             f.write("TEMPLATE id:%d state:%s count:%d ntokens:%d fields:%s\n" %
                     (template.templateId, template.state,
@@ -261,7 +261,7 @@ class ModelFilesGenerator:
             for tok in template.tokens:
                 f.write("%s\n" % urllib.parse.quote(tok))
         f.close()
-        f = file(self.datapath + ".rules", "w")
+        f = open(self.datapath + ".rules", "w")
         for ruleSet in self.rules.values():
             for r in ruleSet.rules:
                 f.write("RULE transition:%s srcId:%d srcField:%d dstField:%d type:%s\n" %

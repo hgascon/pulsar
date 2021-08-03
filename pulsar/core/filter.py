@@ -122,8 +122,8 @@ class PacketMerger(StatefulFilter):
 
         for msg in messages:
 
-            src_dst = msg.src + "_" + msg.dst
-            dst_src = msg.dst + "_" + msg.src
+            src_dst = msg.src + b"_" + msg.dst
+            dst_src = msg.dst + b"_" + msg.src
             # check if there's an entry for this combination of SRC and DST
 #            if src_dst_dic.has_key(src_dst):
             if src_dst in src_dst_dic:

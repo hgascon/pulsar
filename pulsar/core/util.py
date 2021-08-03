@@ -51,6 +51,6 @@ def readDerrick(path):
         g = GzipFile(path, "rb")
         messages = [] 
         for l in g:
-            messages.append(urllib.parse.unquote(l.rstrip("\r\n").split(" ", 4)[-1]))
+            messages.append(urllib.parse.unquote(l.rstrip(b"\r\n").split(b" ", 4)[-1]))
         g.close()
         return messages
